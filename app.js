@@ -215,6 +215,31 @@ function getExplanation(char, lang, prevChar, nextChar) {
     return dictExplanation;
 }
 
+// 将数字转换为上标形式的辅助函数
+function toSuperscript(num) {
+  if (!num) return '';
+  // 数字到上标字符的映射
+  const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+  return num.toString().split('').map(digit => {
+    return superscripts[parseInt(digit)] || digit;
+  }).join('');
+}
+
+// 获取带LFW上标的字符
+function getCharWithLFW(char) {
+  if (dictionary[char] && dictionary[char].LFW) {
+    return char + toSuperscript(dictionary[char].LFW);
+  }
+  return char;
+}
+
+// 处理字符和字符组合的LFW编号
+function processLFW(chars) {
+  if (Array.isArray(chars)) {
+    return chars.map(char => getCharWithLFW(char));
+  }
+  return getCharWithLFW(chars);
+}
 
 // 定义输出格式的分隔符
 const FORMAT_SEPARATORS = {
@@ -468,34 +493,53 @@ function generateTypstOutput(chars, lang, readingSystem) {
     
     const processedChars = processCombination([...chars]);
     
-        // 合并连接的项
-        function mergeConnectedItems(items) {
-            const result = [];
-            let currentGroup = '';
-            
-            items.forEach((item, index) => {
-                if (index === 0) {
-                    currentGroup = item;
+    // 合并连接的项
+    function mergeConnectedItems(items) {
+        const result = [];
+        let currentGroup = '';
+        
+        items.forEach((item, index) => {
+            if (index === 0) {
+                currentGroup = item;
+            } else {
+                // 如果当前项以连接符开始或前一组以连接符结束
+                if (/^[=-]/.test(item) || /[=-]$/.test(currentGroup)) {
+                    currentGroup += item;
                 } else {
-                    // 如果当前项以连接符开始或前一组以连接符结束
-                    if (/^[=-]/.test(item) || /[=-]$/.test(currentGroup)) {
-                        currentGroup += item;
-                    } else {
-                        result.push(currentGroup);
-                        currentGroup = item;
-                    }
+                    result.push(currentGroup);
+                    currentGroup = item;
                 }
-            });
-            
-            if (currentGroup) {
-                result.push(currentGroup);
             }
-            
-            return result;
+        });
+        
+        if (currentGroup) {
+            result.push(currentGroup);
         }
-    
-    // 处理源字符
+        
+        return result;
+    }
+
+    // 处理源字符 - 不添加LFW上标
     const charList = mergeConnectedItems(processedChars).map(char => processTypstBrackets(char));
+    
+    // 处理header - 添加LFW上标
+    const headerWithLFW = [...chars].map(char => getCharWithLFW(char)).join('');
+    
+    // 处理源字符（添加LFW上标）- 仅用于header
+    const charsWithLFW = processedChars.map(char => {
+        if (char.includes('-') || char.includes('=')) {
+            // 处理多字符连接情况
+            const parts = char.split(/[-=]/);
+            const connectors = char.match(/[-=]/g);
+            
+            return parts.map((part, idx) => {
+                const partWithLFW = getCharWithLFW(part);
+                return idx < parts.length - 1 ? 
+                    `${partWithLFW}${connectors[idx]}` : partWithLFW;
+            }).join('');
+        }
+        return getCharWithLFW(char);
+    });
     
     // 处理读音
     const rawReadings = processedChars.map((char, index) => {
@@ -585,12 +629,12 @@ function generateTypstOutput(chars, lang, readingSystem) {
     const morphemes = mergeConnectedItems(rawMorphemes).map(morpheme => processTypstBrackets(morpheme));
 
     return `#gloss(\n` +
-            `header: ${processTypstBrackets(chars)},\n` +
+            `header: ${processTypstBrackets(headerWithLFW)},\n` +
             `source: (${charList.join(separator)}),\n` +
             `transliteration: (${readings.join(separator)}),\n` +
             `morphemes: (${morphemes.join(separator)}),\n` +
             `translation: ""\n)`;
-        }
+}
 
 function generateObsidianOutput(chars, lang, readingSystem) {
     const separator = FORMAT_SEPARATORS.obsidian.items;
@@ -684,6 +728,9 @@ function generateObsidianOutput(chars, lang, readingSystem) {
         return '';
     });
 
+    // 添加LFW上标到字符
+    const charsWithLFW = [...chars].map(char => getCharWithLFW(char)).join('');
+
     // 处理标点符号前的空格
     function joinWithSmartSpacing(items) {
         return items.reduce((result, current, index) => {
@@ -716,7 +763,7 @@ function generateObsidianOutput(chars, lang, readingSystem) {
     // 返回Obsidian格式的输出
     return '```gloss\n' +
            '\\set exstyle big\n' +
-           `\\ex ${chars}\n` +
+           `\\ex ${charsWithLFW}\n` +
            `\\gla ${readingsText}\n` +
            `\\glb ${morphemesText}\n` +
            '\\ft \n' +
@@ -736,8 +783,23 @@ function generatePlainTextOutput(chars, lang, readingSystem) {
     let currentMorphemeGroup = '';
     
     processedChars.forEach((char, index, array) => {
-        // 处理字符
-        if (index > 0 && !char.startsWith('-') && !char.startsWith('=') && 
+        // 处理字符（添加LFW上标）
+        let charWithLFW = char;
+        if (!char.includes('-') && !char.includes('=')) {
+            charWithLFW = getCharWithLFW(char);
+        } else {
+            // 处理多字符连接情况
+            const parts = char.split(/[-=]/);
+            const connectors = char.match(/[-=]/g);
+            
+            charWithLFW = parts.map((part, idx) => {
+                const partWithLFW = getCharWithLFW(part);
+                return idx < parts.length - 1 ? 
+                    `${partWithLFW}${connectors[idx]}` : partWithLFW;
+            }).join('');
+        }
+        
+        if (index > 0 && !charWithLFW.startsWith('-') && !charWithLFW.startsWith('=') && 
             !currentCharGroup.endsWith('-') && !currentCharGroup.endsWith('=')) {
             charGroups.push(currentCharGroup);
             readingGroups.push(currentReadingGroup);
@@ -746,7 +808,8 @@ function generatePlainTextOutput(chars, lang, readingSystem) {
             currentReadingGroup = '';
             currentMorphemeGroup = '';
         }
-        currentCharGroup += char;
+        currentCharGroup += charWithLFW;
+
         
         // 处理读音
         let reading = '';
@@ -987,6 +1050,8 @@ const i18nData = {
         "format-output": "格式输出：",
         "copy-clipboard": "复制到剪贴板",
         "plain-text": "纯文本",
+         "show-lfw": "显示编号：",
+        "lfw-label": "LFW"
     },
     en: {
         "title": "Tangut Script<br>Annotation Tool α",
@@ -1003,6 +1068,8 @@ const i18nData = {
         "format-output": "Formatted Output:",
         "copy-clipboard": "Copy to Clipboard",
         "plain-text": "Plain Text",
+        "show-lfw": "Show Numbers:",
+        "lfw-label": "LFW"
     },
     ja: {
         "title": "西夏文字<br>注釈ツール α",
@@ -1018,7 +1085,9 @@ const i18nData = {
         "output-format": "出力形式：",
         "format-output": "出力：",
         "copy-clipboard": "コピー",
-        "plain-text": "テキスト形式"
+        "plain-text": "テキスト形式",
+        "show-lfw": "番号表示：",
+        "lfw-label": "LFW"
     },
     ru: {
         "title": "Тангутское письмо<br>Инструмент для глоссирования α",
@@ -1035,6 +1104,8 @@ const i18nData = {
         "format-output": "Форматированный вывод:",
         "copy-clipboard": "Копировать в буфер обмена",
         "plain-text": "Простой текст",
+        "show-lfw": "Показать номера:",
+        "lfw-label": "LFW"
     }
 };
 
@@ -1089,3 +1160,42 @@ const defaultLang = supportedLangs.includes(userLang) ? userLang : 'zh';
 document.getElementById('languageSelect').value = defaultLang;
 updatePageText(defaultLang);
 });
+
+// 将数字转换为上标形式的辅助函数
+function toSuperscript(num) {
+    if (!num) return '';
+    // 数字到上标字符的映射
+    const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+    return num.toString().split('').map(digit => {
+        return superscripts[parseInt(digit)] || digit;
+    }).join('');
+}
+
+// 获取带LFW上标的字符
+function getCharWithLFW(char) {
+    // 检查是否启用LFW编号显示
+    const showLFW = document.getElementById('show-lfw').checked;
+    
+    if (showLFW && dictionary[char] && dictionary[char].LFW) {
+        return char + toSuperscript(dictionary[char].LFW);
+    }
+    return char;
+}
+
+// 修改现有函数中处理字符显示的部分
+
+// 在processCombination函数之前插入以下函数
+// 处理多字符连接情况下的LFW编号
+function processConnectedCharsWithLFW(char) {
+    if (char.includes('-') || char.includes('=')) {
+        const parts = char.split(/[-=]/);
+        const connectors = char.match(/[-=]/g);
+        
+        return parts.map((part, idx) => {
+            const partWithLFW = getCharWithLFW(part);
+            return idx < parts.length - 1 ? 
+                `${partWithLFW}${connectors[idx]}` : partWithLFW;
+        }).join('');
+    }
+    return getCharWithLFW(char);
+}
