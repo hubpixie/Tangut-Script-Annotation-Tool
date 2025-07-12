@@ -477,13 +477,6 @@ const WORD_DATA = [
     "explanationCN": "索求"
   },
   {
-    "word": "𗀔𗬵",
-    "GX": "tśhaw¹.dźwoṃ¹",
-    "GHC": "tśhja̱¹.dźjwow¹",
-    "explanationEN": "float.up",
-    "explanationCN": "上浮"
-  },
-  {
     "word": "𗀔𘒰",
     "GX": "tśhaw¹.nzi̱w²",
     "GHC": "tśhja̱¹.ze̱w²",
@@ -2692,8 +2685,8 @@ const WORD_DATA = [
     "word": "𗂚𗠤",
     "GX": "ye².dzi²",
     "GHC": ".dzji²",
-    "explanationEN": "banquet‖entertain.at.a.banquet",
-    "explanationCN": "宴‖宴会"
+    "explanationEN": "banquet",
+    "explanationCN": "宴会"
   },
   {
     "word": "𗂛𘄙",
@@ -3501,25 +3494,11 @@ const WORD_DATA = [
     "explanationCN": "清吏"
   },
   {
-    "word": "𗂸𗓁",
-    "GX": "bi².mi¹",
-    "GHC": "bji².mji¹",
-    "explanationEN": "i.heard",
-    "explanationCN": "臣闻"
-  },
-  {
     "word": "𗂸𗦉",
     "GX": "bi².be²",
     "GHC": "bji².bjij²",
-    "explanationEN": "i.concubine",
+    "explanationEN": "concubine",
     "explanationCN": "臣妾"
-  },
-  {
-    "word": "𗂸𗫡",
-    "GX": "bi².nə²",
-    "GHC": "bji².njɨ²",
-    "explanationEN": "prime.minister.(in.ancient.china)‖arrive/spread",
-    "explanationCN": "臣丞相宰相官宦大夫‖至"
   },
   {
     "word": "𗂸𗵘",
@@ -3548,13 +3527,6 @@ const WORD_DATA = [
     "GHC": "bji².sjij²",
     "explanationEN": "subjects",
     "explanationCN": "臣民"
-  },
-  {
-    "word": "𗂸𘃡",
-    "GX": "bi².vi¹",
-    "GHC": "bji².wji¹",
-    "explanationEN": "minister",
-    "explanationCN": "为臣"
   },
   {
     "word": "𗂸𘄡",
@@ -3919,13 +3891,6 @@ const WORD_DATA = [
     "GHC": "ꞏjijr¹.kjow¹",
     "explanationEN": "strong",
     "explanationCN": "刚强"
-  },
-  {
-    "word": "𗃎𗣗",
-    "GX": "ryer¹.zeh²",
-    "GHC": "ꞏjijr¹.zjịj²",
-    "explanationEN": "firm‖do",
-    "explanationCN": "1.刚强、坚、艰‖做作为"
   },
   {
     "word": "𗃎𗭍",
@@ -4726,13 +4691,6 @@ const WORD_DATA = [
     "explanationCN": "尔朱兆(人名)"
   },
   {
-    "word": "𗄈～𗫡",
-    "GX": "śow¹.nə²",
-    "GHC": "śjwo¹.njɨ²",
-    "explanationEN": "rise[ᴀ]‖arrive/spread",
-    "explanationCN": "起[ᴀ]‖至"
-  },
-  {
     "word": "𗄈𗏴",
     "GX": "śow¹.dźu¹",
     "GHC": "śjwo¹.dźju¹",
@@ -4752,20 +4710,6 @@ const WORD_DATA = [
     "GHC": "śjwo¹.lhjwi¹",
     "explanationEN": "vertical.convergence",
     "explanationCN": "立敛"
-  },
-  {
-    "word": "𗄈𗫡",
-    "GX": "śow¹.nə²",
-    "GHC": "śjwo¹.njɨ²",
-    "explanationEN": "start.and.end",
-    "explanationCN": "起止"
-  },
-  {
-    "word": "𗄈𗬁",
-    "GX": "śow¹.deṃ²",
-    "GHC": "śjwo¹.djɨj²",
-    "explanationEN": "start.and.end",
-    "explanationCN": "起止"
   },
   {
     "word": "𗄊𗄊",
@@ -5790,13 +5734,6 @@ const WORD_DATA = [
     "explanationCN": "定日十二建除日"
   },
   {
-    "word": "𗅆𘃡",
-    "GX": "deṃ².vi¹",
-    "GHC": "djɨj².wji¹",
-    "explanationEN": "set.as",
-    "explanationCN": "定为"
-  },
-  {
     "word": "𗅆𘉥",
     "GX": "deṃ².dźaw¹",
     "GHC": "djɨj².dźja̱¹",
@@ -5808,7 +5745,7 @@ const WORD_DATA = [
     "GX": "deṃ².ndze²",
     "GHC": "djɨj².dzji̱j²",
     "explanationEN": "zen.master",
-    "explanationCN": "禅师师号"
+    "explanationCN": "禅师"
   },
   {
     "word": "𗅆𘝶",
@@ -5956,13 +5893,6 @@ const WORD_DATA = [
     "GHC": "njij².rar¹",
     "explanationEN": "moon.mountain",
     "explanationCN": "月山"
-  },
-  {
-    "word": "𗅔𗤋",
-    "GX": "naw².me¹",
-    "GHC": "nja̱².mjij¹",
-    "explanationEN": "nothing.more.than",
-    "explanationCN": "无非"
   },
   {
     "word": "𗅔𗦻",
@@ -7996,7 +7926,7 @@ const WORD_DATA = [
   },
   {
     "word": "𗇎𗢯",
-    "GX": "veh².lhwa¹",
+    "GX": "veh².llwa¹",
     "GHC": "wjịj².lhjwa¹",
     "explanationEN": "seal.the.flesh",
     "explanationCN": "封瓤"
@@ -8275,13 +8205,6 @@ const WORD_DATA = [
     "explanationCN": "胡乱"
   },
   {
-    "word": "𗇬𘃡",
-    "GX": "lwa̱ṃ².vi¹",
-    "GHC": "lwã².wji¹",
-    "explanationEN": "tamper",
-    "explanationCN": "乱动"
-  },
-  {
     "word": "𗇬𘎪",
     "GX": "lwa̱ṃ².ntshe¹",
     "GHC": "lwã².tshji̱j¹",
@@ -8322,13 +8245,6 @@ const WORD_DATA = [
     "GHC": "rar².nja̱¹",
     "explanationEN": "shadow",
     "explanationCN": "黑影"
-  },
-  {
-    "word": "𗇮𗱝",
-    "GX": "rə̱r².dẓwai̱¹",
-    "GHC": "rar².dźiwe¹",
-    "explanationEN": "shadow/reflection‖echo",
-    "explanationCN": "影‖回音"
   },
   {
     "word": "𗇮𗴭",
@@ -13252,13 +13168,6 @@ const WORD_DATA = [
     "explanationCN": "《大诗》"
   },
   {
-    "word": "𗊱𘃡",
-    "GX": "dzo².vi¹",
-    "GHC": "dzjo².wji¹",
-    "explanationEN": "write.poetry",
-    "explanationCN": "作诗"
-  },
-  {
     "word": "𗊱𘃨",
     "GX": "dzo².rghər¹",
     "GHC": "dzjo².ɣjɨr¹",
@@ -13718,28 +13627,28 @@ const WORD_DATA = [
     "GX": "ne̱².na̱¹",
     "GHC": "nej².na¹",
     "explanationEN": "renxu.stem.and.branch",
-    "explanationCN": "壬戌干支"
+    "explanationCN": "壬戌"
   },
   {
     "word": "𗋌𗱈",
     "GX": "ne̱².lli̱²",
     "GHC": "nej².le²",
     "explanationEN": "renyin.stem.and.branch",
-    "explanationCN": "壬寅干支"
+    "explanationCN": "壬寅"
   },
   {
     "word": "𗋌𗵃",
     "GX": "ne̱².vwi̱¹",
     "GHC": "nej².we¹",
     "explanationEN": "renchen.ganzhi",
-    "explanationCN": "壬辰干支"
+    "explanationCN": "壬辰"
   },
   {
     "word": "𗋌𘂶",
     "GX": "ne̱².vih¹",
     "GHC": "nej².wjị¹",
     "explanationEN": "renshen.ganzhi",
-    "explanationCN": "壬申干支"
+    "explanationCN": "壬申"
   },
   {
     "word": "𗋌𘃠",
@@ -13753,14 +13662,14 @@ const WORD_DATA = [
     "GX": "ne̱².ge¹",
     "GHC": "nej².gjij¹",
     "explanationEN": "renwu.stem.and.branch",
-    "explanationCN": "壬午干支"
+    "explanationCN": "壬午"
   },
   {
     "word": "𗋌𘋇",
     "GX": "ne̱².fi¹",
     "GHC": "nej².xjwi¹",
     "explanationEN": "renzi.stem.branch",
-    "explanationCN": "壬子干支"
+    "explanationCN": "壬子"
   },
   {
     "word": "𗋍𘛨",
@@ -13966,186 +13875,11 @@ const WORD_DATA = [
     "explanationCN": "甜淡"
   },
   {
-    "word": "𗋕𗅉",
-    "GX": "tha¹.nuo¹",
-    "GHC": "thja¹.niow¹",
-    "explanationEN": "afterwards",
-    "explanationCN": "之后"
-  },
-  {
-    "word": "𗋕𗋸𗅉",
-    "GX": "tha¹.ma¹.nuo¹",
-    "GHC": "thja¹.mja¹.niow¹",
-    "explanationEN": "then",
-    "explanationCN": "然后"
-  },
-  {
-    "word": "𗋕𗍊",
-    "GX": "tha¹.su²",
-    "GHC": "thja¹.sju²",
-    "explanationEN": "so",
-    "explanationCN": "如此"
-  },
-  {
-    "word": "𗋕𗐱",
-    "GX": "tha¹.ni²",
-    "GHC": "thja¹.nji²",
-    "explanationEN": "that.person",
-    "explanationCN": "彼人"
-  },
-  {
-    "word": "𗋕𗟲",
-    "GX": "tha¹.ŋŋwu̱¹",
-    "GHC": "thja¹.ŋwu̱¹",
-    "explanationEN": "his.words",
-    "explanationCN": "其言"
-  },
-  {
     "word": "𗋕𗡶",
     "GX": "tha¹.śe¹",
     "GHC": "thja¹.śjij¹",
     "explanationEN": "natural",
     "explanationCN": "自然"
-  },
-  {
-    "word": "𗋕𗡸",
-    "GX": "tha¹.si²",
-    "GHC": "thja¹.sji²",
-    "explanationEN": "his.wife",
-    "explanationCN": "其妇"
-  },
-  {
-    "word": "𗋕𗤒",
-    "GX": "tha¹.kiw¹",
-    "GHC": "thja¹.kjiw¹",
-    "explanationEN": "its.year",
-    "explanationCN": "其年"
-  },
-  {
-    "word": "𗋕𗧁",
-    "GX": "tha¹.rer²",
-    "GHC": "thja¹.rjir²",
-    "explanationEN": "their.talent",
-    "explanationCN": "其才"
-  },
-  {
-    "word": "𗋕𗧘",
-    "GX": "tha¹.vwo̱²",
-    "GHC": "thja¹.wo²",
-    "explanationEN": "its",
-    "explanationCN": "其"
-  },
-  {
-    "word": "𗋕𗫌",
-    "GX": "tha¹.ni¹",
-    "GHC": "thja¹.nji¹",
-    "explanationEN": "their.home",
-    "explanationCN": "其家"
-  },
-  {
-    "word": "𗋕𗯩",
-    "GX": "tha¹.twu̱h¹",
-    "GHC": "thja¹.twụ¹",
-    "explanationEN": "its.place",
-    "explanationCN": "其处"
-  },
-  {
-    "word": "𗋕𗵘",
-    "GX": "tha¹.tśa¹",
-    "GHC": "thja¹.tśja¹",
-    "explanationEN": "its.way",
-    "explanationCN": "其道"
-  },
-  {
-    "word": "𗋕𗾞",
-    "GX": "tha¹.nnə²",
-    "GHC": "thja¹.njɨ̱²",
-    "explanationEN": "that.day.",
-    "explanationCN": "是日"
-  },
-  {
-    "word": "𗋕𗿳",
-    "GX": "tha¹.dzeṃ¹",
-    "GHC": "thja¹.dzjɨj¹",
-    "explanationEN": "at.that.time",
-    "explanationCN": "其时"
-  },
-  {
-    "word": "𗋕𗿳𘓐",
-    "GX": "tha¹.dzeṃ¹.dzwo²",
-    "GHC": "thja¹.dzjɨj¹.dzjwo²",
-    "explanationEN": "time.people",
-    "explanationCN": "时人"
-  },
-  {
-    "word": "𗋕𘅣",
-    "GX": "tha¹.da̱h²",
-    "GHC": "thja¹.dạ²",
-    "explanationEN": "its.matter",
-    "explanationCN": "其事"
-  },
-  {
-    "word": "𗋕𘅫",
-    "GX": "tha¹.tśu¹",
-    "GHC": "thja¹.tśju¹",
-    "explanationEN": "his.job",
-    "explanationCN": "其职"
-  },
-  {
-    "word": "𗋕𘇂",
-    "GX": "tha¹.ġu̱²",
-    "GHC": "thja¹.gu²",
-    "explanationEN": "among.them",
-    "explanationCN": "其中"
-  },
-  {
-    "word": "𗋕𘎪",
-    "GX": "tha¹.ntshe¹",
-    "GHC": "thja¹.tshji̱j¹",
-    "explanationEN": "his.words",
-    "explanationCN": "其言"
-  },
-  {
-    "word": "𗋕𘒣",
-    "GX": "tha¹.da̱h²",
-    "GHC": "thja¹.dạ²",
-    "explanationEN": "his.words",
-    "explanationCN": "其言"
-  },
-  {
-    "word": "𗋕𘓐",
-    "GX": "tha¹.dzwo²",
-    "GHC": "thja¹.dzjwo²",
-    "explanationEN": "that.person",
-    "explanationCN": "彼人"
-  },
-  {
-    "word": "𗋕𘔮",
-    "GX": "tha¹.rġhwa̱r²",
-    "GHC": "thja¹.ꞏwar²",
-    "explanationEN": "its.object",
-    "explanationCN": "其物"
-  },
-  {
-    "word": "𗋕𘕋",
-    "GX": "tha¹.dźih²",
-    "GHC": "thja¹.dźjar²",
-    "explanationEN": "their.crimes",
-    "explanationCN": "其罪"
-  },
-  {
-    "word": "𗋕𘜔",
-    "GX": "tha¹.rŋi̱wr²",
-    "GHC": "thja¹.ŋewr²",
-    "explanationEN": "its.number",
-    "explanationCN": "其数"
-  },
-  {
-    "word": "𗋕𘞌",
-    "GX": "tha¹.rźər¹",
-    "GHC": "thja¹.źjɨr¹",
-    "explanationEN": "actually",
-    "explanationCN": "其实"
   },
   {
     "word": "𗋖𗐐",
@@ -15184,13 +14918,6 @@ const WORD_DATA = [
     "explanationCN": "排水"
   },
   {
-    "word": "𗋽𘇂",
-    "GX": "rzər².ġu̱²",
-    "GHC": "zjɨ̱r².gu²",
-    "explanationEN": "in.the.water",
-    "explanationCN": "水中"
-  },
-  {
     "word": "𗋽𘇂𗌡",
     "GX": "rzər².ġu̱².tha̱ṃ¹",
     "GHC": "zjɨ̱r².gu².thã¹",
@@ -15461,7 +15188,7 @@ const WORD_DATA = [
     "GX": "źu².se²",
     "GHC": "źju².sjij²",
     "explanationEN": "fish‖tortoise",
-    "explanationCN": "鱼‖甲角【谢】"
+    "explanationCN": "鱼鳞"
   },
   {
     "word": "𗋾𘜶",
@@ -16029,13 +15756,6 @@ const WORD_DATA = [
     "GHC": "pjạ¹.lo¹",
     "explanationEN": "filter.residue",
     "explanationCN": "滤渣"
-  },
-  {
-    "word": "𗌭～𘘦",
-    "GX": "qu̱¹.tśhow¹",
-    "GHC": "ku¹.tśhjwo¹",
-    "explanationEN": "so‖a.modal.auxiliary",
-    "explanationCN": "连词【鼓】【姑】【孤】【羖】【股】【孤】‖故"
   },
   {
     "word": "𗌭𘘦",
@@ -17134,7 +16854,7 @@ const WORD_DATA = [
     "GX": "vwi̱².na̱¹",
     "GHC": "we².na¹",
     "explanationEN": "wuxu.stem.and.branch",
-    "explanationCN": "戊戌干支"
+    "explanationCN": "戊戌"
   },
   {
     "word": "𗍗𗭴",
@@ -17148,14 +16868,14 @@ const WORD_DATA = [
     "GX": "vwi̱².lli̱²",
     "GHC": "we².le²",
     "explanationEN": "wuyin.stem.and.branch",
-    "explanationCN": "戊寅干支"
+    "explanationCN": "戊寅"
   },
   {
     "word": "𗍗𗵃",
     "GX": "vwi̱².vwi̱¹",
     "GHC": "we².we¹",
     "explanationEN": "wuchen.ganzhi",
-    "explanationCN": "戊辰干支"
+    "explanationCN": "戊辰"
   },
   {
     "word": "𗍗𗽬",
@@ -17169,21 +16889,21 @@ const WORD_DATA = [
     "GX": "vwi̱².vih¹",
     "GHC": "we².wjị¹",
     "explanationEN": "wushen.ganzhi",
-    "explanationCN": "戊申干支"
+    "explanationCN": "戊申"
   },
   {
     "word": "𗍗𘆽",
     "GX": "vwi̱².ge¹",
     "GHC": "we².gjij¹",
     "explanationEN": "wuwu.stem.and.branch",
-    "explanationCN": "戊午干支"
+    "explanationCN": "戊午"
   },
   {
     "word": "𗍗𘋇",
     "GX": "vwi̱².fi¹",
     "GHC": "we².xjwi¹",
     "explanationEN": "ganzhi.of.wuzi",
-    "explanationCN": "戊子干支"
+    "explanationCN": "戊子"
   },
   {
     "word": "𗍗𘌜𗫍",
@@ -17921,13 +17641,6 @@ const WORD_DATA = [
     "explanationCN": "二份"
   },
   {
-    "word": "𗍫𘊲𘂤𗈪𘊲",
-    "GX": "nnə¹.mphaa̱².qha̱¹.a¹.mphaa̱²",
-    "GHC": "njɨ̱¹.phia̱².kha¹.ꞏja.phia̱²",
-    "explanationEN": "half",
-    "explanationCN": "二分之一"
-  },
-  {
     "word": "𗍫𘋠",
     "GX": "nnə¹.mə̱²",
     "GHC": "njɨ̱¹.mə²",
@@ -18115,20 +17828,6 @@ const WORD_DATA = [
     "GHC": "lja¹.lwụ¹",
     "explanationEN": "middle",
     "explanationCN": "中间"
-  },
-  {
-    "word": "𗍳𗫡",
-    "GX": "ni².nə²",
-    "GHC": "nji².njɨ²",
-    "explanationEN": "you.hon‖arrive/spread",
-    "explanationCN": "您‖至"
-  },
-  {
-    "word": "𗍳𘀆",
-    "GX": "ni².ne²",
-    "GHC": "nji².njij²",
-    "explanationEN": "you.him",
-    "explanationCN": "你他"
   },
   {
     "word": "𗍶𗏇",
@@ -18418,13 +18117,6 @@ const WORD_DATA = [
     "explanationCN": "肾"
   },
   {
-    "word": "𗎈𗌛",
-    "GX": "ġhwo̱ṃh¹.rhwa̱r¹",
-    "GHC": "ꞏwọ¹.xwar¹",
-    "explanationEN": "ice‖mix/stir/blend",
-    "explanationCN": "冰‖和拌"
-  },
-  {
     "word": "𗎈𗝐",
     "GX": "ġhwo̱ṃh¹.ġha̱²",
     "GHC": "ꞏwọ¹.ɣa²",
@@ -18696,20 +18388,6 @@ const WORD_DATA = [
     "GHC": "bju².zjir²",
     "explanationEN": "along.the.edge",
     "explanationCN": "沿边"
-  },
-  {
-    "word": "𗎘𗫡",
-    "GX": "bu².nə²",
-    "GHC": "bju².njɨ²",
-    "explanationEN": "presence",
-    "explanationCN": "临境"
-  },
-  {
-    "word": "𗎘𗰛",
-    "GX": "bu².dzeh¹",
-    "GHC": "bju².dzjịj¹",
-    "explanationEN": "crossing.the.border",
-    "explanationCN": "逾境"
   },
   {
     "word": "𗎘𗱀",
@@ -19067,13 +18745,6 @@ const WORD_DATA = [
     "GHC": "mji̱¹.mjij²",
     "explanationEN": "homes",
     "explanationCN": "宅舍"
-  },
-  {
-    "word": "𗎭𘃡",
-    "GX": "mmi¹.vi¹",
-    "GHC": "mji̱¹.wji¹",
-    "explanationEN": "for.the.house",
-    "explanationCN": "为宅"
   },
   {
     "word": "𗎭𘐖",
@@ -20259,13 +19930,6 @@ const WORD_DATA = [
     "explanationCN": "胸肋"
   },
   {
-    "word": "𗏘𘇂",
-    "GX": "rġha̱r².ġu̱²",
-    "GHC": "ɣar².gu²",
-    "explanationEN": "in.the.chest",
-    "explanationCN": "胸中"
-  },
-  {
     "word": "𗏘𘐴",
     "GX": "rġha̱r².rgər²",
     "GHC": "ɣar².ŋjɨr²",
@@ -21295,13 +20959,6 @@ const WORD_DATA = [
     "explanationCN": "聚坐"
   },
   {
-    "word": "𗐛𘇂",
-    "GX": "rvwa̱r².ġu̱²",
-    "GHC": "war².gu²",
-    "explanationEN": "in.the.seat",
-    "explanationCN": "座中"
-  },
-  {
     "word": "𗐜𗐍",
     "GX": "gha².qe̱?",
     "GHC": "ɣja².kej",
@@ -21554,13 +21211,6 @@ const WORD_DATA = [
     "explanationCN": "朝堂"
   },
   {
-    "word": "𗐯𘇂",
-    "GX": "qae̱h².ġu̱²",
-    "GHC": "kiẹj².gu²",
-    "explanationEN": "chaozhong",
-    "explanationCN": "朝中"
-  },
-  {
     "word": "𗐯𘋳",
     "GX": "qae̱h².gwi²",
     "GHC": "kiẹj².gjwi²",
@@ -21636,13 +21286,6 @@ const WORD_DATA = [
     "GHC": "nju¹.nji̱²",
     "explanationEN": "ear.and.nose",
     "explanationCN": "耳鼻"
-  },
-  {
-    "word": "𗐴𗰷",
-    "GX": "nu¹.rzwə̱r¹",
-    "GHC": "nju¹.zwər¹",
-    "explanationEN": "ear.washing",
-    "explanationCN": "洗耳"
   },
   {
     "word": "𗐴𗸬",
@@ -23101,46 +22744,11 @@ const WORD_DATA = [
     "explanationCN": "择徒"
   },
   {
-    "word": "𗑠𗦬",
-    "GX": "rir².ġu̱²",
-    "GHC": "rjir².gu²",
-    "explanationEN": "with",
-    "explanationCN": "与……共"
-  },
-  {
-    "word": "𗑠𗯮",
-    "GX": "rir².nthwu̱¹",
-    "GHC": "rjir².thwu̱¹",
-    "explanationEN": "with",
-    "explanationCN": "与……同"
-  },
-  {
-    "word": "𗑠𘙰",
-    "GX": "rir².li̱w²",
-    "GHC": "rjir².lew²",
-    "explanationEN": "with",
-    "explanationCN": "与……同"
-  },
-  {
-    "word": "𗑠𘜄",
-    "GX": "rir².rŋwi̱r¹",
-    "GHC": "rjir².ŋwer¹",
-    "explanationEN": "with",
-    "explanationCN": "与……同"
-  },
-  {
-    "word": "𗑠𘝇",
-    "GX": "rir².nświ²",
-    "GHC": "rjir².śjwi̱²",
-    "explanationEN": "combine.with",
-    "explanationCN": "与……合"
-  },
-  {
     "word": "𗑡𗈰",
     "GX": "law².rnar²",
     "GHC": "lja̱².njar²",
     "explanationEN": "lose‖lose/drop",
-    "explanationCN": "失落‖落"
+    "explanationCN": "落下"
   },
   {
     "word": "𗑣𗀓",
@@ -23689,13 +23297,6 @@ const WORD_DATA = [
     "explanationCN": "歌唱"
   },
   {
-    "word": "𗒎𘃡",
-    "GX": "yoṃ².vi¹",
-    "GHC": "ꞏjow².wji¹",
-    "explanationEN": "compose.songs",
-    "explanationCN": "作歌"
-  },
-  {
     "word": "𗒐𗄭𗅲",
     "GX": "ġhwae̱¹.dzəh².teṃh²",
     "GHC": "ɣiwej¹.dzjɨ̣².tjɨ̣j²",
@@ -23962,20 +23563,6 @@ const WORD_DATA = [
     "explanationCN": "上吊（勒颈）"
   },
   {
-    "word": "𗒕𗇒𘃡",
-    "GX": "llweh¹.śa¹.vi¹",
-    "GHC": "ljwịj¹.śja¹.wji¹",
-    "explanationEN": "hanging.(a.type.of.death.penalty).penalty",
-    "explanationCN": "绞（死刑之一种）刑罚"
-  },
-  {
-    "word": "𗒕𗇒𘃡𗳒𘗐𗜍",
-    "GX": "llweh¹.śa¹.vi¹.ŋwu̱².de².sa¹",
-    "GHC": "ljwịj¹.śja¹.wji¹.ŋwu².djij².sja¹",
-    "explanationEN": "strangulation.(a.type.of.death.penalty).penalty",
-    "explanationCN": "绞杀（死刑之一种）刑罚"
-  },
-  {
     "word": "𗒕𗏘",
     "GX": "llweh¹.rġha̱r²",
     "GHC": "ljwịj¹.ɣar²",
@@ -24238,8 +23825,8 @@ const WORD_DATA = [
     "word": "𗒫𗣒𗽽𘂆𗤛",
     "GX": "ŋgiw¹.lo̱ṃ².qu̱¹.tsə¹.tśoṃ¹",
     "GHC": "gji̱w¹.low².ku¹.tsjɨ¹.tśjow¹",
-    "explanationEN": "the.ox.is.the.weaver.girl.temple.(\"\".transliterated.\"aunt\",.aunt.is.the.girl,.referring.to.an.unmarried.woman..weaver.girl.is.a.woman.who.can.weave..both",
-    "explanationCN": "牛即织女寺（“𗽽𘂆”音译“姑子”，姑子即姑娘，指未婚女子。织女即是会织布的女子。二者"
+    "explanationEN": "niuolang.zhinü.temple",
+    "explanationCN": "牛郎织女寺"
   },
   {
     "word": "𗒫𗰂",
@@ -24788,13 +24375,6 @@ const WORD_DATA = [
     "explanationCN": "睡醒"
   },
   {
-    "word": "𗒾𘇂",
-    "GX": "mi̱².ġu̱²",
-    "GHC": "me².gu²",
-    "explanationEN": "in.sleep",
-    "explanationCN": "睡中"
-  },
-  {
     "word": "𗒿𘀄𘝞",
     "GX": "lu̱¹.ŋgu².rywər²",
     "GHC": "lu¹.gju̱².ꞏjwɨr²",
@@ -24975,13 +24555,6 @@ const WORD_DATA = [
     "GHC": "lhwu¹.low²",
     "explanationEN": "warm.clothes",
     "explanationCN": "暖衣"
-  },
-  {
-    "word": "𗓈𘃡",
-    "GX": "lhwu̱¹.vi¹",
-    "GHC": "lhwu¹.wji¹",
-    "explanationEN": "make.clothes",
-    "explanationCN": "做衣"
   },
   {
     "word": "𗓈𘃰",
@@ -25570,20 +25143,6 @@ const WORD_DATA = [
     "GHC": "na¹.ljịj²",
     "explanationEN": "shenzhen.university",
     "explanationCN": "深大"
-  },
-  {
-    "word": "𗓱～𗌭",
-    "GX": "te¹.qu̱¹",
-    "GHC": "tjij¹.ku¹",
-    "explanationEN": "if/maybe/perhaps‖so",
-    "explanationCN": "假若或者‖连词【鼓】【姑】【孤】【羖】【股】【孤】"
-  },
-  {
-    "word": "𗓱～𗓱",
-    "GX": "te¹.te¹",
-    "GHC": "tjij¹.tjij¹",
-    "explanationEN": "if/maybe/perhaps‖if/maybe/perhaps",
-    "explanationCN": "假若或者‖假若或者"
   },
   {
     "word": "𗓳𗤨",
@@ -26361,13 +25920,6 @@ const WORD_DATA = [
     "GHC": "lwəj¹.ꞏjɨr²",
     "explanationEN": "diligent",
     "explanationCN": "勤快"
-  },
-  {
-    "word": "𗔝𘁂",
-    "GX": "qai̱w².ya²",
-    "GHC": "kiew².ꞏja²",
-    "explanationEN": "a.transliteration‖a.transliteration",
-    "explanationCN": "【耿】【埂】‖1.【耶】【也】【野】【夜】【叶】【闫】【琰】【邪】【邑】【衍】【逸】【阴】"
   },
   {
     "word": "𗔞𗫑",
@@ -29065,13 +28617,6 @@ const WORD_DATA = [
     "explanationCN": "大使(官名)"
   },
   {
-    "word": "𗖊𘃡",
-    "GX": "śə¹.vi¹",
-    "GHC": "śjɨ¹.wji¹",
-    "explanationEN": "in.order.to.make",
-    "explanationCN": "为使"
-  },
-  {
     "word": "𗖊𘈧",
     "GX": "śə¹.nde̱¹",
     "GHC": "śjɨ¹.de̱j¹",
@@ -29373,6 +28918,13 @@ const WORD_DATA = [
     "explanationCN": "告奏"
   },
   {
+    "word": "𗖘𘜼",
+    "GX": "nwo².mpho²",
+    "GHC": "njwo².phjo̱²",
+    "explanationEN": "antithesis",
+    "explanationCN": "对仗"
+  },
+  {
     "word": "𗖘𘝇",
     "GX": "nwo².nświ²",
     "GHC": "njwo².śjwi̱²",
@@ -29392,13 +28944,6 @@ const WORD_DATA = [
     "GHC": "sa².twa¹",
     "explanationEN": "sattva",
     "explanationCN": "萨埵"
-  },
-  {
-    "word": "𗖚𗹳",
-    "GX": "sa̱².dźe²",
-    "GHC": "sa².dźjij²",
-    "explanationEN": "report/plan‖principle/discipline",
-    "explanationCN": "连接‖1.网、历、躯干、簿"
   },
   {
     "word": "𗖚𘎆",
@@ -30409,13 +29954,6 @@ const WORD_DATA = [
     "explanationCN": "细面"
   },
   {
-    "word": "𗗟𘍟",
-    "GX": "ye¹.tsə¹",
-    "GHC": "ꞏjij¹.tsjɨ¹",
-    "explanationEN": "ꜰᴜᴛ‖a.unit.of.weight",
-    "explanationCN": "ꜰᴜᴛ‖镒"
-  },
-  {
     "word": "𗗢𘐫",
     "GX": "the¹.khi¹",
     "GHC": "thjij¹.khji¹",
@@ -30889,7 +30427,7 @@ const WORD_DATA = [
     "GX": "na̱¹.gu¹",
     "GHC": "na¹.gju¹",
     "explanationEN": "earthly.branches.of.xuhai",
-    "explanationCN": "戌亥地支"
+    "explanationCN": "戌亥"
   },
   {
     "word": "𗗻𗤒",
@@ -31019,7 +30557,7 @@ const WORD_DATA = [
   },
   {
     "word": "𗘂𗡻",
-    "GX": "khwə¹.lə¹",
+    "GX": "khwə¹.llə¹",
     "GHC": "khjwɨ¹.ljɨ¹",
     "explanationEN": "dog.poop",
     "explanationCN": "狗粪"
@@ -31660,13 +31198,6 @@ const WORD_DATA = [
     "GHC": "gju̱¹.tsji²",
     "explanationEN": "yuji.(combined.name.of.xia.yu.and.houji)",
     "explanationCN": "禹稷（夏禹和后稷的并称）"
-  },
-  {
-    "word": "𗘼𗘅𗗾",
-    "GX": "ŋgu¹.gu¹.vwa̱¹",
-    "GHC": "gju̱¹.gju¹.wa¹",
-    "explanationEN": "a.transliteration‖pig/hog‖pig/hog",
-    "explanationCN": "【于】【雨】【鱼】【御】【愚】【禹】【虞】【羽】【语】【鱼】【玉】‖亥猪‖猪彘"
   },
   {
     "word": "𗘼𗙃",
@@ -32792,14 +32323,14 @@ const WORD_DATA = [
     "word": "𗙹𗼑",
     "GX": "rlho̱ṃr².lhih²",
     "GHC": "lhowr¹.lhjị²",
-    "explanationEN": "mochizuki",
+    "explanationEN": "full.moon",
     "explanationCN": "望月"
   },
   {
     "word": "𗙹𘇂",
     "GX": "rlho̱ṃr².ġu̱²",
     "GHC": "lhowr¹.gu²",
-    "explanationEN": "mochizuki",
+    "explanationEN": "full.moon",
     "explanationCN": "望月"
   },
   {
@@ -32815,13 +32346,6 @@ const WORD_DATA = [
     "GHC": "tśjo¹.tśja̱¹",
     "explanationEN": "instructions",
     "explanationCN": "指示"
-  },
-  {
-    "word": "𗙼𗄖",
-    "GX": "yu².dźi¹",
-    "GHC": "ꞏju².dźji",
-    "explanationEN": "near.front",
-    "explanationCN": "近前"
   },
   {
     "word": "𗙼𗅉",
@@ -32870,7 +32394,7 @@ const WORD_DATA = [
     "GX": "yu².śa²",
     "GHC": "ꞏju².śja²",
     "explanationEN": "currently",
-    "explanationCN": "现前"
+    "explanationCN": "ᴀɴᴛᴇ-现"
   },
   {
     "word": "𗙼𗞋",
@@ -34046,7 +33570,7 @@ const WORD_DATA = [
     "GX": "ne̱h².na̱¹",
     "GHC": "dẹj².na¹",
     "explanationEN": "jiaxu.stem.and.branch",
-    "explanationCN": "甲戌干支"
+    "explanationCN": "甲戌"
   },
   {
     "word": "𗛴𗘴",
@@ -34074,14 +33598,14 @@ const WORD_DATA = [
     "GX": "ne̱h².lli̱²",
     "GHC": "dẹj².le²",
     "explanationEN": "jiayin.stem.and.branch",
-    "explanationCN": "甲寅干支"
+    "explanationCN": "甲寅"
   },
   {
     "word": "𗛴𗵃",
     "GX": "ne̱h².vwi̱¹",
     "GHC": "dẹj².we¹",
     "explanationEN": "jiachen.stem.and.branch",
-    "explanationCN": "甲辰干支"
+    "explanationCN": "甲辰"
   },
   {
     "word": "𗛴𗼴",
@@ -34102,21 +33626,21 @@ const WORD_DATA = [
     "GX": "ne̱h².vih¹",
     "GHC": "dẹj².wjị¹",
     "explanationEN": "jiashen.stem.branch",
-    "explanationCN": "甲申干支"
+    "explanationCN": "甲申"
   },
   {
     "word": "𗛴𘆽",
     "GX": "ne̱h².ge¹",
     "GHC": "dẹj².gjij¹",
     "explanationEN": "the.trans.and.branches.of.the.sino-japanese.war",
-    "explanationCN": "甲午干支"
+    "explanationCN": "甲午"
   },
   {
     "word": "𗛴𘋇",
     "GX": "ne̱h².fi¹",
     "GHC": "dẹj².xjwi¹",
     "explanationEN": "stems.and.branches.of.jiazi",
-    "explanationCN": "甲子干支"
+    "explanationCN": "甲子"
   },
   {
     "word": "𗛷𗚏",
@@ -34481,13 +34005,6 @@ const WORD_DATA = [
     "GHC": "mə̱¹.pjɨ̣j²",
     "explanationEN": "fire",
     "explanationCN": "火锨"
-  },
-  {
-    "word": "𗜐𗍊",
-    "GX": "mmə̱¹.su²",
-    "GHC": "mə̱¹.sju²",
-    "explanationEN": "as.fire",
-    "explanationCN": "如火"
   },
   {
     "word": "𗜐𗍢",
@@ -35775,7 +35292,7 @@ const WORD_DATA = [
     "GX": "si¹.wo̱h¹",
     "GHC": "sji¹.ꞏiọ¹",
     "explanationEN": "tree/wood‖round",
-    "explanationCN": "木‖圆"
+    "explanationCN": "圆木"
   },
   {
     "word": "𗝠𗜒",
@@ -37486,13 +37003,6 @@ const WORD_DATA = [
     "explanationCN": "车骑"
   },
   {
-    "word": "𗟔𘖘",
-    "GX": "qo̱¹.dźə¹",
-    "GHC": "ko¹.dźjɨ̣",
-    "explanationEN": "vehicle/carriage‖pull.up/rescue",
-    "explanationCN": "1.车】辎轸辂‖拔拉抽"
-  },
-  {
     "word": "𗟔𘗠",
     "GX": "qo̱¹.ġha̱¹",
     "GHC": "ko¹.ɣa¹",
@@ -38208,7 +37718,7 @@ const WORD_DATA = [
   },
   {
     "word": "𗟴𗢯",
-    "GX": "ŋkhə².lhwa¹",
+    "GX": "ŋkhə².llwa¹",
     "GHC": "khjɨ̱².lhjwa¹",
     "explanationEN": "tongue",
     "explanationCN": "口舌"
@@ -38641,25 +38151,11 @@ const WORD_DATA = [
     "explanationCN": "饮食"
   },
   {
-    "word": "𗠇𗮛",
-    "GX": "tih¹.tṣao̱ṃ¹",
-    "GHC": "tjị¹.tśjow¹",
-    "explanationEN": "divide",
-    "explanationCN": "分食"
-  },
-  {
     "word": "𗠇𗱩",
     "GX": "tih¹.nwe¹",
     "GHC": "tjị¹.njwij¹",
     "explanationEN": "eating.choking.syndrome",
     "explanationCN": "食噎病症"
-  },
-  {
-    "word": "𗠇𗴿",
-    "GX": "tih¹.kuh¹",
-    "GHC": "tjị¹.kjụ¹",
-    "explanationEN": "ask.for.food",
-    "explanationCN": "求食"
   },
   {
     "word": "𗠇𗵞",
@@ -38676,39 +38172,11 @@ const WORD_DATA = [
     "explanationCN": "食托"
   },
   {
-    "word": "𗠇𗷁",
-    "GX": "tih¹.ndza̱¹",
-    "GHC": "tjị¹.dza̱¹",
-    "explanationEN": "eaten",
-    "explanationCN": "食过"
-  },
-  {
     "word": "𗠇𗽊",
     "GX": "tih¹.mme̱²",
     "GHC": "tjị¹.me̱j²",
     "explanationEN": "esophageal.sinus.position",
     "explanationCN": "食窦穴位"
-  },
-  {
-    "word": "𗠇𘀞",
-    "GX": "tih¹.rzer¹",
-    "GHC": "tjị¹.zjijr¹",
-    "explanationEN": "satiate",
-    "explanationCN": "饱食"
-  },
-  {
-    "word": "𗠇𘃠",
-    "GX": "tih¹.ndu̱¹",
-    "GHC": "tjị¹.du̱¹",
-    "explanationEN": "food.accumulation",
-    "explanationCN": "积食"
-  },
-  {
-    "word": "𗠇𘃡",
-    "GX": "tih¹.vi¹",
-    "GHC": "tjị¹.wji¹",
-    "explanationEN": "for.food",
-    "explanationCN": "作食"
   },
   {
     "word": "𗠇𘄽",
@@ -38735,8 +38203,8 @@ const WORD_DATA = [
     "word": "𗠇𘈈𘐉𗭪𗦺",
     "GX": "tih¹.mmi¹.vah².si².pha̱ṃ¹",
     "GHC": "tjị¹.mji¹.wjạ².sji².phã¹",
-    "explanationEN": "release.the.serving.plate.(buddhist.instrument)",
-    "explanationCN": "放施食用盘(佛教法器)"
+    "explanationEN": "begging.bowl",
+    "explanationCN": "托钵(佛教法器)"
   },
   {
     "word": "𗠇𘈧",
@@ -40573,13 +40041,6 @@ const WORD_DATA = [
     "explanationCN": "注字"
   },
   {
-    "word": "𗡺𗡼𗅲",
-    "GX": "rber².rber².teṃh²",
-    "GHC": "bji̱r².bji̱r².tjɨ̣j²",
-    "explanationEN": "explain/note‖help/aid‖ceremony/rite/manner",
-    "explanationCN": "注释注解‖1.助副右、嫔‖礼、制"
-  },
-  {
     "word": "𗡺𘎪",
     "GX": "rber².ntshe¹",
     "GHC": "bji̱r².tshji̱j¹",
@@ -40588,21 +40049,21 @@ const WORD_DATA = [
   },
   {
     "word": "𗡻𗮚",
-    "GX": "lə¹.bih¹",
+    "GX": "llə¹.bih¹",
     "GHC": "ljɨ¹.bjị¹",
     "explanationEN": "excrement.and.urine",
     "explanationCN": "屎尿"
   },
   {
     "word": "𗡻𗻲",
-    "GX": "lə¹.tsə̱h¹",
+    "GX": "llə¹.tsə̱h¹",
     "GHC": "ljɨ¹.tswə̣¹",
     "explanationEN": "feces",
     "explanationCN": "粪便"
   },
   {
     "word": "𗡻𘉾",
-    "GX": "lə¹.veh¹",
+    "GX": "llə¹.veh¹",
     "GHC": "ljɨ¹.wjịj¹",
     "explanationEN": "糞屎",
     "explanationCN": "粪屎"
@@ -40928,20 +40389,6 @@ const WORD_DATA = [
     "GHC": "ꞏu².ljow²",
     "explanationEN": "graveside",
     "explanationCN": "坟边"
-  },
-  {
-    "word": "𗢐𘋨",
-    "GX": "wu̱¹.dzwə¹",
-    "GHC": "ꞏu².dzjwɨ¹",
-    "explanationEN": "grave‖emperor",
-    "explanationCN": "1.坟、死‖帝君"
-  },
-  {
-    "word": "𗢔𗫡",
-    "GX": "rir².nə²",
-    "GHC": "rjir².njɨ²",
-    "explanationEN": "to.death",
-    "explanationCN": "至死"
   },
   {
     "word": "𗢔𗰮",
@@ -41784,78 +41231,71 @@ const WORD_DATA = [
     "explanationCN": "词语"
   },
   {
-    "word": "𗢮𘒣",
-    "GX": "gwi¹.da̱h²",
-    "GHC": "gjwi¹.dạ²",
-    "explanationEN": "word/speech‖speech/word",
-    "explanationCN": "言词‖言语"
-  },
-  {
     "word": "𗢯𗀔𗙏",
-    "GX": "lhwa¹.tśhaw¹.ġhai̱h²",
+    "GX": "llwa¹.tśhaw¹.ġhai̱h²",
     "GHC": "lhjwa¹.tśhja̱¹.ɣiẹ²",
     "explanationEN": "supralingual.phonology",
     "explanationCN": "舌上音音韵"
   },
   {
     "word": "𗢯𗆮",
-    "GX": "lhwa¹.lhow¹",
+    "GX": "llwa¹.lhow¹",
     "GHC": "lhjwa¹.lhjwo¹",
     "explanationEN": "retreat",
     "explanationCN": "反悔"
   },
   {
     "word": "𗢯𗗠",
-    "GX": "lhwa¹.nlhaa̱¹",
+    "GX": "llwa¹.nllaa̱¹",
     "GHC": "lhjwa¹.lhia̱²",
     "explanationEN": "lick",
     "explanationCN": "舔舐"
   },
   {
     "word": "𗢯𗠂",
-    "GX": "lhwa¹.ri̱r²",
+    "GX": "llwa¹.ri̱r²",
     "GHC": "lhjwa¹.rer²",
     "explanationEN": "koujie",
     "explanationCN": "口捷"
   },
   {
     "word": "𗢯𗠼",
-    "GX": "lhwa¹.nlle²",
+    "GX": "llwa¹.nlle²",
     "GHC": "lhjwa¹.lji̱j²",
     "explanationEN": "gluttonous.mouth",
     "explanationCN": "馋嘴"
   },
   {
     "word": "𗢯𗹠",
-    "GX": "lhwa¹.rer¹",
+    "GX": "llwa¹.rer¹",
     "GHC": "lhjwa¹.rjijr¹",
     "explanationEN": "clever.tongue",
     "explanationCN": "巧舌"
   },
   {
     "word": "𗢯𘁙",
-    "GX": "lhwa¹.dźwa¹",
+    "GX": "llwa¹.dźwa¹",
     "GHC": "lhjwa¹.dźjwa¹",
     "explanationEN": "tongue",
     "explanationCN": "舌头"
   },
   {
     "word": "𗢯𘁙𗙏",
-    "GX": "lhwa¹.dźwa¹.ġhai̱h²",
+    "GX": "llwa¹.dźwa¹.ġhai̱h²",
     "GHC": "lhjwa¹.dźjwa¹.ɣiẹ²",
     "explanationEN": "tongue.phonology",
     "explanationCN": "舌头音音韵"
   },
   {
     "word": "𗢯𘐳",
-    "GX": "lhwa¹.lə²",
+    "GX": "llwa¹.lə²",
     "GHC": "lhjwa¹.",
     "explanationEN": "tongue",
     "explanationCN": "卷舌"
   },
   {
     "word": "𗢯𘘄𗙏",
-    "GX": "lhwa¹.świ¹.ġhai̱h²",
+    "GX": "llwa¹.świ¹.ġhai̱h²",
     "GHC": "lhjwa¹.śjwi¹.ɣiẹ²",
     "explanationEN": "lingual.phonology",
     "explanationCN": "舌齿音音韵"
@@ -43439,14 +42879,14 @@ const WORD_DATA = [
     "word": "𗣼𗪺",
     "GX": "tśha².ġhai̱¹",
     "GHC": "tśhja².ɣie¹",
-    "explanationEN": "wade",
+    "explanationEN": "power",
     "explanationCN": "威德"
   },
   {
     "word": "𗣼𗫡",
     "GX": "tśha².nə²",
     "GHC": "tśhja².njɨ²",
-    "explanationEN": "to.germany",
+    "explanationEN": "supreme.virtue",
     "explanationCN": "至德"
   },
   {
@@ -44773,13 +44213,6 @@ const WORD_DATA = [
     "explanationCN": "仪行父(人名)"
   },
   {
-    "word": "𗤡𗼵",
-    "GX": "ŋgi¹.hoṃ²",
-    "GHC": "gji̱¹.xjow²",
-    "explanationEN": "a.surname‖a.transliteration",
-    "explanationCN": "1.【义】【宜】【玉】【仪】【毅】【凝】‖【房】【方】【逢】【风】【匈】【兴】【奉】【雄】【放】【雍】【封】【冯】【风】"
-  },
-  {
     "word": "𗤡𘝾",
     "GX": "ŋgi¹.li²",
     "GHC": "gji̱¹.lji²",
@@ -45023,13 +44456,6 @@ const WORD_DATA = [
     "GHC": "dźju².tjɨ̣²",
     "explanationEN": "tired",
     "explanationCN": "疲倦"
-  },
-  {
-    "word": "𗤨𘃡",
-    "GX": "dźu².vi¹",
-    "GHC": "dźju².wji¹",
-    "explanationEN": "show.weakness",
-    "explanationCN": "示弱"
   },
   {
     "word": "𗤨𘍔",
@@ -45373,13 +44799,6 @@ const WORD_DATA = [
     "GHC": "kjɨ̱r².ꞏjɨj²",
     "explanationEN": "houses",
     "explanationCN": "屋舍"
-  },
-  {
-    "word": "𗤫𘃡",
-    "GX": "rkər².vi¹",
-    "GHC": "kjɨ̱r².wji¹",
-    "explanationEN": "weilu",
-    "explanationCN": "为庐"
   },
   {
     "word": "𗤫𘃽",
@@ -45947,13 +45366,6 @@ const WORD_DATA = [
     "GHC": "nji̱j¹.sej¹",
     "explanationEN": "heart",
     "explanationCN": "心净"
-  },
-  {
-    "word": "𗤶𗒯",
-    "GX": "nne¹.khi¹",
-    "GHC": "nji̱j¹.khji¹",
-    "explanationEN": "heart/mind‖lose",
-    "explanationCN": "心‖1.丢失落弃【奇】【锜】【起】【骑】【祗】【耆】【企】【崎】【却】【杞】【忌】【靳】【岐】"
   },
   {
     "word": "𗤶𗓆",
@@ -47601,13 +47013,6 @@ const WORD_DATA = [
     "explanationCN": "悲痛"
   },
   {
-    "word": "𗥒𘃡",
-    "GX": "ŋo̱².vi¹",
-    "GHC": "ŋo².wji¹",
-    "explanationEN": "be.in.pain",
-    "explanationCN": "作痛"
-  },
-  {
     "word": "𗥒𘟋",
     "GX": "ŋo̱².rza̱r¹",
     "GHC": "ŋo².zar¹",
@@ -47781,13 +47186,6 @@ const WORD_DATA = [
     "GHC": "ŋo².tśji¹",
     "explanationEN": "constipation",
     "explanationCN": "瘀疾"
-  },
-  {
-    "word": "𗥓𘃡",
-    "GX": "ŋo̱².vi¹",
-    "GHC": "ŋo².wji¹",
-    "explanationEN": "be.in.pain",
-    "explanationCN": "作痛"
   },
   {
     "word": "𗥓𘉫",
@@ -48672,13 +48070,6 @@ const WORD_DATA = [
     "explanationCN": "首尾"
   },
   {
-    "word": "𗥦𘇂",
-    "GX": "ġhu̱¹.ġu̱²",
-    "GHC": "ɣu¹.gu²",
-    "explanationEN": "head",
-    "explanationCN": "头上"
-  },
-  {
     "word": "𗥦𘇧",
     "GX": "ġhu̱¹.yoṃ²",
     "GHC": "ɣu¹.ꞏjow²",
@@ -49076,13 +48467,6 @@ const WORD_DATA = [
     "GHC": "lo².ŋia̱²",
     "explanationEN": "nirvana.(place.name)",
     "explanationCN": "瑯琊(地名)"
-  },
-  {
-    "word": "𗥹𘃡",
-    "GX": "lo̱².vi¹",
-    "GHC": "lo².wji¹",
-    "explanationEN": "group",
-    "explanationCN": "成群"
   },
   {
     "word": "𗥹𘝚",
@@ -49645,20 +49029,6 @@ const WORD_DATA = [
     "explanationCN": "回夷务(官署)"
   },
   {
-    "word": "𗦃𘃡",
-    "GX": "hwe̱².vi¹",
-    "GHC": "xwej².wji¹",
-    "explanationEN": "can.do",
-    "explanationCN": "会做"
-  },
-  {
-    "word": "𗦅𘃡",
-    "GX": "ŋkhe¹.vi¹",
-    "GHC": "khji̱j¹.wji¹",
-    "explanationEN": "hard.to.do",
-    "explanationCN": "难做"
-  },
-  {
     "word": "𗦆𗂧",
     "GX": "tsiṃ¹.lheh²",
     "GHC": "tsjĩ¹.lhjịj²",
@@ -49823,22 +49193,22 @@ const WORD_DATA = [
     "word": "𗦇𗅔",
     "GX": "lli̱w².naw²",
     "GHC": "lew².nja̱²",
-    "explanationEN": "should.not",
-    "explanationCN": "不应"
+    "explanationEN": "ɴᴍʟꜱ:ɴ[ᴀ]-ᴄᴏᴘ.ɴᴇɢ",
+    "explanationCN": "ɴᴍʟꜱ:ɴ[ᴀ]-ᴄᴏᴘ.ɴᴇɢ"
   },
   {
     "word": "𗦇𗤋",
     "GX": "lli̱w².me¹",
     "GHC": "lew².mjij¹",
-    "explanationEN": "nothing",
-    "explanationCN": "无所"
+    "explanationEN": "ɴᴍʟꜱ:ɴ[ᴀ]-ɴᴇɢ.ᴇx.ᴠ",
+    "explanationCN": "ɴᴍʟꜱ:ɴ[ᴀ]-ɴᴇɢ.ᴇx.ᴠ"
   },
   {
     "word": "𗦇𗰁",
     "GX": "lli̱w².dźuo²",
     "GHC": "lew².dźio̱w²",
-    "explanationEN": "can.it.be.done?",
-    "explanationCN": "堪可"
+    "explanationEN": "ɴᴍʟꜱ:ɴ[ᴀ]-be.able",
+    "explanationCN": "ɴᴍʟꜱ:ɴ[ᴀ]-可能"
   },
   {
     "word": "𗦈𗀲",
@@ -50905,13 +50275,6 @@ const WORD_DATA = [
     "explanationCN": "住客"
   },
   {
-    "word": "𗦹𘃡",
-    "GX": "vi¹.vi¹",
-    "GHC": "wji¹.wji¹",
-    "explanationEN": "guest",
-    "explanationCN": "作客"
-  },
-  {
     "word": "𗦹𘓐",
     "GX": "vi¹.dzwo²",
     "GHC": "wji¹.dzjwo²",
@@ -50952,6 +50315,13 @@ const WORD_DATA = [
     "GHC": "phã¹.xwo².ŋər¹",
     "explanationEN": "panhe.mountain.(place.name)",
     "explanationCN": "盘禾山(地名)"
+  },
+  {
+    "word": "𗦺𘂆",
+    "GX": "pha̱ṃ¹.tsə¹",
+    "GHC": "phã¹.tsjɨ¹",
+    "explanationEN": "plate",
+    "explanationCN": "盘子"
   },
   {
     "word": "𗦺𘃧",
@@ -51192,20 +50562,6 @@ const WORD_DATA = [
     "explanationCN": "验明"
   },
   {
-    "word": "𗦾𗶷",
-    "GX": "n·yu¹.śə¹",
-    "GHC": "ꞏju̱¹.śjɨ¹",
-    "explanationEN": "look.forward",
-    "explanationCN": "往视"
-  },
-  {
-    "word": "𗦾𗶹",
-    "GX": "n·yu¹.śi²",
-    "GHC": "ꞏju̱¹.śji²",
-    "explanationEN": "look.forward",
-    "explanationCN": "往视"
-  },
-  {
     "word": "𗦾𗷲",
     "GX": "n·yu¹.giṃ¹",
     "GHC": "ꞏju̱¹.gjĩ¹",
@@ -51437,13 +50793,6 @@ const WORD_DATA = [
     "explanationCN": "律𠼪老家山(人名)"
   },
   {
-    "word": "𗧈𘃡",
-    "GX": "swə¹.vi¹",
-    "GHC": "sjwɨ¹.wji¹",
-    "explanationEN": "put.urine",
-    "explanationCN": "把尿"
-  },
-  {
     "word": "𗧉𗾟",
     "GX": "vi².vwa̱h²",
     "GHC": "wji².wạ²",
@@ -51547,20 +50896,6 @@ const WORD_DATA = [
     "GHC": "lhjɨ¹.wor¹",
     "explanationEN": "born",
     "explanationCN": "出生"
-  },
-  {
-    "word": "𗧓𗔀",
-    "GX": "ŋa̱².va¹",
-    "GHC": "ŋa².wja¹",
-    "explanationEN": "my.father",
-    "explanationCN": "吾父"
-  },
-  {
-    "word": "𗧓𘒏",
-    "GX": "ŋa̱².ga¹",
-    "GHC": "ŋa².gia¹",
-    "explanationEN": "our.army",
-    "explanationCN": "我军"
   },
   {
     "word": "𗧔𗭮",
@@ -51771,13 +51106,6 @@ const WORD_DATA = [
     "GHC": "wo².dźjij².dzjwo²",
     "explanationEN": "scholars",
     "explanationCN": "士"
-  },
-  {
-    "word": "𗧘𘃡",
-    "GX": "vwo̱².vi¹",
-    "GHC": "wo².wji¹",
-    "explanationEN": "for",
-    "explanationCN": "为"
   },
   {
     "word": "𗧘𘇄",
@@ -52219,13 +51547,6 @@ const WORD_DATA = [
     "GHC": "ŋjir¹.ljo¹",
     "explanationEN": "good.fortune",
     "explanationCN": "祸福"
-  },
-  {
-    "word": "𗧹𘃡",
-    "GX": "rgir¹.vi¹",
-    "GHC": "ŋjir¹.wji¹",
-    "explanationEN": "harm",
-    "explanationCN": "为害"
   },
   {
     "word": "𗧹𘈔",
@@ -53467,13 +52788,6 @@ const WORD_DATA = [
     "explanationCN": "曲高和寡"
   },
   {
-    "word": "𗨮𘃡",
-    "GX": "kah².vi¹",
-    "GHC": "kjạ².wji¹",
-    "explanationEN": "compose.songs",
-    "explanationCN": "作歌"
-  },
-  {
     "word": "𗨮𘝇",
     "GX": "kah².nświ²",
     "GHC": "kjạ².śjwi̱²",
@@ -53871,13 +53185,6 @@ const WORD_DATA = [
     "GHC": "bju̱².khwej²",
     "explanationEN": "general",
     "explanationCN": "大将"
-  },
-  {
-    "word": "𗩈𘃡",
-    "GX": "mbu².vi¹",
-    "GHC": "bju̱².wji¹",
-    "explanationEN": "for.will",
-    "explanationCN": "为将"
   },
   {
     "word": "𗩈𘒏",
@@ -54825,13 +54132,6 @@ const WORD_DATA = [
     "explanationCN": "善时"
   },
   {
-    "word": "𗩴𘃡",
-    "GX": "nni̱w².vi¹",
-    "GHC": "ne̱w².wji¹",
-    "explanationEN": "for.good",
-    "explanationCN": "为善"
-  },
-  {
     "word": "𗩴𘄡",
     "GX": "nni̱w².seh²",
     "GHC": "ne̱w².sjịj²",
@@ -55129,7 +54429,7 @@ const WORD_DATA = [
     "word": "𗪀𗏣",
     "GX": "ŋkhu².rer²",
     "GHC": "khju̱².rjijr²",
-    "explanationEN": "see.everywhere",
+    "explanationEN": "where.you.see",
     "explanationCN": "见处"
   },
   {
@@ -55530,13 +54830,6 @@ const WORD_DATA = [
     "GHC": "śji¹.nwə¹",
     "explanationEN": "prophet",
     "explanationCN": "先知"
-  },
-  {
-    "word": "𗪘𗍊",
-    "GX": "śi¹.su²",
-    "GHC": "śji¹.sju²",
-    "explanationEN": "as.previously",
-    "explanationCN": "如前"
   },
   {
     "word": "𗪘𗏡",
@@ -55999,13 +55292,6 @@ const WORD_DATA = [
     "GHC": "ɣu¹.śjwo¹",
     "explanationEN": "beginning",
     "explanationCN": "初起"
-  },
-  {
-    "word": "𗪟𗄈𘂴𗫡",
-    "GX": "ġhu̱¹.śow¹.mme¹.nə²",
-    "GHC": "ɣu¹.śjwo¹.mji̱j¹.njɨ²",
-    "explanationEN": "from.start.to.finish",
-    "explanationCN": "从头至尾"
   },
   {
     "word": "𗪟𗤒",
@@ -57604,20 +56890,6 @@ const WORD_DATA = [
     "explanationCN": "至处"
   },
   {
-    "word": "𗫡𗶷",
-    "GX": "nə².śə¹",
-    "GHC": "njɨ².śjɨ¹",
-    "explanationEN": "to.the",
-    "explanationCN": "到往"
-  },
-  {
-    "word": "𗫡𗶹",
-    "GX": "nə².śi²",
-    "GHC": "njɨ².śji²",
-    "explanationEN": "to.the",
-    "explanationCN": "到往"
-  },
-  {
     "word": "𗫡𗾈",
     "GX": "nə².mmi̱²",
     "GHC": "njɨ².me̱²",
@@ -57700,13 +56972,6 @@ const WORD_DATA = [
     "GHC": "ɣiew¹.tu̱¹",
     "explanationEN": "study",
     "explanationCN": "求学"
-  },
-  {
-    "word": "𗫦𗟢",
-    "GX": "ġhai̱w¹.gi²",
-    "GHC": "ɣiew¹.gji²",
-    "explanationEN": "study/learn‖grant/award",
-    "explanationCN": "学习‖施赏"
   },
   {
     "word": "𗫦𗟶",
@@ -58913,13 +58178,6 @@ const WORD_DATA = [
     "explanationCN": "坚叉"
   },
   {
-    "word": "𗬣𗅴",
-    "GX": "pə̱¹.lle̱h²",
-    "GHC": "pə¹.lẹj²",
-    "explanationEN": "little.livestock‖avarice",
-    "explanationCN": "小畜‖贪"
-  },
-  {
     "word": "𗬥𗩚",
     "GX": "de¹.du̱¹",
     "GHC": "djij¹.du¹",
@@ -60059,13 +59317,6 @@ const WORD_DATA = [
     "GHC": "thu².piəj²",
     "explanationEN": "beast.name",
     "explanationCN": "兽名"
-  },
-  {
-    "word": "𗭳𗁚",
-    "GX": "thu̱².rkər²",
-    "GHC": "thu².",
-    "explanationEN": "lamb‖fence,.fold",
-    "explanationCN": "羔羊‖栅栏，折迭"
   },
   {
     "word": "𗭴𗁀",
@@ -61420,7 +60671,7 @@ const WORD_DATA = [
   },
   {
     "word": "𗮮𗢯",
-    "GX": "nni².lhwa¹",
+    "GX": "nni².llwa¹",
     "GHC": "nji̱².lhjwa¹",
     "explanationEN": "nasal.tongue",
     "explanationCN": "鼻舌"
@@ -61885,7 +61136,7 @@ const WORD_DATA = [
     "GX": "lhe̱².na̱¹",
     "GHC": "lhej².na¹",
     "explanationEN": "gengxu.stem.and.branch",
-    "explanationCN": "庚戌干支"
+    "explanationCN": "庚戌"
   },
   {
     "word": "𗯝𗰿",
@@ -61899,21 +61150,21 @@ const WORD_DATA = [
     "GX": "lhe̱².lli̱²",
     "GHC": "lhej².le²",
     "explanationEN": "gengyin.stem.and.branch",
-    "explanationCN": "庚寅干支"
+    "explanationCN": "庚寅"
   },
   {
     "word": "𗯝𗵃",
     "GX": "lhe̱².vwi̱¹",
     "GHC": "lhej².we¹",
     "explanationEN": "gengchen.stem.and.branch",
-    "explanationCN": "庚辰干支"
+    "explanationCN": "庚辰"
   },
   {
     "word": "𗯝𘂶",
     "GX": "lhe̱².vih¹",
     "GHC": "lhej².wjị¹",
     "explanationEN": "gengshen.stem.branch",
-    "explanationCN": "庚申干支"
+    "explanationCN": "庚申"
   },
   {
     "word": "𗯝𘄾",
@@ -61927,7 +61178,7 @@ const WORD_DATA = [
     "GX": "lhe̱².ge¹",
     "GHC": "lhej².gjij¹",
     "explanationEN": "gengwu.stem.and.branch",
-    "explanationCN": "庚午干支"
+    "explanationCN": "庚午"
   },
   {
     "word": "𗯝𘈧",
@@ -61941,7 +61192,7 @@ const WORD_DATA = [
     "GX": "lhe̱².fi¹",
     "GHC": "lhej².xjwi¹",
     "explanationEN": "boxer.stem.branch",
-    "explanationCN": "庚子干支"
+    "explanationCN": "庚子"
   },
   {
     "word": "𗯝𘏡",
@@ -62077,13 +61328,6 @@ const WORD_DATA = [
     "explanationCN": "世事"
   },
   {
-    "word": "𗯨𘇂",
-    "GX": "rur¹.ġu̱²",
-    "GHC": "rjur¹.gu²",
-    "explanationEN": "world",
-    "explanationCN": "世间"
-  },
-  {
     "word": "𗯨𘇚",
     "GX": "rur¹.mmi²",
     "GHC": "rjur¹.mji̱²",
@@ -62152,13 +61396,6 @@ const WORD_DATA = [
     "GHC": "thwu̱¹.dźji̱j¹",
     "explanationEN": "same.place",
     "explanationCN": "同处"
-  },
-  {
-    "word": "𗯮𗭍",
-    "GX": "nthwu̱¹.dźeh¹",
-    "GHC": "thwu̱¹.dźjịj¹",
-    "explanationEN": "same/alike‖go/send",
-    "explanationCN": "同通】‖1.行遣、用进、设狩"
   },
   {
     "word": "𗯮𗰛",
@@ -62250,13 +61487,6 @@ const WORD_DATA = [
     "GHC": "khju¹.tsew².rjar¹",
     "explanationEN": "lower.division",
     "explanationCN": "下等司"
-  },
-  {
-    "word": "𗯴𗶷",
-    "GX": "khu¹.śə¹",
-    "GHC": "khju¹.śjɨ¹",
-    "explanationEN": "down",
-    "explanationCN": "往下"
   },
   {
     "word": "𗯴𘄿",
@@ -62768,13 +61998,6 @@ const WORD_DATA = [
     "GHC": "bow².bow²",
     "explanationEN": "urgent",
     "explanationCN": "急急"
-  },
-  {
-    "word": "𗰒𗶷",
-    "GX": "bo̱ṃ².śə¹",
-    "GHC": "bow².śjɨ¹",
-    "explanationEN": "hurry.up",
-    "explanationCN": "疾往"
   },
   {
     "word": "𗰓𗁁",
@@ -64310,13 +63533,6 @@ const WORD_DATA = [
     "explanationCN": "檄文"
   },
   {
-    "word": "𗰼𘃡",
-    "GX": "wo̱¹.vi¹",
-    "GHC": "ꞏo¹.wji¹",
-    "explanationEN": "as",
-    "explanationCN": "作为"
-  },
-  {
     "word": "𗰽𗋽𗗸",
     "GX": "dzwəh¹.rzər².vwa̱¹",
     "GHC": "dzjwɨ̣¹.zjɨ̱r².wa¹",
@@ -64461,7 +63677,7 @@ const WORD_DATA = [
     "GX": "lli̱².rtsi̱r¹",
     "GHC": "le².tser¹",
     "explanationEN": "yin.mao.earthly.branch",
-    "explanationCN": "寅卯地支"
+    "explanationCN": "寅卯"
   },
   {
     "word": "𗱈𗍰",
@@ -64892,7 +64108,7 @@ const WORD_DATA = [
   },
   {
     "word": "𗱚𘗫",
-    "GX": "ndzu².lla̱h¹",
+    "GX": "ndzu².la̱h¹",
     "GHC": "dzju̱².lạ¹",
     "explanationEN": "hide",
     "explanationCN": "隐瞒"
@@ -65001,20 +64217,6 @@ const WORD_DATA = [
     "GHC": "kə¹.lã¹",
     "explanationEN": "divine.stone",
     "explanationCN": "神石"
-  },
-  {
-    "word": "𗱧𗃱",
-    "GX": "mme̱².bu¹",
-    "GHC": "me̱j².bju¹",
-    "explanationEN": "think.of/miss‖backbone",
-    "explanationCN": "思念‖1.脊梁、波浪"
-  },
-  {
-    "word": "𗱧𘋗",
-    "GX": "mme̱².dzu̱²",
-    "GHC": "me̱j².dzu²",
-    "explanationEN": "think.of/miss‖fine.horse/steed",
-    "explanationCN": "思念‖骏"
   },
   {
     "word": "𗱨𗕯",
@@ -66130,13 +65332,6 @@ const WORD_DATA = [
     "explanationCN": "虚宿"
   },
   {
-    "word": "𗲠𘇂",
-    "GX": "ŋa̱¹.ġu̱²",
-    "GHC": "ŋa¹.gu²",
-    "explanationEN": "air",
-    "explanationCN": "空中"
-  },
-  {
     "word": "𗲡𗝢",
     "GX": "hi̱ṃ².la̱ṃ¹",
     "GHC": "xẽ².lã¹",
@@ -66954,13 +66149,6 @@ const WORD_DATA = [
     "GHC": "ꞏu².ꞏu²",
     "explanationEN": "wrestling",
     "explanationCN": "角力"
-  },
-  {
-    "word": "𗳱𗐱",
-    "GX": "tha².ni²",
-    "GHC": "thja².nji²",
-    "explanationEN": "they(anaphoric)",
-    "explanationCN": "他们(回指)"
   },
   {
     "word": "𗳲𗳇",
@@ -67943,13 +67131,6 @@ const WORD_DATA = [
     "explanationCN": "敬问"
   },
   {
-    "word": "𗴢𗤫",
-    "GX": "mbu¹.rkər²",
-    "GHC": "bju̱¹.kjɨ̱r²",
-    "explanationEN": "respect/revere‖house/room",
-    "explanationCN": "敬‖室屋房庐舍"
-  },
-  {
     "word": "𗴢𗤷",
     "GX": "mbu¹.qa̱h¹",
     "GHC": "bju̱¹.kạ¹",
@@ -68207,13 +67388,6 @@ const WORD_DATA = [
     "GHC": "swu².dwu²",
     "explanationEN": "similar",
     "explanationCN": "类似"
-  },
-  {
-    "word": "𗴭𘃡",
-    "GX": "swu̱².vi¹",
-    "GHC": "swu².wji¹",
-    "explanationEN": "similar",
-    "explanationCN": "相似"
   },
   {
     "word": "𗴮𗯮",
@@ -68899,7 +68073,7 @@ const WORD_DATA = [
     "GX": "vwi̱¹.phao̱²",
     "GHC": "we¹.phio²",
     "explanationEN": "dragon.snake",
-    "explanationCN": "龙蛇"
+    "explanationCN": "龙蛇、辰巳"
   },
   {
     "word": "𗵃𗅡",
@@ -70386,13 +69560,6 @@ const WORD_DATA = [
     "explanationCN": "顶脑"
   },
   {
-    "word": "𗵣𘇂",
-    "GX": "tśiw².ġu̱²",
-    "GHC": "tśjiw².gu²",
-    "explanationEN": "top",
-    "explanationCN": "顶上"
-  },
-  {
     "word": "𗵤𗎫",
     "GX": "se¹.rtser²",
     "GHC": "sjij¹.tsji̱r²",
@@ -71772,13 +70939,6 @@ const WORD_DATA = [
     "explanationCN": "贩卖"
   },
   {
-    "word": "𗶷𗄼",
-    "GX": "śə¹.la¹",
-    "GHC": "śjɨ¹.lja¹",
-    "explanationEN": "back.and.forth",
-    "explanationCN": "往来"
-  },
-  {
     "word": "𗶷𗅉",
     "GX": "śə¹.nuo¹",
     "GHC": "śjɨ¹.niow¹",
@@ -71805,20 +70965,6 @@ const WORD_DATA = [
     "GHC": "śjɨ¹.dźji̱j¹",
     "explanationEN": "stay.or.leave",
     "explanationCN": "去留"
-  },
-  {
-    "word": "𗶷𗯩",
-    "GX": "śə¹.twu̱h¹",
-    "GHC": "śjɨ¹.twụ¹",
-    "explanationEN": "go.somewhere",
-    "explanationCN": "往处"
-  },
-  {
-    "word": "𗶷𗶹",
-    "GX": "śə¹.śi²",
-    "GHC": "śjɨ¹.śji²",
-    "explanationEN": "to",
-    "explanationCN": "往"
   },
   {
     "word": "𗶷𗷄",
@@ -72057,13 +71203,6 @@ const WORD_DATA = [
     "GHC": "phji̱².ꞏjij¹",
     "explanationEN": "lightweight",
     "explanationCN": "轻巧"
-  },
-  {
-    "word": "𗷑𗶷",
-    "GX": "mphi².śə¹",
-    "GHC": "phji̱².śjɨ¹",
-    "explanationEN": "go.lightly",
-    "explanationCN": "轻往"
   },
   {
     "word": "𗷖𗄪",
@@ -72609,42 +71748,42 @@ const WORD_DATA = [
     "GX": "vwi̱¹.phao̱²",
     "GHC": "we¹.phio²",
     "explanationEN": "dingsi.ganzhi",
-    "explanationCN": "丁巳干支"
+    "explanationCN": "丁巳"
   },
   {
     "word": "𗸃𗍍",
     "GX": "vwi̱¹.rtsi̱r¹",
     "GHC": "we¹.tser¹",
     "explanationEN": "ding.mao.gan.zhi",
-    "explanationCN": "丁卯干支"
+    "explanationCN": "丁卯"
   },
   {
     "word": "𗸃𗘅",
     "GX": "vwi̱¹.gu¹",
     "GHC": "we¹.gju¹",
     "explanationEN": "dinghai.ganzhi",
-    "explanationCN": "丁亥干支"
+    "explanationCN": "丁亥"
   },
   {
     "word": "𗸃𗵊",
     "GX": "vwi̱¹.mmu²",
     "GHC": "we¹.mju̱²",
     "explanationEN": "ding.chou.gan.zhi",
-    "explanationCN": "丁丑干支"
+    "explanationCN": "丁丑"
   },
   {
     "word": "𗸃𗿼",
     "GX": "vwi̱¹.dźwoṃ¹",
     "GHC": "we¹.dźjwow¹",
     "explanationEN": "ding.you.ganzhi",
-    "explanationCN": "丁酉干支"
+    "explanationCN": "丁酉"
   },
   {
     "word": "𗸃𘍂",
     "GX": "vwi̱¹.mo²",
     "GHC": "we¹.mjo²",
     "explanationEN": "dingweiganzhi",
-    "explanationCN": "丁未干支"
+    "explanationCN": "丁未"
   },
   {
     "word": "𗸄𗏑",
@@ -72883,13 +72022,6 @@ const WORD_DATA = [
     "GHC": "ꞏjɨr².śiəj¹",
     "explanationEN": "oblique.sheng",
     "explanationCN": "斜笙"
-  },
-  {
-    "word": "𗸕～𗸕～",
-    "GX": "qhwə̱¹.qhwə̱¹",
-    "GHC": "khwə¹.khwə¹",
-    "explanationEN": "half‖half",
-    "explanationCN": "半‖半"
   },
   {
     "word": "𗸕𗆰",
@@ -75167,13 +74299,6 @@ const WORD_DATA = [
     "explanationCN": "天变"
   },
   {
-    "word": "𗹦𘃡",
-    "GX": "mə̱¹.vi¹",
-    "GHC": "mə¹.wji¹",
-    "explanationEN": "be.a.god.",
-    "explanationCN": "做天"
-  },
-  {
     "word": "𗹦𘃡𗼻𗇫",
     "GX": "mə̱¹.vi¹.lləh².dih²",
     "GHC": "mə¹.wji¹.ljɨ̣².djị²",
@@ -75410,13 +74535,6 @@ const WORD_DATA = [
     "GHC": "ꞏjɨj².sjwɨ²",
     "explanationEN": "tent.felt",
     "explanationCN": "帐毡"
-  },
-  {
-    "word": "𗹨𘃡",
-    "GX": "yeṃ².vi¹",
-    "GHC": "ꞏjɨj².wji¹",
-    "explanationEN": "bookkeeping",
-    "explanationCN": "作帐"
   },
   {
     "word": "𗹨𘅣",
@@ -76945,13 +76063,6 @@ const WORD_DATA = [
     "explanationCN": "干生姜"
   },
   {
-    "word": "𗻼𗄈",
-    "GX": "ṣae̱ṃ¹.śow¹",
-    "GHC": "śiəj¹.śjwo¹",
-    "explanationEN": "man‖rise[ᴀ]",
-    "explanationCN": "1.生】兽猩‖起[ᴀ]"
-  },
-  {
     "word": "𗻼𗕼",
     "GX": "ṣae̱ṃ¹.lu²",
     "GHC": "śiəj¹.lju²",
@@ -77496,13 +76607,6 @@ const WORD_DATA = [
     "GHC": "mji².zar¹.ɣiew¹.iọ¹",
     "explanationEN": "panhan.college.(official.office)",
     "explanationCN": "番汉学院(官署)"
-  },
-  {
-    "word": "𗼇𘂜𗿳𗖵𘃎𘇂𗊏",
-    "GX": "mi².rza̱r¹.dzeṃ¹.bu¹.pah¹.ġu̱².nih²",
-    "GHC": "mji².zar¹.dzjɨj¹.bju¹.pjạ¹.gu².njị²",
-    "explanationEN": "the.name.tangut.people.call.themselves‖han‖time/date/moment‖ʀᴇꜰ‖palm/handful.of‖ᴍᴇᴅ/middle‖pearl",
-    "explanationCN": "番‖汉‖1.时、须臾‖ʀᴇꜰ‖量词：掌‖ᴍᴇᴅ;中间‖珠"
   },
   {
     "word": "𗼇𘂜𘜶𘘝𘍞",
@@ -78142,13 +77246,6 @@ const WORD_DATA = [
     "explanationCN": "有福"
   },
   {
-    "word": "𗼕𘃡",
-    "GX": "lo¹.vi¹",
-    "GHC": "ljo¹.wji¹",
-    "explanationEN": "for.blessing",
-    "explanationCN": "为福"
-  },
-  {
     "word": "𗼕𘄡",
     "GX": "lo¹.seh²",
     "GHC": "ljo¹.sjịj²",
@@ -78255,7 +77352,7 @@ const WORD_DATA = [
   },
   {
     "word": "𗼚𘎧𗡻",
-    "GX": "wo̱ṃ².vwa̱¹.lə¹",
+    "GX": "wo̱ṃ².vwa̱¹.llə¹",
     "GHC": "ꞏow².wa¹.ljɨ¹",
     "explanationEN": "lying.and.lying.(person's.name)",
     "explanationCN": "卧讹立(人名)"
@@ -78321,7 +77418,7 @@ const WORD_DATA = [
     "GX": "qo̱ṃ².ni²",
     "GHC": "kow².nji²",
     "explanationEN": "son.of.heaven",
-    "explanationCN": "天子"
+    "explanationCN": "官家；天子"
   },
   {
     "word": "𗼞𗔇",
@@ -78937,21 +78034,21 @@ const WORD_DATA = [
     "GX": "lleh¹.phao̱²",
     "GHC": "ljịj¹.phio²",
     "explanationEN": "yisi.ganzhi",
-    "explanationCN": "乙巳干支"
+    "explanationCN": "乙巳"
   },
   {
     "word": "𗼴𗍍",
     "GX": "lleh¹.rtsi̱r¹",
     "GHC": "ljịj¹.tser¹",
     "explanationEN": "yimao.stem.and.branch",
-    "explanationCN": "乙卯干支"
+    "explanationCN": "乙卯"
   },
   {
     "word": "𗼴𗘅",
     "GX": "lleh¹.gu¹",
     "GHC": "ljịj¹.gju¹",
     "explanationEN": "yihai.stem.and.branch",
-    "explanationCN": "乙亥干支"
+    "explanationCN": "乙亥"
   },
   {
     "word": "𗼴𗡅",
@@ -78965,7 +78062,7 @@ const WORD_DATA = [
     "GX": "lleh¹.mmu²",
     "GHC": "ljịj¹.mju̱²",
     "explanationEN": "yichou.stem.and.branch",
-    "explanationCN": "乙丑干支"
+    "explanationCN": "乙丑"
   },
   {
     "word": "𗼴𗺉",
@@ -78986,7 +78083,7 @@ const WORD_DATA = [
     "GX": "lleh¹.dźwoṃ¹",
     "GHC": "ljịj¹.dźjwow¹",
     "explanationEN": "yiyou.stem.and.branch",
-    "explanationCN": "乙酉干支"
+    "explanationCN": "乙酉"
   },
   {
     "word": "𗼴𘄽",
@@ -79000,7 +78097,7 @@ const WORD_DATA = [
     "GX": "lleh¹.mo²",
     "GHC": "ljịj¹.mjo²",
     "explanationEN": "yiwei.ganzhi",
-    "explanationCN": "乙未干支"
+    "explanationCN": "乙未"
   },
   {
     "word": "𗼵𗍏",
@@ -80186,13 +79283,6 @@ const WORD_DATA = [
     "explanationCN": "耕牛"
   },
   {
-    "word": "𗽈𗭪",
-    "GX": "llih¹.si²",
-    "GHC": "ljị¹.sji²",
-    "explanationEN": "agricultural.use",
-    "explanationCN": "农用"
-  },
-  {
     "word": "𗽈𗱀",
     "GX": "llih¹.wo̱¹",
     "GHC": "ljị¹.ꞏo¹",
@@ -80219,13 +79309,6 @@ const WORD_DATA = [
     "GHC": "ljị¹.dzjɨj¹",
     "explanationEN": "agricultural.season",
     "explanationCN": "农时"
-  },
-  {
-    "word": "𗽈𘃡",
-    "GX": "llih¹.vi¹",
-    "GHC": "ljị¹.wji¹",
-    "explanationEN": "cultivation",
-    "explanationCN": "耕作"
   },
   {
     "word": "𗽈𘅫",
@@ -80820,7 +79903,7 @@ const WORD_DATA = [
     "GX": "tshih¹.phao̱²",
     "GHC": "tshjị¹.phio²",
     "explanationEN": "jisi.stem.and.branch",
-    "explanationCN": "己巳干支"
+    "explanationCN": "己巳"
   },
   {
     "word": "𗽬𗅵",
@@ -80841,14 +79924,14 @@ const WORD_DATA = [
     "GX": "tshih¹.rtsi̱r¹",
     "GHC": "tshjị¹.tser¹",
     "explanationEN": "jimao.stem.and.branch",
-    "explanationCN": "己卯干支"
+    "explanationCN": "己卯"
   },
   {
     "word": "𗽬𗘅",
     "GX": "tshih¹.gu¹",
     "GHC": "tshjị¹.gju¹",
     "explanationEN": "jihai.stem.and.branch",
-    "explanationCN": "己亥干支"
+    "explanationCN": "己亥"
   },
   {
     "word": "𗽬𗣒",
@@ -80869,21 +79952,21 @@ const WORD_DATA = [
     "GX": "tshih¹.mmu²",
     "GHC": "tshjị¹.mju̱²",
     "explanationEN": "i.am.ugly.",
-    "explanationCN": "己丑干支"
+    "explanationCN": "己丑"
   },
   {
     "word": "𗽬𗿼",
     "GX": "tshih¹.dźwoṃ¹",
     "GHC": "tshjị¹.dźjwow¹",
     "explanationEN": "the.stems.and.branches.of.jiyou",
-    "explanationCN": "己酉干支"
+    "explanationCN": "己酉"
   },
   {
     "word": "𗽬𘍂",
     "GX": "tshih¹.mo²",
     "GHC": "tshjị¹.mjo²",
     "explanationEN": "i.have.not.yet.done.so.",
-    "explanationCN": "己未干支"
+    "explanationCN": "己未"
   },
   {
     "word": "𗽭𗅉",
@@ -81212,7 +80295,7 @@ const WORD_DATA = [
     "GX": "qu̱¹.tsə¹",
     "GHC": "ku¹.tsjɨ¹",
     "explanationEN": "the.ox.is.the.weaver.girl.temple.(\"\".transliterated.\"aunt\",.aunt.is.the.girl,.referring.to.an.unmarried.woman..weaver.girl.is.a.woman.who.can.weave..both",
-    "explanationCN": "牛即织女寺（“𗽽𘂆”音译“姑子”，姑子即姑娘，指未婚女子。织女即是会织布的女子。二者"
+    "explanationCN": "姑子，指织女"
   },
   {
     "word": "𗽾𗘴",
@@ -81495,13 +80578,6 @@ const WORD_DATA = [
     "explanationCN": "神策(官名)"
   },
   {
-    "word": "𗾈𗹨",
-    "GX": "mmi̱².yeṃ²",
-    "GHC": "me̱².ꞏjɨj²",
-    "explanationEN": "able.and.virtuous.people‖tent/house/temple",
-    "explanationCN": "贤‖帐舍堂室宅宇庙泡"
-  },
-  {
     "word": "𗾈𗼃",
     "GX": "mmi̱².śeṃ²",
     "GHC": "me̱².śjɨj²",
@@ -81752,13 +80828,6 @@ const WORD_DATA = [
     "GHC": "be².lhjị².gjịj¹.mjijr²",
     "explanationEN": "sun,.moon,.stars",
     "explanationCN": "日月星辰"
-  },
-  {
-    "word": "𗾔𘇂",
-    "GX": "bi̱².ġu̱²",
-    "GHC": "be².gu²",
-    "explanationEN": "japan.and.china",
-    "explanationCN": "日中"
   },
   {
     "word": "𗾔𘉍",
@@ -82811,13 +81880,6 @@ const WORD_DATA = [
     "explanationCN": "亲家母"
   },
   {
-    "word": "𗿅𘃡",
-    "GX": "yə¹.vi¹",
-    "GHC": "ꞏjɨ¹.wji¹",
-    "explanationEN": "for.marriage",
-    "explanationCN": "为婚"
-  },
-  {
     "word": "𗿆𗣩",
     "GX": "śe¹.tha̱²",
     "GHC": "śjij¹.tha²",
@@ -83620,7 +82682,7 @@ const WORD_DATA = [
     "GX": "dzeṃ¹.bu¹.pah¹.ġu̱².nih²",
     "GHC": "dzjɨj¹.bju¹.pjạ¹.gu².njị²",
     "explanationEN": "\"beads.in.the.palm.of.fan.han.and.time\"",
-    "explanationCN": "《番汉合时掌中珠》"
+    "explanationCN": "《合时掌中珠》"
   },
   {
     "word": "𗿳𗡪",
@@ -84274,13 +83336,6 @@ const WORD_DATA = [
     "explanationCN": "勒泥(番姓)"
   },
   {
-    "word": "𘀌𗩹",
-    "GX": "rtsi̱r¹.yi¹",
-    "GHC": "tser¹.ꞏji¹",
-    "explanationEN": "buffalo.gnat‖now/this.moment",
-    "explanationCN": "虻蚋‖此刻"
-  },
-  {
     "word": "𘀍𗣊",
     "GX": "na².mi²",
     "GHC": "nja².mji²",
@@ -84370,13 +83425,6 @@ const WORD_DATA = [
     "GHC": "pu¹.ꞏjow¹",
     "explanationEN": "puyang.(place.name)",
     "explanationCN": "濮阳(地名)"
-  },
-  {
-    "word": "𘀏𘀏",
-    "GX": "pu̱¹.pu̱¹",
-    "GHC": "pu¹.pu¹",
-    "explanationEN": "a.surname‖a.surname",
-    "explanationCN": "【布】【博】【北】‖【布】【博】【北】"
   },
   {
     "word": "𘀏𘂋",
@@ -85954,13 +85002,6 @@ const WORD_DATA = [
     "explanationCN": "小"
   },
   {
-    "word": "𘂆𗩱",
-    "GX": "tsə¹.nwi²",
-    "GHC": "tsjɨ¹.njwi²",
-    "explanationEN": "can.also",
-    "explanationCN": "亦能"
-  },
-  {
     "word": "𘂆𗵘",
     "GX": "tsə¹.tśa¹",
     "GHC": "tsjɨ¹.tśja¹",
@@ -86001,13 +85042,6 @@ const WORD_DATA = [
     "GHC": "ɣiə¹.njij²",
     "explanationEN": "rare",
     "explanationCN": "稀少"
-  },
-  {
-    "word": "𘂎⿱𘡩𘂎",
-    "GX": "la̱¹.la̱¹",
-    "GHC": "la¹.la¹",
-    "explanationEN": "small/little‖small/little",
-    "explanationCN": "小‖小"
   },
   {
     "word": "𘂎𗛵",
@@ -86843,13 +85877,6 @@ const WORD_DATA = [
     "explanationCN": "银球"
   },
   {
-    "word": "𘂲𘙰",
-    "GX": "nsu¹.li̱w²",
-    "GHC": "sju̱¹.lew²",
-    "explanationEN": "silver‖same/alike",
-    "explanationCN": "银‖同类"
-  },
-  {
     "word": "𘂳𗰔",
     "GX": "źah¹.yiw²",
     "GHC": "źjạ¹.ꞏjiw²",
@@ -86980,7 +86007,7 @@ const WORD_DATA = [
     "GX": "vih¹.dźwoṃ¹",
     "GHC": "wjị¹.dźjwow¹",
     "explanationEN": "birds.and.beasts",
-    "explanationCN": "鸟兽"
+    "explanationCN": "鸟兽、申酉"
   },
   {
     "word": "𘂶𘆃",
@@ -87568,14 +86595,14 @@ const WORD_DATA = [
     "GX": "ndu̱¹.phao̱²",
     "GHC": "du̱¹.phio²",
     "explanationEN": "guisi.stem.branch",
-    "explanationCN": "癸巳干支"
+    "explanationCN": "癸巳"
   },
   {
     "word": "𘃠𗍍",
     "GX": "ndu̱¹.rtsi̱r¹",
     "GHC": "du̱¹.tser¹",
     "explanationEN": "guimao.stem.and.branch",
-    "explanationCN": "癸卯干支"
+    "explanationCN": "癸卯"
   },
   {
     "word": "𘃠𗔇",
@@ -87596,21 +86623,21 @@ const WORD_DATA = [
     "GX": "ndu̱¹.gu¹",
     "GHC": "du̱¹.gju¹",
     "explanationEN": "guihai.stem.and.branch",
-    "explanationCN": "癸亥干支"
+    "explanationCN": "癸亥"
   },
   {
     "word": "𘃠𗵊",
     "GX": "ndu̱¹.mmu²",
     "GHC": "du̱¹.mju̱²",
     "explanationEN": "guichou.stem.branch",
-    "explanationCN": "癸丑干支"
+    "explanationCN": "癸丑"
   },
   {
     "word": "𘃠𗿼",
     "GX": "ndu̱¹.dźwoṃ¹",
     "GHC": "du̱¹.dźjwow¹",
     "explanationEN": "guiyou.stem.and.branch",
-    "explanationCN": "癸酉干支"
+    "explanationCN": "癸酉"
   },
   {
     "word": "𘃠𘃥",
@@ -87624,21 +86651,7 @@ const WORD_DATA = [
     "GX": "ndu̱¹.mo²",
     "GHC": "du̱¹.mjo²",
     "explanationEN": "guiwei.ganzhi",
-    "explanationCN": "癸未干支"
-  },
-  {
-    "word": "𘃡𗣬",
-    "GX": "vi¹.vo¹",
-    "GHC": "wji¹.wjo¹",
-    "explanationEN": "pretentious",
-    "explanationCN": "造作"
-  },
-  {
-    "word": "𘃡𗤋",
-    "GX": "vi¹.me¹",
-    "GHC": "wji¹.mjij¹",
-    "explanationEN": "wuwei",
-    "explanationCN": "无为"
+    "explanationCN": "癸未"
   },
   {
     "word": "𘃡𗭍",
@@ -87938,8 +86951,8 @@ const WORD_DATA = [
     "word": "𘃳𘂆",
     "GX": "kiw¹.tsə¹",
     "GHC": "kjiw¹.tsjɨ¹",
-    "explanationEN": "ancient.country.name.of.qiuci",
-    "explanationCN": "龟兹古国名"
+    "explanationEN": "kucha",
+    "explanationCN": "龟兹（古国名）"
   },
   {
     "word": "𘃳𘂆𗂧",
@@ -87952,7 +86965,7 @@ const WORD_DATA = [
     "word": "𘃳𘉒𗓽𗒅",
     "GX": "kiw¹.mo̱².lo̱¹.rśər¹",
     "GHC": "kjiw¹.mo².lo¹.śjɨr¹",
-    "explanationEN": "kumarashi.(person's.name)",
+    "explanationEN": "kumārajīva",
     "explanationCN": "鸠摩罗什(人名)"
   },
   {
@@ -88678,7 +87691,7 @@ const WORD_DATA = [
   },
   {
     "word": "𘄍𘇜𗘂𗡻𘞶",
-    "GX": "ba̱².bi̱².khwə¹.lə¹.mphu̱²",
+    "GX": "ba̱².bi̱².khwə¹.llə¹.mphu̱²",
     "GHC": "ba².be².khjwɨ¹.ljɨ¹.phu̱²",
     "explanationEN": "blowing.cup.dog.dung.zhuang.(person.name)",
     "explanationCN": "播杯狗粪壮(人名)"
@@ -89291,20 +88304,6 @@ const WORD_DATA = [
     "GHC": "thjɨj¹.śiəj¹",
     "explanationEN": "\"taishang.lao.said.that.he.was.born.with.yin.sutra\".tao.sutra",
     "explanationCN": "《太上老说天生阴经》道经"
-  },
-  {
-    "word": "𘄱𗽦",
-    "GX": "theṃ¹.ho̱ṃ²",
-    "GHC": "thjɨj¹.xjow²",
-    "explanationEN": "a.transliteration‖a.place.name",
-    "explanationCN": "【殿】【电】【田】【天】【甜】【廷】【定】【恬】‖【旬】【匈】地名"
-  },
-  {
-    "word": "𘄱𗽦𘋅",
-    "GX": "theṃ¹.ho̱ṃ².sa̱ṃ¹",
-    "GHC": "thjɨj¹.xjow².sã¹",
-    "explanationEN": "a.transliteration‖a.place.name‖a.transliteration",
-    "explanationCN": "【殿】【电】【田】【天】【甜】【廷】【定】【恬】‖【旬】【匈】地名‖1.【山】【三】【珊】【散】"
   },
   {
     "word": "𘄱𘀏",
@@ -90775,13 +89774,6 @@ const WORD_DATA = [
     "GHC": "tśju¹.khwej²",
     "explanationEN": "important.role",
     "explanationCN": "大役"
-  },
-  {
-    "word": "𘅫𘃡",
-    "GX": "tśu¹.vi¹",
-    "GHC": "tśju¹.wji¹",
-    "explanationEN": "do.things",
-    "explanationCN": "做事"
   },
   {
     "word": "𘅫𘃪",
@@ -92377,7 +91369,7 @@ const WORD_DATA = [
     "GX": "ge¹.mo²",
     "GHC": "gjij¹.mjo²",
     "explanationEN": "wuwei.earthly.branch",
-    "explanationCN": "午未地支"
+    "explanationCN": "午未"
   },
   {
     "word": "𘆾𘘆",
@@ -92847,13 +91839,6 @@ const WORD_DATA = [
     "GHC": "mji̱².ɣie²",
     "explanationEN": "benefit",
     "explanationCN": "饶益"
-  },
-  {
-    "word": "𘇚𘃡",
-    "GX": "mmi².vi¹",
-    "GHC": "mji̱².wji¹",
-    "explanationEN": "care.for.the.people",
-    "explanationCN": "恤治民庶"
   },
   {
     "word": "𘇚𘑨",
@@ -93507,13 +92492,6 @@ const WORD_DATA = [
     "explanationCN": "人马星宫"
   },
   {
-    "word": "𘈑𘇂",
-    "GX": "rmər¹.ġu̱²",
-    "GHC": "mjɨr¹.gu²",
-    "explanationEN": "among.people",
-    "explanationCN": "人中"
-  },
-  {
     "word": "𘈑𘓊",
     "GX": "rmər¹.rzər¹",
     "GHC": "mjɨr¹.zjɨ̱r¹",
@@ -93840,7 +92818,7 @@ const WORD_DATA = [
     "GX": "śow¹.ġu̱²",
     "GHC": "śjwo¹.gu²",
     "explanationEN": "midnight",
-    "explanationCN": "中宵"
+    "explanationCN": "中宵；半夜"
   },
   {
     "word": "𘈝𘓳",
@@ -93876,13 +92854,6 @@ const WORD_DATA = [
     "GHC": "mji̱j¹.ŋạ²",
     "explanationEN": "sweet.dream",
     "explanationCN": "美梦"
-  },
-  {
-    "word": "𘈞𘇂",
-    "GX": "mme¹.ġu̱²",
-    "GHC": "mji̱j¹.gu²",
-    "explanationEN": "in.a.dream",
-    "explanationCN": "梦中"
   },
   {
     "word": "𘈞𘍔",
@@ -94473,13 +93444,6 @@ const WORD_DATA = [
     "explanationCN": "伍奢(人名)"
   },
   {
-    "word": "𘈫𗜪𗼐",
-    "GX": "wu̱².li̱w¹.qwaa̱ṃ¹",
-    "GHC": "ꞏu².lew¹.kiwã¹",
-    "explanationEN": "a.surname‖building‖close",
-    "explanationCN": "【武】【乌】【巫】【毋】【戊】【芜】【务】【雾】‖1.楼】耧【娄】【陋】【路】【牢】‖【关】"
-  },
-  {
     "word": "𘈫𗭴",
     "GX": "wu̱².yoṃ¹",
     "GHC": "ꞏu².ꞏjow¹",
@@ -94732,13 +93696,6 @@ const WORD_DATA = [
     "explanationCN": "长子"
   },
   {
-    "word": "𘈷𗍊",
-    "GX": "gi².su²",
-    "GHC": "gji².sju²",
-    "explanationEN": "juzi",
-    "explanationCN": "犹子"
-  },
-  {
     "word": "𘈷𗎭",
     "GX": "gi².mmi¹",
     "GHC": "gji².mji̱¹",
@@ -94900,13 +93857,6 @@ const WORD_DATA = [
     "explanationCN": "业报"
   },
   {
-    "word": "𘈽𘃡",
-    "GX": "sweṃ¹.vi¹",
-    "GHC": "sjwɨj¹.wji¹",
-    "explanationEN": "homework",
-    "explanationCN": "作业"
-  },
-  {
     "word": "𘈾𗂥",
     "GX": "du¹.ne²",
     "GHC": "dju¹.njij²",
@@ -95059,13 +94009,6 @@ const WORD_DATA = [
     "GHC": "tsji̱r¹.dźjij².dzjwo²",
     "explanationEN": "there.are.officials",
     "explanationCN": "有官人"
-  },
-  {
-    "word": "𘉀𘃡",
-    "GX": "rtser¹.vi¹",
-    "GHC": "tsji̱r¹.wji¹",
-    "explanationEN": "official",
-    "explanationCN": "为官"
   },
   {
     "word": "𘉀𘄿",
@@ -95446,13 +94389,6 @@ const WORD_DATA = [
     "explanationCN": "伪诏"
   },
   {
-    "word": "𘉇𘃡",
-    "GX": "dzi̱w².vi¹",
-    "GHC": "dzew².wji¹",
-    "explanationEN": "falsification",
-    "explanationCN": "作伪"
-  },
-  {
     "word": "𘉇𘎪",
     "GX": "dzi̱w².ntshe¹",
     "GHC": "dzew².tshji̱j¹",
@@ -95468,7 +94404,7 @@ const WORD_DATA = [
   },
   {
     "word": "𘉇𘗫",
-    "GX": "dzi̱w².lla̱h¹",
+    "GX": "dzi̱w².la̱h¹",
     "GHC": "dzew².lạ¹",
     "explanationEN": "deceit",
     "explanationCN": "诡诈"
@@ -96230,13 +95166,6 @@ const WORD_DATA = [
     "explanationCN": "堆积"
   },
   {
-    "word": "𘉘𗂎",
-    "GX": "rzə̱r².tsheṃ²",
-    "GHC": "zər².tshjɨj²",
-    "explanationEN": "a.surname‖purple/violet",
-    "explanationCN": "【徐】【叙】‖紫色【倩】【靖】【青】【净】【前】"
-  },
-  {
     "word": "𘉘𗌰",
     "GX": "rzə̱r².pu̱h²",
     "GHC": "zər².pụ²",
@@ -96559,13 +95488,6 @@ const WORD_DATA = [
     "explanationCN": "忌星(星命)"
   },
   {
-    "word": "𘉼𘃡",
-    "GX": "ntho̱².vi¹",
-    "GHC": "tho̱².wji¹",
-    "explanationEN": "harm",
-    "explanationCN": "为害"
-  },
-  {
     "word": "𘉽𗮴",
     "GX": "dzi̱¹.mma¹",
     "GHC": "dze¹.mja̱¹",
@@ -96609,7 +95531,7 @@ const WORD_DATA = [
   },
   {
     "word": "𘊂𗡻",
-    "GX": "naw².lə¹",
+    "GX": "naw².llə¹",
     "GHC": "nja̱².ljɨ¹",
     "explanationEN": "feces",
     "explanationCN": "粪便"
@@ -96760,13 +95682,6 @@ const WORD_DATA = [
     "GHC": "niow².nẹ¹",
     "explanationEN": "hidden.good.and.promoted.evil",
     "explanationCN": "隐善扬恶"
-  },
-  {
-    "word": "𘊄𘃡",
-    "GX": "ṇoṃ².vi¹",
-    "GHC": "niow².wji¹",
-    "explanationEN": "do.evil",
-    "explanationCN": "作恶"
   },
   {
     "word": "𘊄𘃨",
@@ -97399,13 +96314,6 @@ const WORD_DATA = [
     "explanationCN": "老六"
   },
   {
-    "word": "𘊛～𗍊",
-    "GX": "dzoh¹.su²",
-    "GHC": "dzjọ¹.sju²",
-    "explanationEN": "metaphor/just.like‖be.like",
-    "explanationCN": "譬如‖如"
-  },
-  {
     "word": "𘊛𗍊",
     "GX": "dzoh¹.su²",
     "GHC": "dzjọ¹.sju²",
@@ -97952,13 +96860,6 @@ const WORD_DATA = [
     "explanationCN": "全份"
   },
   {
-    "word": "𘊳𗍊",
-    "GX": "bo̱¹.su²",
-    "GHC": "bo¹.sju²",
-    "explanationEN": "like.a.forest",
-    "explanationCN": "如林"
-  },
-  {
     "word": "𘊳𗔼",
     "GX": "bo̱¹.ġhwe̱¹",
     "GHC": "bo¹.ɣwej¹",
@@ -97985,13 +96886,6 @@ const WORD_DATA = [
     "GHC": "bo¹.źjạ¹",
     "explanationEN": "in.the.team",
     "explanationCN": "队中"
-  },
-  {
-    "word": "𘊳𘇂",
-    "GX": "bo̱¹.ġu̱²",
-    "GHC": "bo¹.gu²",
-    "explanationEN": "in.the.forest",
-    "explanationCN": "林中"
   },
   {
     "word": "𘊳𘊳",
@@ -98516,7 +97410,7 @@ const WORD_DATA = [
     "GX": "fi¹.mmu²",
     "GHC": "xjwi¹.mju̱²",
     "explanationEN": "zi.chou.earthly.branch",
-    "explanationCN": "子丑地支"
+    "explanationCN": "子丑"
   },
   {
     "word": "𘋇𗶡𗽭",
@@ -99100,13 +97994,6 @@ const WORD_DATA = [
     "explanationCN": "君民"
   },
   {
-    "word": "𘋨𘃡",
-    "GX": "dzwə¹.vi¹",
-    "GHC": "dzjwɨ¹.wji¹",
-    "explanationEN": "for.the.emperor",
-    "explanationCN": "为帝"
-  },
-  {
     "word": "𘋨𘄡",
     "GX": "dzwə¹.seh²",
     "GHC": "dzjwɨ¹.sjịj²",
@@ -99212,13 +98099,6 @@ const WORD_DATA = [
     "explanationCN": "《帝王世纪》"
   },
   {
-    "word": "𘋫𗹟",
-    "GX": "tśa¹.mə̱¹",
-    "GHC": "tśja¹.mə¹",
-    "explanationEN": "to.fall.over/to.stumble.and.fall‖patron.of.sheep",
-    "explanationCN": "踬‖护羊神"
-  },
-  {
     "word": "𘋫𘋭",
     "GX": "tśa¹.tśha¹",
     "GHC": "tśja¹.tśhja¹",
@@ -99252,13 +98132,6 @@ const WORD_DATA = [
     "GHC": "ꞏjar¹.dzjị²",
     "explanationEN": "defend",
     "explanationCN": "守立"
-  },
-  {
-    "word": "𘋯𘃡",
-    "GX": "yeṃ².vi¹",
-    "GHC": "ꞏjɨj².wji¹",
-    "explanationEN": "cocoon",
-    "explanationCN": "作茧"
   },
   {
     "word": "𘋯𘍴",
@@ -101460,7 +100333,7 @@ const WORD_DATA = [
   },
   {
     "word": "𘎃𗦗𗿕𗡻",
-    "GX": "vwi̱¹.so̱².ġhwu̱h².lə¹",
+    "GX": "vwi̱¹.so̱².ġhwu̱h².llə¹",
     "GHC": "we¹.so².ꞏwụ².ljɨ¹",
     "explanationEN": "male.finch.manure.(animal.manure).(drug.name)",
     "explanationCN": "雄雀粪（动物粪便）(药名)"
@@ -101495,7 +100368,7 @@ const WORD_DATA = [
   },
   {
     "word": "𘎃𗾖𗿕𗡻",
-    "GX": "vwi̱¹.rgor¹.ġhwu̱h².lə¹",
+    "GX": "vwi̱¹.rgor¹.ġhwu̱h².llə¹",
     "GHC": "we¹.go̱r¹.ꞏwụ².ljɨ¹",
     "explanationEN": "male.finch.manure.(animal.manure).(drug.name)",
     "explanationCN": "雄雀粪（动物粪便）(药名)"
@@ -101789,7 +100662,7 @@ const WORD_DATA = [
   },
   {
     "word": "𘎋𗗠",
-    "GX": "dźə¹.nlhaa̱¹",
+    "GX": "dźə¹.nllaa̱¹",
     "GHC": "dźjɨ¹.lhia̱²",
     "explanationEN": "brush",
     "explanationCN": "拂拭"
@@ -101891,13 +100764,6 @@ const WORD_DATA = [
     "GHC": "lhjɨ̣¹.ljị¹.kjɨ̱r¹",
     "explanationEN": "archer",
     "explanationCN": "弓箭匠"
-  },
-  {
-    "word": "𘎗𘃡",
-    "GX": "lhəh¹.vi¹",
-    "GHC": "lhjɨ̣¹.wji¹",
-    "explanationEN": "for.the.bow",
-    "explanationCN": "为弓"
   },
   {
     "word": "𘎗𘄽",
@@ -102024,13 +100890,6 @@ const WORD_DATA = [
     "GHC": "tjɨ¹.tjij¹",
     "explanationEN": "if",
     "explanationCN": "假若"
-  },
-  {
-    "word": "𘎤𗓱～𗌭",
-    "GX": "tə¹.te¹.qu̱¹",
-    "GHC": "tjɨ¹.tjij¹.ku¹",
-    "explanationEN": "if/one‖if/maybe/perhaps‖so",
-    "explanationCN": "若、一‖假若或者‖连词【鼓】【姑】【孤】【羖】【股】【孤】"
   },
   {
     "word": "𘎤𗾞",
@@ -103069,20 +101928,6 @@ const WORD_DATA = [
     "explanationCN": "盖酿"
   },
   {
-    "word": "𘏚𗁁",
-    "GX": "tih².ve²",
-    "GHC": "tjị².wjij²",
-    "explanationEN": "yes.",
-    "explanationCN": "可以"
-  },
-  {
-    "word": "𘏚𗤋",
-    "GX": "tih².me¹",
-    "GHC": "tjị².mjij¹",
-    "explanationEN": "no.",
-    "explanationCN": "不可"
-  },
-  {
     "word": "𘏚𘐏",
     "GX": "tih².tih¹",
     "GHC": "tjị².tjị¹",
@@ -103164,21 +102009,21 @@ const WORD_DATA = [
     "GX": "ŋqhae̱¹.phao̱²",
     "GHC": "khie̱j¹.phio²",
     "explanationEN": "xinsi.ganzhi",
-    "explanationCN": "辛巳干支"
+    "explanationCN": "辛巳"
   },
   {
     "word": "𘏡𗍍",
     "GX": "ŋqhae̱¹.rtsi̱r¹",
     "GHC": "khie̱j¹.tser¹",
     "explanationEN": "xin.mao.gan.zhi",
-    "explanationCN": "辛卯干支"
+    "explanationCN": "辛卯"
   },
   {
     "word": "𘏡𗘅",
     "GX": "ŋqhae̱¹.gu¹",
     "GHC": "khie̱j¹.gju¹",
     "explanationEN": "xinhai.stem.and.branch",
-    "explanationCN": "辛亥干支"
+    "explanationCN": "辛亥"
   },
   {
     "word": "𘏡𗫴",
@@ -103192,7 +102037,7 @@ const WORD_DATA = [
     "GX": "ŋqhae̱¹.mmu²",
     "GHC": "khie̱j¹.mju̱²",
     "explanationEN": "xin.chou.gan.zhi",
-    "explanationCN": "辛丑干支"
+    "explanationCN": "辛丑"
   },
   {
     "word": "𘏡𗼪",
@@ -103206,14 +102051,14 @@ const WORD_DATA = [
     "GX": "ŋqhae̱¹.dźwoṃ¹",
     "GHC": "khie̱j¹.dźjwow¹",
     "explanationEN": "xinyou.ganzhi",
-    "explanationCN": "辛酉干支"
+    "explanationCN": "辛酉"
   },
   {
     "word": "𘏡𘍂",
     "GX": "ŋqhae̱¹.mo²",
     "GHC": "khie̱j¹.mjo²",
     "explanationEN": "xinwei.ganzhi",
-    "explanationCN": "辛未干支"
+    "explanationCN": "辛未"
   },
   {
     "word": "𘏦𗏅",
@@ -104966,13 +103811,6 @@ const WORD_DATA = [
     "explanationCN": "山水：山和水"
   },
   {
-    "word": "𘑗𗍊",
-    "GX": "rŋə̱r¹.su²",
-    "GHC": "ŋər¹.sju²",
-    "explanationEN": "as.mountains",
-    "explanationCN": "如山"
-  },
-  {
     "word": "𘑗𗗚",
     "GX": "rŋə̱r¹.goṃ²",
     "GHC": "ŋər¹.ŋjow²",
@@ -105818,13 +104656,6 @@ const WORD_DATA = [
     "GHC": "tsjij¹.rjijr²",
     "explanationEN": "the.other.party",
     "explanationCN": "他方"
-  },
-  {
-    "word": "𘑶𗐱",
-    "GX": "tse¹.ni²",
-    "GHC": "tsjij¹.nji²",
-    "explanationEN": "not.self.pl",
-    "explanationCN": "非己(复数)"
   },
   {
     "word": "𘑶𘒏",
@@ -107052,13 +105883,6 @@ const WORD_DATA = [
     "explanationCN": "实话"
   },
   {
-    "word": "𘒣𗌮𗅋𘎪",
-    "GX": "da̱h².rmor¹.mi¹.ntshe¹",
-    "GHC": "dạ².mjor¹.mji¹.tshji̱j¹",
-    "explanationEN": "don't.tell.the.truth",
-    "explanationCN": "不说实话"
-  },
-  {
     "word": "𘒣𗑝",
     "GX": "da̱h².rtsi̱wr¹",
     "GHC": "dạ².tsewr¹",
@@ -107787,20 +106611,6 @@ const WORD_DATA = [
     "explanationCN": "忘记"
   },
   {
-    "word": "𘓁～𗫶",
-    "GX": "lləh¹.de²",
-    "GHC": "ljɨ̣¹.djij²",
-    "explanationEN": "ᴄᴏɴᴄ/ᴄᴏɴᴊ‖ᴛᴇꜱᴛɪᴍ/ᴅᴜʀ",
-    "explanationCN": "ᴄᴏɴᴄ/ᴄᴏɴᴊ‖ᴛᴇꜱᴛɪᴍ/ᴅᴜʀ"
-  },
-  {
-    "word": "𘓁～𘂆",
-    "GX": "lləh¹.tsə¹",
-    "GHC": "ljɨ̣¹.tsjɨ¹",
-    "explanationEN": "ᴄᴏɴᴄ/ᴄᴏɴᴊ‖also/too/small/𝟤ᴅᴜ",
-    "explanationCN": "ᴄᴏɴᴄ/ᴄᴏɴᴊ‖也;小;𝟤ᴅᴜ"
-  },
-  {
     "word": "𘓁𗅉",
     "GX": "lləh¹.nuo¹",
     "GHC": "ljɨ̣¹.niow¹",
@@ -108023,13 +106833,6 @@ const WORD_DATA = [
     "GHC": "zjɨ̱r¹.tsja¹",
     "explanationEN": "xiaoshu.twenty-four.solar.terms",
     "explanationCN": "小暑(二十四节气)"
-  },
-  {
-    "word": "𘓊𗘡",
-    "GX": "rzər¹.tśheṃ¹",
-    "GHC": "zjɨ̱r¹.tśhjɨj¹",
-    "explanationEN": "few/little/tiny‖down",
-    "explanationCN": "少小稀微略娆‖下"
   },
   {
     "word": "𘓊𗡪",
@@ -109212,7 +108015,7 @@ const WORD_DATA = [
     "GX": "nvwə̱¹.rywər².ye¹.vwo̱².keh¹.si².ŋgə²",
     "GHC": "wə¹.ꞏjwɨr².ꞏjij¹.wo².kjịj¹.sji².gjɨ̱²",
     "explanationEN": "the.book.of.filial.piety",
-    "explanationCN": "《孝经"
+    "explanationCN": "《孝经义理注疏》"
   },
   {
     "word": "𘓓𘝦",
@@ -110328,13 +109131,6 @@ const WORD_DATA = [
     "explanationCN": "皇城司（次等司）"
   },
   {
-    "word": "𘓹𘃡",
-    "GX": "vwa̱h².vi¹",
-    "GHC": "wạ².wji¹",
-    "explanationEN": "miyasaku",
-    "explanationCN": "宫作"
-  },
-  {
     "word": "𘓹𘗠",
     "GX": "vwa̱h².ġha̱¹",
     "GHC": "wạ².ɣa¹",
@@ -110462,7 +109258,7 @@ const WORD_DATA = [
   },
   {
     "word": "𘓺𗢯𘚐𗵫𗪺𗦾",
-    "GX": "rŋwə̱r¹.lhwa¹.so̱ṃ¹.geh¹.ġhai̱¹.n·yu¹",
+    "GX": "rŋwə̱r¹.llwa¹.so̱ṃ¹.geh¹.ġhai̱¹.n·yu¹",
     "GHC": "ŋwər¹.lhjwa¹.sow¹.gjịj¹.ɣie¹.ꞏju̱¹",
     "explanationEN": "\"sky.tongue.mulberry.star.vision\"",
     "explanationCN": "《天舌桑星视力》"
@@ -110655,13 +109451,6 @@ const WORD_DATA = [
     "GHC": "ŋwər¹.rjijr¹",
     "explanationEN": "pegasus",
     "explanationCN": "天马"
-  },
-  {
-    "word": "𘓺𘇂",
-    "GX": "rŋwə̱r¹.ġu̱²",
-    "GHC": "ŋwər¹.gu²",
-    "explanationEN": "in.the.middle.of.the.day",
-    "explanationCN": "天中"
   },
   {
     "word": "𘓺𘈈",
@@ -110983,21 +109772,21 @@ const WORD_DATA = [
     "GX": "bi¹.na̱¹",
     "GHC": "bji¹.na¹",
     "explanationEN": "bingxu.stem.and.branch",
-    "explanationCN": "丙戌干支"
+    "explanationCN": "丙戌"
   },
   {
     "word": "𘔁𗱈",
     "GX": "bi¹.lli̱²",
     "GHC": "bji¹.le²",
     "explanationEN": "bingyin.stem.and.branch",
-    "explanationCN": "丙寅干支"
+    "explanationCN": "丙寅"
   },
   {
     "word": "𘔁𗵃",
     "GX": "bi¹.vwi̱¹",
     "GHC": "bji¹.we¹",
     "explanationEN": "bingchen.ganzhi",
-    "explanationCN": "丙辰干支"
+    "explanationCN": "丙辰"
   },
   {
     "word": "𘔁𗸃",
@@ -111011,21 +109800,21 @@ const WORD_DATA = [
     "GX": "bi¹.vih¹",
     "GHC": "bji¹.wjị¹",
     "explanationEN": "bingshen.ganzhi",
-    "explanationCN": "丙申干支"
+    "explanationCN": "丙申"
   },
   {
     "word": "𘔁𘆽",
     "GX": "bi¹.ge¹",
     "GHC": "bji¹.gjij¹",
     "explanationEN": "bingwu.stem.and.branch",
-    "explanationCN": "丙午干支"
+    "explanationCN": "丙午"
   },
   {
     "word": "𘔁𘋇",
     "GX": "bi¹.fi¹",
     "GHC": "bji¹.xjwi¹",
     "explanationEN": "ganzhi.of.bingzi",
-    "explanationCN": "丙子干支"
+    "explanationCN": "丙子"
   },
   {
     "word": "𘔂𗇍",
@@ -111885,7 +110674,7 @@ const WORD_DATA = [
     "word": "𘔧𗷑",
     "GX": "guh¹.mphi²",
     "GHC": "gjụ¹.phji̱²",
-    "explanationEN": "giant.skin.(official.name)",
+    "explanationEN": "jupi.(official.name)",
     "explanationCN": "巨皮(官名)"
   },
   {
@@ -112638,13 +111427,6 @@ const WORD_DATA = [
     "explanationCN": "杞地(地名)"
   },
   {
-    "word": "𘔺𘈥",
-    "GX": "khi².sa̱¹",
-    "GHC": "khji².sa¹",
-    "explanationEN": "gas‖swell/choke",
-    "explanationCN": "1.气】【溪】【忌】【绮】【暨】【器】【其】【起】【岂】【炁】‖胀噎"
-  },
-  {
     "word": "𘔺𘓐",
     "GX": "khi².dzwo²",
     "GHC": "khji².dzjwo²",
@@ -112678,20 +111460,6 @@ const WORD_DATA = [
     "GHC": "nio̱w¹.ꞏjiw²",
     "explanationEN": "doubt",
     "explanationCN": "生疑"
-  },
-  {
-    "word": "𘔼𗤋",
-    "GX": "nuo¹.me¹",
-    "GHC": "nio̱w¹.mjij¹",
-    "explanationEN": "no.reason",
-    "explanationCN": "无由"
-  },
-  {
-    "word": "𘔼𘘦",
-    "GX": "nuo¹.tśhow¹",
-    "GHC": "nio̱w¹.tśhjwo¹",
-    "explanationEN": "therefore",
-    "explanationCN": "故"
   },
   {
     "word": "𘔽𘐷",
@@ -113121,13 +111889,6 @@ const WORD_DATA = [
     "explanationCN": "有罪人"
   },
   {
-    "word": "𘕋𘃡",
-    "GX": "dźih².vi¹",
-    "GHC": "dźjar².wji¹",
-    "explanationEN": "crime",
-    "explanationCN": "犯罪"
-  },
-  {
     "word": "𘕋𘄩",
     "GX": "dźih².tsuh¹",
     "GHC": "dźjar².tsjụ¹",
@@ -113462,13 +112223,6 @@ const WORD_DATA = [
     "GHC": "sọ¹.ŋwej².mji̱¹",
     "explanationEN": "sanhe.palace.(star.life)",
     "explanationCN": "三合宫(星命)"
-  },
-  {
-    "word": "𘕕𗚖",
-    "GX": "so̱ṃh¹.rlhor¹",
-    "GHC": "sọ¹.lhjo̱r¹",
-    "explanationEN": "three‖a.unit.of.measurement",
-    "explanationCN": "三‖1.庹、筝案"
   },
   {
     "word": "𘕕𗚠",
@@ -113882,20 +112636,6 @@ const WORD_DATA = [
     "GHC": "sọ¹.phia̱²",
     "explanationEN": "three.copies",
     "explanationCN": "三份"
-  },
-  {
-    "word": "𘕕𘊲𘂤𗈪𘊲",
-    "GX": "so̱ṃh¹.mphaa̱².qha̱¹.a¹.mphaa̱²",
-    "GHC": "sọ¹.phia̱².kha¹.ꞏja.phia̱²",
-    "explanationEN": "one.third",
-    "explanationCN": "三分之一"
-  },
-  {
-    "word": "𘕕𘊲𘂤𗍫𘊲",
-    "GX": "so̱ṃh¹.mphaa̱².qha̱¹.nnə¹.mphaa̱²",
-    "GHC": "sọ¹.phia̱².kha¹.njɨ̱¹.phia̱²",
-    "explanationEN": "two-thirds",
-    "explanationCN": "三分之二"
   },
   {
     "word": "𘕕𘋠",
@@ -114570,118 +113310,6 @@ const WORD_DATA = [
     "explanationCN": "敌寇"
   },
   {
-    "word": "𘕣𗃬",
-    "GX": "vwa̱².lli̱²",
-    "GHC": "wa².le²",
-    "explanationEN": "why.fear",
-    "explanationCN": "何惧"
-  },
-  {
-    "word": "𘕣𗍊",
-    "GX": "vwa̱².su²",
-    "GHC": "wa².sju²",
-    "explanationEN": "what.kind",
-    "explanationCN": "什么样"
-  },
-  {
-    "word": "𘕣𗣗",
-    "GX": "vwa̱².zeh²",
-    "GHC": "wa².zjịj²",
-    "explanationEN": "what.is",
-    "explanationCN": "何为"
-  },
-  {
-    "word": "𘕣𗦤",
-    "GX": "vwa̱².nlle¹",
-    "GHC": "wa².lji̱j¹",
-    "explanationEN": "why.wait?",
-    "explanationCN": "何待"
-  },
-  {
-    "word": "𘕣𗭻",
-    "GX": "vwa̱².nlle²",
-    "GHC": "wa².lji̱j²",
-    "explanationEN": "why.wait?",
-    "explanationCN": "何待"
-  },
-  {
-    "word": "𘕣𗰣",
-    "GX": "vwa̱².zeh¹",
-    "GHC": "wa².zjịj¹",
-    "explanationEN": "how.much",
-    "explanationCN": "多少"
-  },
-  {
-    "word": "𘕣𗾞",
-    "GX": "vwa̱².nnə²",
-    "GHC": "wa².njɨ̱²",
-    "explanationEN": "when?",
-    "explanationCN": "何日"
-  },
-  {
-    "word": "𘕣𗿳",
-    "GX": "vwa̱².dzeṃ¹",
-    "GHC": "wa².dzjɨj¹",
-    "explanationEN": "when?",
-    "explanationCN": "何时"
-  },
-  {
-    "word": "𘕣𘀽",
-    "GX": "vwa̱².ntshi²",
-    "GHC": "wa².tshji̱²",
-    "explanationEN": "what.are.you.talking.about?",
-    "explanationCN": "何言"
-  },
-  {
-    "word": "𘕣𘁟",
-    "GX": "vwa̱².do̱²",
-    "GHC": "wa².do²",
-    "explanationEN": "he.yi",
-    "explanationCN": "何异"
-  },
-  {
-    "word": "𘕣𘃡",
-    "GX": "vwa̱².vi¹",
-    "GHC": "wa².wji¹",
-    "explanationEN": "what.is",
-    "explanationCN": "何为"
-  },
-  {
-    "word": "𘕣𘄢",
-    "GX": "vwa̱².yaw¹",
-    "GHC": "wa².ꞏja̱¹",
-    "explanationEN": "what.can.i.do?",
-    "explanationCN": "奈何"
-  },
-  {
-    "word": "𘕣𘒣",
-    "GX": "vwa̱².da̱h²",
-    "GHC": "wa².dạ²",
-    "explanationEN": "what.are.you.talking.about?",
-    "explanationCN": "何言"
-  },
-  {
-    "word": "𘕣𘔼",
-    "GX": "vwa̱².nuo¹",
-    "GHC": "wa².nio̱w¹",
-    "explanationEN": "why(cause)",
-    "explanationCN": "为什么(原因）"
-  },
-  {
-    "word": "𘕣𘘣",
-    "GX": "vwa̱².yə²",
-    "GHC": "wa².ꞏjɨ²",
-    "explanationEN": "what.are.you.talking.about?",
-    "explanationCN": "何言"
-  },
-  {
-    "word": "𘕣𘟣",
-    "GX": "vwa̱².du¹",
-    "GHC": "wa².dju¹",
-    "explanationEN": "what.is.it?",
-    "explanationCN": "何有"
-  },
-  {
     "word": "𘕤𗜜",
     "GX": "yu².yo²",
     "GHC": "ꞏju².ꞏjo²",
@@ -115261,48 +113889,6 @@ const WORD_DATA = [
     "GHC": "njijr².phjo¹",
     "explanationEN": "zhu.qiao.(freeze.the.account)",
     "explanationCN": "诸巧(封号)"
-  },
-  {
-    "word": "𘕿𗁁",
-    "GX": "ġha̱².ve²",
-    "GHC": "ɣa².wjij²",
-    "explanationEN": "located.in",
-    "explanationCN": "位于"
-  },
-  {
-    "word": "𘕿𗄈",
-    "GX": "ġha̱².śow¹",
-    "GHC": "ɣa².śjwo¹",
-    "explanationEN": "began.in",
-    "explanationCN": "始于"
-  },
-  {
-    "word": "𘕿𗫡",
-    "GX": "ġha̱².nə²",
-    "GHC": "ɣa².njɨ²",
-    "explanationEN": "as.of",
-    "explanationCN": "至于"
-  },
-  {
-    "word": "𘕿𘂬",
-    "GX": "ġha̱².wo̱¹",
-    "GHC": "ɣa².ꞏo¹",
-    "explanationEN": "lies.in",
-    "explanationCN": "在于"
-  },
-  {
-    "word": "𘕿𘆑",
-    "GX": "ġha̱².gih²",
-    "GHC": "ɣa².gjị²",
-    "explanationEN": "depends.on",
-    "explanationCN": "依于"
-  },
-  {
-    "word": "𘕿𘕑",
-    "GX": "ġha̱².wu̱h¹",
-    "GHC": "ɣa².ꞏụ¹",
-    "explanationEN": "depends.on",
-    "explanationCN": "依于"
   },
   {
     "word": "𘖁𘖁",
@@ -116075,13 +114661,6 @@ const WORD_DATA = [
     "explanationCN": "钤"
   },
   {
-    "word": "𘗐～𘂆",
-    "GX": "de².tsə¹",
-    "GHC": "djij².tsjɨ¹",
-    "explanationEN": "ɪɴᴛʀɢ/ᴏᴘᴛ‖also/too/small/𝟤ᴅᴜ",
-    "explanationCN": "ɪɴᴛʀɢ/ᴏᴘᴛ‖也;小;𝟤ᴅᴜ"
-  },
-  {
     "word": "𘗒𗂞",
     "GX": "bu².mae̱¹",
     "GHC": "bju².miej¹",
@@ -116236,13 +114815,6 @@ const WORD_DATA = [
     "explanationCN": "巢窝"
   },
   {
-    "word": "𘗞𘃡",
-    "GX": "rvor².vi¹",
-    "GHC": "wjor².wji¹",
-    "explanationEN": "nesting",
-    "explanationCN": "筑巢"
-  },
-  {
     "word": "𘗠𗅉",
     "GX": "ġha̱¹.nuo¹",
     "GHC": "ɣa¹.niow¹",
@@ -116345,7 +114917,7 @@ const WORD_DATA = [
     "GX": "ġha̱¹.khu¹.vi¹",
     "GHC": "ɣa¹.khju¹.wji¹",
     "explanationEN": "doorman",
-    "explanationCN": "门客"
+    "explanationCN": "门下客"
   },
   {
     "word": "𘗠𗯴𗫻𗕪",
@@ -116482,56 +115054,56 @@ const WORD_DATA = [
   },
   {
     "word": "𘗫𗆴",
-    "GX": "lla̱h¹.la̱¹",
+    "GX": "la̱h¹.la̱¹",
     "GHC": "lạ¹.la¹",
     "explanationEN": "virtual.reality",
     "explanationCN": "虚实"
   },
   {
     "word": "𘗫𗤋",
-    "GX": "lla̱h¹.me¹",
+    "GX": "la̱h¹.me¹",
     "GHC": "lạ¹.mjij¹",
     "explanationEN": "innocent.sixty-four.hexagram.names",
     "explanationCN": "无妄六十四卦卦名"
   },
   {
     "word": "𘗫𘇩",
-    "GX": "lla̱h¹.ṇi¹",
+    "GX": "la̱h¹.ṇi¹",
     "GHC": "lạ¹.nji¹",
     "explanationEN": "deception",
     "explanationCN": "骗术"
   },
   {
     "word": "𘗫𘉇",
-    "GX": "lla̱h¹.dzi̱w²",
+    "GX": "la̱h¹.dzi̱w²",
     "GHC": "lạ¹.dzew²",
     "explanationEN": "deceit",
     "explanationCN": "诡诈"
   },
   {
     "word": "𘗫𘉖",
-    "GX": "lla̱h¹.rpwər¹",
+    "GX": "la̱h¹.rpwər¹",
     "GHC": "lạ¹.pjwɨ̱r¹",
     "explanationEN": "cheat",
     "explanationCN": "欺骗"
   },
   {
     "word": "𘗫𘒣",
-    "GX": "lla̱h¹.da̱h²",
+    "GX": "la̱h¹.da̱h²",
     "GHC": "lạ¹.dạ²",
     "explanationEN": "lie",
     "explanationCN": "诈言"
   },
   {
     "word": "𘗫𘗬",
-    "GX": "lla̱h¹.dźu¹",
+    "GX": "la̱h¹.dźu¹",
     "GHC": "lạ¹.dźju¹",
     "explanationEN": "cheat",
     "explanationCN": "欺骗"
   },
   {
     "word": "𘗫𘗯",
-    "GX": "lla̱h¹.rllo̱r¹",
+    "GX": "la̱h¹.rllo̱r¹",
     "GHC": "lạ¹.ljo̱r¹",
     "explanationEN": "fraud",
     "explanationCN": "欺诈"
@@ -116559,7 +115131,7 @@ const WORD_DATA = [
   },
   {
     "word": "𘗬𘗫",
-    "GX": "dźu¹.lla̱h¹",
+    "GX": "dźu¹.la̱h¹",
     "GHC": "dźju¹.lạ¹",
     "explanationEN": "cheat",
     "explanationCN": "欺骗"
@@ -116862,13 +115434,6 @@ const WORD_DATA = [
     "word": "𘗽𘃪",
     "GX": "zoh².dźwa¹",
     "GHC": "zjọ².dźjwa¹",
-    "explanationEN": "end.of.life",
-    "explanationCN": "寿终"
-  },
-  {
-    "word": "𘗽𘇂",
-    "GX": "zoh².ġu̱²",
-    "GHC": "zjọ².gu²",
     "explanationEN": "end.of.life",
     "explanationCN": "寿终"
   },
@@ -117412,13 +115977,6 @@ const WORD_DATA = [
     "explanationCN": "良师"
   },
   {
-    "word": "𘘚𘃡",
-    "GX": "ndze².vi¹",
-    "GHC": "dzji̱j².wji¹",
-    "explanationEN": "teacher",
-    "explanationCN": "为师"
-  },
-  {
     "word": "𘘚𘄽",
     "GX": "ndze².ŋa̱h²",
     "GHC": "dzji̱j².ŋạ²",
@@ -117741,25 +116299,11 @@ const WORD_DATA = [
     "explanationCN": "谓曰"
   },
   {
-    "word": "𘘦～𗌭",
-    "GX": "tśhow¹.qu̱¹",
-    "GHC": "tśhjwo¹.ku¹",
-    "explanationEN": "a.modal.auxiliary‖so",
-    "explanationCN": "故‖连词【鼓】【姑】【孤】【羖】【股】【孤】"
-  },
-  {
     "word": "𘘦𗖸",
     "GX": "tśhow¹.ŋŋwu̱¹",
     "GHC": "tśhjwo¹.ŋwu̱¹",
     "explanationEN": "therefore,.it.is.said",
     "explanationCN": "故曰"
-  },
-  {
-    "word": "𘘦𘔼",
-    "GX": "tśhow¹.nuo¹",
-    "GHC": "tśhjwo¹.nio̱w¹",
-    "explanationEN": "therefore",
-    "explanationCN": "因此"
   },
   {
     "word": "𘘨𗒒",
@@ -120672,20 +119216,6 @@ const WORD_DATA = [
     "GHC": "dźjị¹.dźjɨ̱r¹",
     "explanationEN": "banquet",
     "explanationCN": "筵席"
-  },
-  {
-    "word": "𘛡𘃡",
-    "GX": "dźih¹.vi¹",
-    "GHC": "dźjị¹.wji¹",
-    "explanationEN": "feast",
-    "explanationCN": "设筵"
-  },
-  {
-    "word": "𘛡𘃡𗼈𗵰",
-    "GX": "dźih¹.vi¹.nah¹.tih¹",
-    "GHC": "dźjị¹.wji¹.njạ¹.tjị¹",
-    "explanationEN": "feast.to.the.gods",
-    "explanationCN": "设筵祭神"
   },
   {
     "word": "𘛢𗩈",
@@ -123615,7 +122145,7 @@ const WORD_DATA = [
   },
   {
     "word": "𘝚𘗫",
-    "GX": "rkwər¹.lla̱h¹",
+    "GX": "rkwər¹.la̱h¹",
     "GHC": "kjwɨr¹.lạ¹",
     "explanationEN": "fraud",
     "explanationCN": "盗诈"
@@ -124412,13 +122942,6 @@ const WORD_DATA = [
     "explanationCN": "自家"
   },
   {
-    "word": "𘝵𗐱",
-    "GX": "ye¹.ni²",
-    "GHC": "ꞏjij¹.nji²",
-    "explanationEN": "self.pl",
-    "explanationCN": "己(复数)"
-  },
-  {
     "word": "𘝵𗒼",
     "GX": "ye¹.qhwe̱h¹",
     "GHC": "ꞏjij¹.khwẹj¹",
@@ -124783,13 +123306,6 @@ const WORD_DATA = [
     "explanationCN": "自有"
   },
   {
-    "word": "𘝵𘃡",
-    "GX": "ye¹.vi¹",
-    "GHC": "ꞏjij¹.wji¹",
-    "explanationEN": "self",
-    "explanationCN": "自为"
-  },
-  {
     "word": "𘝵𘄗",
     "GX": "ye¹.dzwəh¹",
     "GHC": "ꞏjij¹.dzjwɨ̣¹",
@@ -125005,13 +123521,6 @@ const WORD_DATA = [
     "GHC": "thjij².njwi²",
     "explanationEN": "how.can",
     "explanationCN": "焉能"
-  },
-  {
-    "word": "𘝶𗳒",
-    "GX": "the².ŋwu̱²",
-    "GHC": "thjij².ŋwu²",
-    "explanationEN": "how",
-    "explanationCN": "怎么会(理由)"
   },
   {
     "word": "𘝻𗀱",
@@ -125403,7 +123912,7 @@ const WORD_DATA = [
     "GX": "li².tsə¹",
     "GHC": "lji².tsjɨ¹",
     "explanationEN": "plum.fruit",
-    "explanationCN": "李子水果"
+    "explanationCN": "李子(水果)"
   },
   {
     "word": "𘝾𘄊",
@@ -125939,7 +124448,7 @@ const WORD_DATA = [
   },
   {
     "word": "𘞝𗢯",
-    "GX": "dzwə¹.lhwa¹",
+    "GX": "dzwə¹.llwa¹",
     "GHC": "dzjwɨ¹.lhjwa¹",
     "explanationEN": "slander",
     "explanationCN": "谗舌"
@@ -126055,13 +124564,6 @@ const WORD_DATA = [
     "GHC": "tjịj¹.dźji̱j¹",
     "explanationEN": "alone",
     "explanationCN": "独处"
-  },
-  {
-    "word": "𘞪𗸯",
-    "GX": "teh¹.dźwu¹",
-    "GHC": "tjịj¹.dźjwu¹",
-    "explanationEN": "only/unique‖benevolence/humanity",
-    "explanationCN": "1.独一、专印‖仁"
   },
   {
     "word": "𘞪𘈩",
@@ -126223,13 +124725,6 @@ const WORD_DATA = [
     "GHC": "ljij².ꞏjwĩ¹",
     "explanationEN": "ling.yin.(official.name)",
     "explanationCN": "令尹(官名)"
-  },
-  {
-    "word": "𘟀𗭪",
-    "GX": "le².si²",
-    "GHC": "ljij².sji²",
-    "explanationEN": "it.looks.useful.",
-    "explanationCN": "看用"
   },
   {
     "word": "𘟀𗶃",
@@ -126757,13 +125252,6 @@ const WORD_DATA = [
     "explanationCN": "王法"
   },
   {
-    "word": "𘟙𘃡",
-    "GX": "ne².vi¹",
-    "GHC": "njij².wji¹",
-    "explanationEN": "be.king",
-    "explanationCN": "为王"
-  },
-  {
     "word": "𘟙𘈷",
     "GX": "ne².gi²",
     "GHC": "njij².gji²",
@@ -127205,13 +125693,6 @@ const WORD_DATA = [
     "explanationCN": "生离"
   },
   {
-    "word": "𘟤𗈶",
-    "GX": "swuh².sə¹",
-    "GHC": "sjwụ².sjɨ¹",
-    "explanationEN": "life‖die",
-    "explanationCN": "生活‖死"
-  },
-  {
     "word": "𘟤𗈹",
     "GX": "swuh².nsi¹",
     "GHC": "sjwụ².sji̱¹",
@@ -127286,7 +125767,7 @@ const WORD_DATA = [
     "GX": "swuh².swuh²",
     "GHC": "sjwụ².sjwụ²",
     "explanationEN": "born",
-    "explanationCN": "生"
+    "explanationCN": "活、生"
   },
   {
     "word": "𘟥𗀀",
@@ -127308,13 +125789,6 @@ const WORD_DATA = [
     "GHC": "bə².ꞏjur¹",
     "explanationEN": "silkworm.breeding",
     "explanationCN": "育蚕"
-  },
-  {
-    "word": "𘟥𗐅",
-    "GX": "bə̱².be¹",
-    "GHC": "bə².bjij¹",
-    "explanationEN": "insect/maggot‖mend/patch",
-    "explanationCN": "虫蛆‖补衲"
   },
   {
     "word": "𘟥𗔨",
@@ -129865,7 +128339,7 @@ const CHARACTER_DATA = [
   },
   {
     "character": "𘗫",
-    "GX": "lla̱h¹",
+    "GX": "la̱h¹",
     "GHC": "lạ¹",
     "LFW": "0255",
     "explanationEN": "pretense/flattery",
@@ -135473,7 +133947,7 @@ const CHARACTER_DATA = [
   },
   {
     "character": "𗗠",
-    "GX": "nlhaa̱¹",
+    "GX": "nllaa̱¹",
     "GHC": "lhia̱²",
     "LFW": "0956",
     "explanationEN": "lick/wipe.away",
@@ -141628,8 +140102,8 @@ const CHARACTER_DATA = [
     "GX": "tse¹",
     "GHC": "tsjij¹",
     "LFW": "1724",
-    "explanationEN": "he/it",
-    "explanationCN": "他它彼"
+    "explanationEN": "ᴀɴᴛɪʀᴇꜰʟ",
+    "explanationCN": "ᴀɴᴛɪʀᴇꜰʟ"
   },
   {
     "character": "𘘩",
@@ -143957,7 +142431,7 @@ const CHARACTER_DATA = [
     "GHC": "nja̱²",
     "LFW": "2015",
     "explanationEN": "excrement",
-    "explanationCN": "粪便"
+    "explanationCN": "牛粪"
   },
   {
     "character": "𘊀",
@@ -144309,7 +142783,7 @@ const CHARACTER_DATA = [
     "GHC": "lhjị²",
     "LFW": "2059",
     "explanationEN": "excrement/dung",
-    "explanationCN": "粪便"
+    "explanationCN": "羊粪"
   },
   {
     "character": "𘉶",
@@ -150509,7 +148983,7 @@ const CHARACTER_DATA = [
     "GHC": "djɨj²",
     "LFW": "2833",
     "explanationEN": "calm/quiet",
-    "explanationCN": "定】"
+    "explanationCN": "【定】"
   },
   {
     "character": "𗹿",
@@ -153377,7 +151851,7 @@ const CHARACTER_DATA = [
   },
   {
     "character": "𗢯",
-    "GX": "lhwa¹",
+    "GX": "llwa¹",
     "GHC": "lhjwa¹",
     "LFW": "3190",
     "explanationEN": "tongue",
@@ -155857,11 +154331,11 @@ const CHARACTER_DATA = [
   },
   {
     "character": "𗡻",
-    "GX": "lə¹",
+    "GX": "llə¹",
     "GHC": "ljɨ¹",
     "LFW": "3499",
     "explanationEN": "excrement/dung",
-    "explanationCN": "屎粪"
+    "explanationCN": "狗粪"
   },
   {
     "character": "𗆹",
@@ -156885,7 +155359,7 @@ const CHARACTER_DATA = [
     "GHC": "nji²",
     "LFW": "3627",
     "explanationEN": "whispered/quiet/secret",
-    "explanationCN": "窃窃谆谆低声悄悄暗暗阴谋"
+    "explanationCN": "悄悄"
   },
   {
     "character": "𗤩",
@@ -157213,7 +155687,7 @@ const CHARACTER_DATA = [
     "GHC": "ljị¹",
     "LFW": "3668",
     "explanationEN": "plant/cultivate",
-    "explanationCN": "1.耕种植、农、结"
+    "explanationCN": "耕种"
   },
   {
     "character": "𗽮",
@@ -160805,7 +159279,7 @@ const CHARACTER_DATA = [
     "GHC": "mur¹",
     "LFW": "4117",
     "explanationEN": "tree/wood",
-    "explanationCN": "木】"
+    "explanationCN": "【木】"
   },
   {
     "character": "𗞌",
@@ -160821,7 +159295,7 @@ const CHARACTER_DATA = [
     "GHC": "pie¹",
     "LFW": "4119",
     "explanationEN": "cypress",
-    "explanationCN": "柏】"
+    "explanationCN": "【柏】"
   },
   {
     "character": "𗞭",
@@ -163757,7 +162231,7 @@ const CHARACTER_DATA = [
     "GHC": "phji̱²",
     "LFW": "4486",
     "explanationEN": "sensitive/dexterous",
-    "explanationCN": "1.灵巧灵敏、批"
+    "explanationCN": "灵巧、轻灵【批】"
   },
   {
     "character": "𗷔",
@@ -172660,8 +171134,8 @@ const CHARACTER_DATA = [
     "GX": "gwi²",
     "GHC": "gjwi²",
     "LFW": "5598",
-    "explanationEN": "clothes/clothing",
-    "explanationCN": "衣服"
+    "explanationEN": "clothes/to.put.on",
+    "explanationCN": "衣服；穿、着"
   },
   {
     "character": "𘂱",
@@ -173389,7 +171863,7 @@ const CHARACTER_DATA = [
     "GHC": "ɣa¹",
     "LFW": "5689",
     "explanationEN": "door/gate/room",
-    "explanationCN": "门室屋宅计"
+    "explanationCN": "门室屋宅【计】"
   },
   {
     "character": "𘁺",
