@@ -136437,7 +136437,7 @@ const CHARACTER_DATA = [
     "character": "𗈕",
     "GX": "ẓai̱²",
     "GHC": "",
-    "LFW": "67-A",
+    "LFW": "1267-A",
     "explanationEN": "boil.in.a.covered.pot.over.a.slow.fire/braise",
     "explanationCN": "在有盖的锅中用慢火煮;炖"
   },
@@ -136445,7 +136445,7 @@ const CHARACTER_DATA = [
     "character": "𗈊",
     "GX": "ẓai̱²",
     "GHC": "źie²",
-    "LFW": "67-B",
+    "LFW": "1267-B",
     "explanationEN": "boil.in.a.covered.pot.over.a.slow.fire/braise",
     "explanationCN": "在有盖的锅中用慢火煮;炖"
   },
@@ -140111,7 +140111,7 @@ const CHARACTER_DATA = [
     "GHC": "kjɨ²",
     "LFW": "1725",
     "explanationEN": "an.animal.looks.like.a.deer",
-    "explanationCN": "麂】"
+    "explanationCN": "【麂】"
   },
   {
     "character": "𗶔",
@@ -148701,7 +148701,7 @@ const CHARACTER_DATA = [
     "character": "𗽍",
     "GX": "ndwə̱¹",
     "GHC": "dwə̣¹",
-    "LFW": "99-A",
+    "LFW": "2799-A",
     "explanationEN": "protruding",
     "explanationCN": "突出"
   },
@@ -148709,7 +148709,7 @@ const CHARACTER_DATA = [
     "character": "𗽎",
     "GX": "ndwə̱¹",
     "GHC": "",
-    "LFW": "99-B",
+    "LFW": "2799-B",
     "explanationEN": "protruding",
     "explanationCN": "突出"
   },
@@ -149845,7 +149845,7 @@ const CHARACTER_DATA = [
     "character": "𗁙",
     "GX": "rkər²",
     "GHC": "kjɨ̱r²",
-    "LFW": "41-A",
+    "LFW": "2941-A",
     "explanationEN": "fence,.fold",
     "explanationCN": "栅栏，折迭"
   },
@@ -149853,7 +149853,7 @@ const CHARACTER_DATA = [
     "character": "𗁚",
     "GX": "rkər²",
     "GHC": "",
-    "LFW": "41-B",
+    "LFW": "2941-B",
     "explanationEN": "fence,.fold",
     "explanationCN": "栅栏，折迭"
   },
@@ -150381,7 +150381,7 @@ const CHARACTER_DATA = [
     "character": "𗌕",
     "GX": "?ar²",
     "GHC": "-jar²",
-    "LFW": "07-A",
+    "LFW": "3007-A",
     "explanationEN": "net",
     "explanationCN": "网"
   },
@@ -150389,7 +150389,7 @@ const CHARACTER_DATA = [
     "character": "𗌖",
     "GX": "?ar²",
     "GHC": "-jar²",
-    "LFW": "07-B",
+    "LFW": "3007-B",
     "explanationEN": "net",
     "explanationCN": "网"
   },
@@ -152621,7 +152621,7 @@ const CHARACTER_DATA = [
     "character": "𗧧",
     "GX": "li²",
     "GHC": "lji²",
-    "LFW": "86-A",
+    "LFW": "3286-A",
     "explanationEN": "spoil.(a.child)/dote.(a.child)",
     "explanationCN": "宠坏（一个孩子）;todote（一个孩子）"
   },
@@ -152629,7 +152629,7 @@ const CHARACTER_DATA = [
     "character": "𗨢",
     "GX": "li²",
     "GHC": "lji²",
-    "LFW": "86-B",
+    "LFW": "3286-B",
     "explanationEN": "spoil.(a.child)/dote.(a.child)",
     "explanationCN": "宠坏（一个孩子）;todote（一个孩子）"
   },
@@ -167541,7 +167541,7 @@ const CHARACTER_DATA = [
     "character": "𗮐",
     "GX": "nthu̱¹",
     "GHC": "thu̱¹",
-    "LFW": "50-A",
+    "LFW": "5150-A",
     "explanationEN": "beg/request/demand",
     "explanationCN": "求"
   },
@@ -167549,7 +167549,7 @@ const CHARACTER_DATA = [
     "character": "𗮑",
     "GX": "nthu̱¹",
     "GHC": "",
-    "LFW": "50-B",
+    "LFW": "5150-B",
     "explanationEN": "beg/request/demand",
     "explanationCN": "求"
   },
@@ -174269,7 +174269,7 @@ const CHARACTER_DATA = [
     "character": "𘌇",
     "GX": "no̱h²",
     "GHC": "ku²",
-    "LFW": "90-A",
+    "LFW": "5990-A",
     "explanationEN": "a.transliteration",
     "explanationCN": "音译"
   },
@@ -174277,7 +174277,7 @@ const CHARACTER_DATA = [
     "character": "𘟱",
     "GX": "no̱h²",
     "GHC": "",
-    "LFW": "90-B",
+    "LFW": "5990-B",
     "explanationEN": "a.transliteration",
     "explanationCN": "音译"
   },
