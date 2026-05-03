@@ -1,35 +1,120 @@
-// 加载字典数据
-async function loadDictionary() {
+// Global variable to hold the database instance
+let db, stmts;
+
+// Initialize the database directly within an anonymous async function
+(async () => {
     try {
-        const response = await fetch('dictionary.js');
-        const data = await response.json();
+        // 1. Initialize the WebAssembly engine
+        const SQL = await initSqlJs({
+            locateFile: file => `https://sql.js.org/dist/${file}`
+        });
+
+        // 2. Fetch the database file as binary data
+        const resp = await fetch('./tgt_data.db');
+        if (!resp.ok) throw new Error(`Fetch failed: ${resp.status}`);
         
-        // 初始化词典
-        wordDictionary = data.WORD_DATA.reduce((acc, entry) => {
-            acc[entry.word] = entry;
-            return acc;
-        }, {});
-        
-        // 初始化字典
-        dictionary = data.CHARACTER_DATA.reduce((acc, entry) => {
-            acc[entry.character] = entry;
-            return acc;
-        }, {});
+        const buf = await resp.arrayBuffer();
+
+        // 3. Assign the created instance to the 'db' variable
+        db = new SQL.Database(new Uint8Array(buf));
+
+        console.log("Database is ready directly:", db);
+
+        // Pre-compile SQL statements for better performance.
+        // This avoids recompiling the SQL string for every single lookup.
+        stmts = (() => {
+            const _instances = {
+                word: db.prepare('SELECT * FROM WORD_DATA WHERE word LIKE ? LIMIT ?'),
+                char: db.prepare('SELECT * FROM CHARACTER_DATA WHERE character = ? LIMIT ?')
+            };
+
+            const _fetchAndReset = (stmt) => {
+                    const results = [];
+                    try {
+                        while (stmt.step()) {
+                            results.push(stmt.getAsObject());
+                        }
+                    } finally {
+                        stmt.reset(); // reset if error
+                    }
+                    return results;
+                };
+
+            // --- Public API ---
+            // open as 'stmts'
+        return {
+                /**
+                 *  Partial/whole match with the specified word
+                 * @param {string} searchWord 
+                 * @param {int} limit - limit count for getting data
+                 */
+                getWordData(searchWord, limit = 1) {
+                    const stmt = _instances.word;
+                    // LIKE statement
+                    const lim = limit > 0 ? limit : 1;
+                    stmt.bind([`${searchWord}`, lim]);
+                    const results = _fetchAndReset(stmt);
+                    if (lim == 1) {
+                        if (!!results && results.length > 0) {
+                            return results[0];
+                        } else{
+                            return null;
+                        }
+                    }
+                    return results;
+                },
+
+                /**
+                 * Contains the specified char 
+                 * @param {string} char - one word(char)
+                 * @param {int} limit - limit count for getting data
+                 */
+                getCharData(char, limit = 1) {
+                    const stmt = _instances.char;
+                    const lim = limit > 0 ? limit : 1;
+                    stmt.bind([char, lim]);
+                    const results = _fetchAndReset(stmt);
+                    if (lim == 1) {
+                        if (!!results && results.length > 0) {
+                            return results[0];
+                        } else{
+                            return null;
+                        }
+                    }
+                    return results;
+                },
+
+                // free method
+                free() {
+                    Object.values(_instances).forEach(s => s.free());
+                }
+            };
+        })();
+
+        // Start your application logic here (e.g., render UI)
     } catch (error) {
-        alert('加载字典文件时出错：' + error);
+        console.error('Failed to initialize database:', error);
     }
-}
+})();
 
-// 检查是否在词典中存在该词
+
+/**
+ * Checks if a word exists in the WORD_DATA table.
+ * @param {string|Array} chars - The string or array of characters to check.
+ */
 function checkWordInDictionary(chars) {
-    // 如果输入是数组，将其合并为字符串
     const word = Array.isArray(chars) ? chars.join('') : chars;
-    return wordDictionary[word] ? true : false;
+    const entry = stmts.getWordData(word);
+    return !!entry; // Returns true if record exists, false otherwise
 }
 
-// 获取词的解释
+/**
+ * Retrieves the explanation for a specific word from the DB.
+ * @param {string} word - The word key.
+ * @param {string} lang - Language suffix (e.g., 'EN', 'CN').
+ */
 function getWordExplanation(word, lang) {
-    const entry = wordDictionary[word];
+    const entry = stmts.getWordData(word);
     return entry ? entry[`explanation${lang}`] || '' : '';
 }
 
@@ -165,19 +250,21 @@ function expandCombineRules(rules) {
 // 初始化时展开规则
 const EXPANDED_COMBINE_RULES = expandCombineRules(COMBINE_RULES);
 
-// 获取解释的逻辑
+
+/**
+ * Main logic to retrieve character explanation, handling complex combining rules.
+ */
 function getExplanation(char, lang, prevChar, nextChar) {
-    // 检查是否有变体规则
+    // 1. Check for special variant rules in static configuration
     const rules = EXPANDED_COMBINE_RULES.characters[char];
     if (rules?.variants) {
         const variant = rules.variants.find(v => v.condition(prevChar, nextChar));
         if (variant) {
-            const explanation = variant[`explanation${lang}`];
-            return explanation || '';
+            return variant[`explanation${lang}`] || '';
         }
     }
 
-    // 检查是否包含连接符
+    // 2. Handle compound characters separated by '-' or '='
     if (char.includes('-') || char.includes('=')) {
         const connectors = char.match(/[-=]/g);
         const parts = char.split(/[-=]/);
@@ -185,34 +272,41 @@ function getExplanation(char, lang, prevChar, nextChar) {
 
         for (let i = 0; i < parts.length; i++) {
             const part = parts[i];
-            // 为每个部分正确传递上下文
             const prevPart = i > 0 ? parts[i - 1] : prevChar;
             const nextPart = i < parts.length - 1 ? parts[i + 1] : nextChar;
             
-            // 先检查这个部分是否有变体规则
             const partRules = EXPANDED_COMBINE_RULES.characters[part];
             if (partRules?.variants) {
                 const variant = partRules.variants.find(v => v.condition(prevPart, nextPart));
                 if (variant) {
                     explanation += variant[`explanation${lang}`] || '';
                 } else {
-                    explanation += dictionary[part] ? dictionary[part][`explanation${lang}`] || '' : '';
+                    explanation += fetchCharFromDb(part, lang);
                 }
             } else {
-                explanation += dictionary[part] ? dictionary[part][`explanation${lang}`] || '' : '';
+                explanation += fetchCharFromDb(part, lang);
             }
 
+            // Re-attach the connector symbol if present
             if (connectors && connectors[i]) {
                 explanation += connectors[i];
             }
         }
-
         return explanation;
     }
 
-    // 查询字典
-    const dictExplanation = dictionary[char] ? dictionary[char][`explanation${lang}`] || '' : '';
-    return dictExplanation;
+    // 3. Fallback to standard character dictionary lookup
+    return fetchCharFromDb(char, lang);
+}
+
+/**
+ * Internal helper to query CHARACTER_DATA table.
+ * @param {string} char - The character to look up.
+ * @param {string} lang - Language suffix.
+ */
+function fetchCharFromDb(char, lang) {
+    const entry = stmts.getCharData(char);
+    return entry ? entry[`explanation${lang}`] || '' : '';
 }
 
 // 将数字转换为上标形式的辅助函数
@@ -227,10 +321,11 @@ function toSuperscript(num) {
 
 // 获取带LFW上标的字符
 function getCharWithLFW(char) {
-  if (dictionary[char] && dictionary[char].LFW) {
-    return char + toSuperscript(dictionary[char].LFW);
-  }
-  return char;
+    const entry = stmts.getCharData(char);
+    if (entry && entry.LFW) {
+        return char + toSuperscript(entry.LFW);
+    }
+    return char;
 }
 
 // 处理字符和字符组合的LFW编号
@@ -261,9 +356,13 @@ const FORMAT_SEPARATORS = {
 function processCombination(items) {
     const result = [];
     let i = 0;
-
+    console.log("items.count=", items.length);
     while (i < items.length) {
         const currentItem = items[i];
+        if (currentItem.trim().length < 1) {
+            i++;
+            continue;
+        }
 
         // 如果是标点符号，直接处理
         if (/[\p{P}\s]/u.test(currentItem)) {
@@ -283,7 +382,7 @@ function processCombination(items) {
             const matchedWord = findExactMatch(items, i, possibleWords);
             if (matchedWord) {
                 // 获取词组的格式信息
-                const wordEntry = wordDictionary[matchedWord.word];
+                const wordEntry = stmts.getWordData(matchedWord.word);
                 let formattedWord = matchedWord.word;
                 if (wordEntry && wordEntry.format && wordEntry.format.prefix) {
                     formattedWord = wordEntry.format.prefix + formattedWord;
@@ -398,18 +497,21 @@ function processCombination(items) {
 
 // 查找以指定字符开头的所有词组
 function findWordsStartingWith(char) {
-    const matches = [];
-    for (const word in wordDictionary) {
-        // 将词组转换为字符数组进行比较
-        if ([...word][0] === char) {  // 使用数组解构来正确处理 Unicode 字符
-            matches.push({
-                word,
-                length: [...word].length,  // 使用数组长度来获取正确的字符数
-                priority: wordDictionary[word].priority || 0
-            });
-        }
+    if (!!char && char.trim().length < 1) {
+        return [];
     }
-    
+    const entries = stmts.getWordData(char + "%", limit = 100)
+
+    const matches = (entries || [])
+        .map(({word, priority}) => {
+        // 将词组转换为字符数组进行比较
+        return {
+            word,
+            length: [...word], // 使用数组长度来获取正确的字符数
+            priority: priority || 0
+        };
+    });
+
     // 按优先级和长度排序
     return matches.sort((a, b) => {
         if (a.priority !== b.priority) {
@@ -544,10 +646,10 @@ function generateTypstOutput(chars, lang, readingSystem) {
     // 处理读音
     const rawReadings = processedChars.map((char, index) => {
         // 首先检查是否在词典中
-        if (wordDictionary[char]) {
-            const reading = readingSystem === 'GX' ? wordDictionary[char].GX : wordDictionary[char].GHC;
+        let entry = stmts.getWordData(char);
+        if (!!entry) {
+            const reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
             // 检查是否需要添加前缀
-            const entry = wordDictionary[char];
             if (entry.format && entry.format.prefix) {
                 return entry.format.prefix + reading.replace(/[\[\]]/g, '');
             }
@@ -561,19 +663,22 @@ function generateTypstOutput(chars, lang, readingSystem) {
             
             return parts.map((part, idx) => {
                 let reading = '';
+                let entry = stmts.getWordData(part);
                 // 检查是否是词组
-                if (wordDictionary[part]) {
-                    reading = readingSystem === 'GX' ? wordDictionary[part].GX : wordDictionary[part].GHC;
+                if (!!entry) {
+                    reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
                     reading = reading.replace(/[\[\]]/g, '');
-                } else if (dictionary[part]) {
-                    reading = readingSystem === 'GX' ? dictionary[part].GX : dictionary[part].GHC;
+                } else {
+                    entry = stmts.getCharData(part);
+                    reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
                 }
                 return idx < parts.length - 1 ? 
                     `${reading || ''}${connectors[idx]}` : (reading || '');
             }).join('');
         }
-        if (dictionary[char]) {
-            const reading = readingSystem === 'GX' ? dictionary[char].GX : dictionary[char].GHC;
+        entry = stmts.getCharData(char)
+        if (!!entry) {
+            const reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
             return reading || '';
         } else if (/[\p{P}\s]/u.test(char)) {
             return char;
@@ -587,8 +692,9 @@ function generateTypstOutput(chars, lang, readingSystem) {
     // 处理词义解释
     const rawMorphemes = processedChars.map((char, index, array) => {
         // 首先检查是否在词典中
-        if (wordDictionary[char]) {
-            return processTypstBrackets(wordDictionary[char][`explanation${lang}`] || '');
+        let entry = stmts.getWordData(char);
+        if (!!entry) {
+            return processTypstBrackets(entry[`explanation${lang}`] || '');
         }
         
         const prevChar = index > 0 ? array[index - 1] : null;
@@ -601,8 +707,9 @@ function generateTypstOutput(chars, lang, readingSystem) {
             
             const explanations = parts.map((part, idx) => {
                 // 检查是否是词组
-                if (wordDictionary[part]) {
-                    return wordDictionary[part][`explanation${lang}`] || '';
+                entry = stmts.getWordData(part);
+                if (!!entry) {
+                    return entry[`explanation${lang}`] || '';
                 }
                 const prevPart = idx > 0 ? parts[idx - 1] : prevChar;
                 const nextPart = idx < parts.length - 1 ? parts[idx + 1] : nextChar;
@@ -644,10 +751,10 @@ function generateObsidianOutput(chars, lang, readingSystem) {
     // 处理音读部分
     const rawReadings = processedChars.map((char, index) => {
         // 首先检查是否在词典中
-        if (wordDictionary[char]) {
-            const reading = readingSystem === 'GX' ? wordDictionary[char].GX : wordDictionary[char].GHC;
+        let entry = stmts.getWordData(char);
+        if (!!entry) {
+            const reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
             // 检查是否需要添加前缀
-            const entry = wordDictionary[char];
             if (entry.format && entry.format.prefix) {
                 return entry.format.prefix + reading.replace(/[\[\]]/g, '');
             }
@@ -661,19 +768,25 @@ function generateObsidianOutput(chars, lang, readingSystem) {
             
             return parts.map((part, idx) => {
                 let reading = '';
+                let entry = stmts.getWordData(part);
                 // 检查是否是词组
-                if (wordDictionary[part]) {
-                    reading = readingSystem === 'GX' ? wordDictionary[part].GX : wordDictionary[part].GHC;
+                if (!!entry) {
+                    reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
                     reading = reading.replace(/[\[\]]/g, '');
-                } else if (dictionary[part]) {
-                    reading = readingSystem === 'GX' ? dictionary[part].GX : dictionary[part].GHC;
+                } else {
+                    entry = stmts.getCharData(part);
+                    if (!!entry) {
+                        reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
+                    }
                 }
                 return idx < parts.length - 1 ? 
                     `${reading || ''}${connectors[idx]}` : (reading || '');
             }).join('');
         }
-        if (dictionary[char]) {
-            const reading = readingSystem === 'GX' ? dictionary[char].GX : dictionary[char].GHC;
+        
+        entry = stmts.getCharData(char);
+        if (!!entry) {
+            const reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
             return reading || '';
         } else if (/[\p{P}\s]/u.test(char)) {
             return char;
@@ -684,10 +797,10 @@ function generateObsidianOutput(chars, lang, readingSystem) {
     // 处理词义解释部分
     const morphemes = processedChars.map((char, index, array) => {
         // 首先检查是否在词典中
-        if (wordDictionary[char]) {
-            const explanation = wordDictionary[char][`explanation${lang}`] || '';
+        const entry = stmts.getWordData(char);
+        if (!!entry) {
+            const explanation = entry[`explanation${lang}`] || '';
             // 检查是否需要添加前缀
-            const entry = wordDictionary[char];
             if (entry.format && entry.format.prefix) {
                 return entry.format.prefix + explanation;
             }
@@ -704,8 +817,9 @@ function generateObsidianOutput(chars, lang, readingSystem) {
             
             const explanations = parts.map((part, idx) => {
                 // 检查是否是词组
-                if (wordDictionary[part]) {
-                    return wordDictionary[part][`explanation${lang}`] || '';
+                const entry = stmts.getWordData(part);
+                if (!!entry) {
+                    return entry[`explanation${lang}`] || '';
                 }
                 const prevPart = idx > 0 ? parts[idx - 1] : prevChar;
                 const nextPart = idx < parts.length - 1 ? parts[idx + 1] : nextChar;
@@ -813,20 +927,24 @@ function generatePlainTextOutput(chars, lang, readingSystem) {
         
         // 处理读音
         let reading = '';
-        if (wordDictionary[char]) {
-            reading = readingSystem === 'GX' ? wordDictionary[char].GX : wordDictionary[char].GHC;
+        const entry = stmts.getWordData(char);
+        if (!!entry) {
+            reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
             reading = reading.replace(/[\[\]]/g, '');
         } else if (char.includes('-') || char.includes('=')) {
             reading = getConnectedReading(char, readingSystem);
-        } else if (dictionary[char]) {
-            reading = readingSystem === 'GX' ? dictionary[char].GX : dictionary[char].GHC;
+        } else {
+            entry = stmts.getCharData(char);
+            if (!!entry) {
+                reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
+            }
         }
         currentReadingGroup += reading;
         
         // 处理词义
         let morpheme = '';
-        if (wordDictionary[char]) {
-            morpheme = wordDictionary[char][`explanation${lang}`] || '';
+        if (!!entry) {
+            morpheme = entry[`explanation${lang}`] || '';
         } else {
             const prevChar = index > 0 ? array[index - 1] : null;
             const nextChar = index < array.length - 1 ? array[index + 1] : null;
@@ -886,11 +1004,15 @@ function getConnectedReading(char, readingSystem) {
     
     return parts.map((part, idx) => {
         let reading = '';
-        if (wordDictionary[part]) {
-            reading = readingSystem === 'GX' ? wordDictionary[part].GX : wordDictionary[part].GHC;
+        let entry = stmts.getWordData(part)
+        if (!!entry) {
+            reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
             reading = reading.replace(/[\[\]]/g, '');
-        } else if (dictionary[part]) {
-            reading = readingSystem === 'GX' ? dictionary[part].GX : dictionary[part].GHC;
+        } else {
+            entry = stmts.getCharData(part)
+            if (!!entry) {
+                reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
+            }
         }
         return idx < parts.length - 1 ? 
             `${reading || ''}${connectors[idx]}` : (reading || '');
@@ -1175,9 +1297,10 @@ function toSuperscript(num) {
 function getCharWithLFW(char) {
     // 检查是否启用LFW编号显示
     const showLFW = document.getElementById('show-lfw').checked;
-    
-    if (showLFW && dictionary[char] && dictionary[char].LFW) {
-        return char + toSuperscript(dictionary[char].LFW);
+    const entry = stmts.getCharData(char)
+
+    if (showLFW && !!entry && entry.LFW) {
+        return char + toSuperscript(entry.LFW);
     }
     return char;
 }
