@@ -91,6 +91,14 @@
     <title>西夏文自动标注工具 α | Tangut Script Annotation Tool α</title>
 
     <style>
+        @font-face {
+            font-family: 'Tangut N4694';
+            src: url('./Tangut_N4694_V17.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            unicode-range: U+17000-187FF;
+        }
+
         :root {
             --primary-color: #4a90e2;
             --secondary-color: #f5f7fa;
@@ -102,7 +110,7 @@
         }
 
         body {
-            font-family: 'Fira Sans', 'Noto Serif SC', 'Noto Serif Tangut', sans-serif;
+            font-family: 'Fira Sans', 'Tangut N4694', 'Noto Serif SC', 'Noto Serif Tangut', sans-serif;
             max-width: var(--max-container-width);
             min-width: var(--min-container-width);
             margin: clamp(20px, 4vw, 40px) auto;
@@ -319,7 +327,7 @@
             min-width: 40px;
             min-height: 40px;
             padding: 8px;
-            font-family: "Noto Serif Tangut", "Noto Serif SC", system-ui, -apple-system, sans-serif;
+            font-family: 'Tangut N4694', "Noto Serif Tangut", "Noto Serif SC", system-ui, -apple-system, sans-serif;
             font-size: clamp(14px, 1.6vw, 16px);
             font-weight: normal;
             line-height: 1;
@@ -577,7 +585,7 @@
 
         <div class="output-section">
             <label for="output-text" data-i18n="format-output">格式输出：</label>
-            <textarea id="output-text" style="font-family: Fira Sans, Noto Serif Tangut, Noto Serif SC, sans-serif;"></textarea>
+            <textarea id="output-text" style="font-family: Fira Sans, 'Tangut N4694', 'Noto Serif Tangut', 'Noto Serif SC', sans-serif;"></textarea>
             <button onclick="copyOutput()" id="copy-btn" data-i18n="copy-clipboard">复制到剪贴板</button>
         </div>
     </div>

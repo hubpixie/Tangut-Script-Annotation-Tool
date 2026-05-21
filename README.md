@@ -34,23 +34,23 @@
 - 实时显示检索结果
 
 可用的笔画代码:
-- A: 一
-- B: 丨
-- C: 丿
-- D: 丶
-- E: 𠃍
-- F: ㇈
-- G: ㇇
-- H: 𘠄
-- I: 𘠅
-- J: 𠄎
-- K: ㇍（𘇥上部，不含丶）
-- L: 𠄌
-- M: 乚
-- N: ㇊（𗕷左下角）
-- O: 𘠈
-- P: 𡿨
-- Q: ㇏
+- A: 橫 <img src="img/A.png" alt="A" style="height:1em; vertical-align:baseline" />
+- B: 竖 <img src="img/B.png" alt="B" style="height:1em; vertical-align:baseline" />
+- C: 撇 <img src="img/C.png" alt="C" style="height:1em; vertical-align:baseline" />
+- D: 点 <img src="img/D.png" alt="D" style="height:1em; vertical-align:baseline" />
+- E: 横折 <img src="img/E.png" alt="E" style="height:1em; vertical-align:baseline" />
+- F: 横折弯钩 <img src="img/F.png" alt="F" style="height:1em; vertical-align:baseline" />
+- G: 横撇 <img src="img/G.png" alt="G" style="height:1em; vertical-align:baseline" />
+- H: 横折折撇 <img src="img/H.png" alt="H" style="height:1em; vertical-align:baseline" />
+- I: 横折折折撇 <img src="img/I.png" alt="I" style="height:1em; vertical-align:baseline" />
+- J: 横折折折勾 <img src="img/J.png" alt="J" style="height:1em; vertical-align:baseline" />
+- K: 横折横 <img src="img/K.png" alt="K" style="height:1em; vertical-align:baseline" />
+- L: 撇折 <img src="img/L.png" alt="L" style="height:1em; vertical-align:baseline" />
+- M: 竖弯钩 <img src="img/M.png" alt="M" style="height:1em; vertical-align:baseline" />
+- N: 横撇点提 <img src="img/N.png" alt="N" style="height:1em; vertical-align:baseline" />
+- O: 撇点提 <img src="img/O.png" alt="O" style="height:1em; vertical-align:baseline" />
+- P: 撇捺 <img src="img/P.png" alt="P" style="height:1em; vertical-align:baseline" />
+- Q: 捺 <img src="img/Q.png" alt="Q" style="height:1em; vertical-align:baseline" />
 
 ## 技术特性
 
@@ -121,23 +121,23 @@ The tool provides stroke-based search with the following features:
 - Real-time search results
 
 Available stroke codes:
-- A: Horizontal (一)
-- B: Vertical (丨) 
-- C: Falling (丿)
-- D: Dot (丶)
-- E: Hook (𠃍)
-- F: Rising hook (㇈)
-- G: Curved hook (㇇) 
-- H: Double hook (𘠄)
-- I: Triple hook (𘠅)
-- J: Curved stroke (𠄎)
-- K: Upper curve (㇍)
-- L: Angled hook (𠄌)
-- M: Curved tail (乚)
-- N: Lower left hook (㇊)
-- O: Complex hook (𘠈)
-- P: Double curve (𡿨)
-- Q: Diagonal (㇏)
+- A: Horizontal <img src="img/A.png" alt="A" style="height:1em; vertical-align:baseline" />
+- B: Vertical <img src="img/B.png" alt="B" style="height:1em; vertical-align:baseline" />
+- C: Falling <img src="img/C.png" alt="C" style="height:1em; vertical-align:baseline" />
+- D: Dot <img src="img/D.png" alt="D" style="height:1em; vertical-align:baseline" />
+- E: Horizontal-fold <img src="img/E.png" alt="E" style="height:1em; vertical-align:baseline" />
+- F: Horizontal-fold-curved-hook <img src="img/F.png" alt="F" style="height:1em; vertical-align:baseline" />
+- G: Horizontal-falling <img src="img/G.png" alt="G" style="height:1em; vertical-align:baseline" />
+- H: Horizontal-fold-fold-falling <img src="img/H.png" alt="H" style="height:1em; vertical-align:baseline" />
+- I: Horizontal-fold-fold-fold-falling <img src="img/I.png" alt="I" style="height:1em; vertical-align:baseline" />
+- J: Horizontal-fold-fold-fold-hook <img src="img/J.png" alt="J" style="height:1em; vertical-align:baseline" />
+- K: Horizontal-fold-horizontal <img src="img/K.png" alt="K" style="height:1em; vertical-align:baseline" />
+- L: Falling-fold <img src="img/L.png" alt="L" style="height:1em; vertical-align:baseline" />
+- M: Vertical-curved-hook <img src="img/M.png" alt="M" style="height:1em; vertical-align:baseline" />
+- N: Horizontal-falling-dot-rising <img src="img/N.png" alt="N" style="height:1em; vertical-align:baseline" />
+- O: Falling-dot-rising <img src="img/O.png" alt="O" style="height:1em; vertical-align:baseline" />
+- P: Falling-rising <img src="img/P.png" alt="P" style="height:1em; vertical-align:baseline" />
+- Q: Rising <img src="img/Q.png" alt="Q" style="height:1em; vertical-align:baseline" />
 
 ## Technical Features
 
