@@ -927,10 +927,10 @@ function generatePlainTextOutput(chars, lang, readingSystem) {
         
         // 处理读音
         let reading = '';
-        const entry = stmts.getWordData(char);
+        let entry = stmts.getWordData(char);
         if (!!entry) {
             reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
-            reading = reading.replace(/[\[\]]/g, '');
+            reading = reading ? reading.replace(/[\[\]]/g, '') : '';
         } else if (char.includes('-') || char.includes('=')) {
             reading = getConnectedReading(char, readingSystem);
         } else {
@@ -939,12 +939,17 @@ function generatePlainTextOutput(chars, lang, readingSystem) {
                 reading = readingSystem === 'GX' ? entry.GX : entry.GHC;
             }
         }
+        if (!reading && /[\p{P}\s]/u.test(char)) {
+            reading = char;
+        }
         currentReadingGroup += reading;
         
         // 处理词义
         let morpheme = '';
         if (!!entry) {
             morpheme = entry[`explanation${lang}`] || '';
+        } else if (/[\p{P}\s]/u.test(char)) {
+            morpheme = char;
         } else {
             const prevChar = index > 0 ? array[index - 1] : null;
             const nextChar = index < array.length - 1 ? array[index + 1] : null;
@@ -1048,25 +1053,25 @@ function handleGenerate() {
     generate();
 }
 const strokeData = [
-    { code: 'A', alt: '𘠀' },
-    { code: 'B', alt: '𘠁' },
-    { code: 'C', alt: '𘠂' },
-    { code: 'D', alt: '𘶃' },
-    { code: 'E', alt: '' },
-    { code: 'F', alt: '' },
-    { code: 'G', alt: '𘠃' },
-    { code: 'H', alt: '𘠄' },
-    { code: 'I', alt: '𘠅' },
-    { code: 'J', alt: '' },
-    { code: 'K', alt: '' },
-    { code: 'L', alt: '' },
-    { code: 'M', alt: '𘠆' },
-    { code: 'N', alt: '' },
-    { code: 'O', alt: '𘠈' },
-    { code: 'P', alt: '𘠉' },
-    { code: 'Q', alt: '𘶂' },
-    { code: '.', alt: '.' },
-    { code: '*', alt: '*' }
+    { code: 'A', img: 'img/A.png' },
+    { code: 'B', img: 'img/B.png' },
+    { code: 'C', img: 'img/C.png' },
+    { code: 'D', img: 'img/D.png' },
+    { code: 'E', img: 'img/E.png' },
+    { code: 'F', img: 'img/F.png' },
+    { code: 'G', img: 'img/G.png' },
+    { code: 'H', img: 'img/H.png' },
+    { code: 'I', img: 'img/I.png' },
+    { code: 'J', img: 'img/J.png' },
+    { code: 'K', img: 'img/K.png' },
+    { code: 'L', img: 'img/L.png' },
+    { code: 'M', img: 'img/M.png' },
+    { code: 'N', img: 'img/N.png' },
+    { code: 'O', img: 'img/O.png' },
+    { code: 'P', img: 'img/P.png' },
+    { code: 'Q', img: 'img/Q.png' },
+    { code: '.', img: 'img/dot.png' },
+    { code: '*', img: 'img/star.png' }
 ];
 
 function createStrokeButtons() {
@@ -1078,7 +1083,14 @@ strokeData.forEach(stroke => {
     const button = document.createElement('button');
     button.className = 'stroke-button';
     button.onclick = () => insertStroke(stroke.code);
-    button.textContent = stroke.alt;
+    
+    // 使用图片显示笔画
+    const img = document.createElement('img');
+    img.src = stroke.img;
+    img.alt = stroke.code;
+    img.style.height = '1.2em';
+    img.style.verticalAlign = 'middle';
+    button.appendChild(img);
     
     const tooltip = document.createElement('span');
     tooltip.className = 'tooltip';
@@ -1322,3 +1334,29 @@ function processConnectedCharsWithLFW(char) {
     }
     return getCharWithLFW(char);
 }
+
+// 暗黑模式管理
+function toggleDarkMode() {
+    const currentTheme = localStorage.getItem('theme-preference') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme-preference', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+    
+    // 更新按钮文本（如果有暗黑模式按钮的话）
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    if (themeBtn) {
+        themeBtn.textContent = newTheme === 'dark' ? '☀️ 亮色模式' : '🌙 暗黑模式';
+    }
+}
+
+// 初始化暗黑模式按钮
+document.addEventListener('DOMContentLoaded', () => {
+    const currentTheme = localStorage.getItem('theme-preference') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    if (themeBtn) {
+        themeBtn.textContent = currentTheme === 'dark' ? '☀️ 亮色模式' : '🌙 暗黑模式';
+        themeBtn.addEventListener('click', toggleDarkMode);
+    }
+});
