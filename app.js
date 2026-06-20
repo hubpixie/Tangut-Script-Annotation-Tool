@@ -880,7 +880,7 @@ function generateObsidianOutput(chars, lang, readingSystem) {
            `\\ex ${charsWithLFW}\n` +
            `\\gla ${readingsText}\n` +
            `\\glb ${morphemesText}\n` +
-           '\\ft \n' +
+           '\\ft .\n' +
            '```';
 }
 
