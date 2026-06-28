@@ -28,11 +28,29 @@ let db, stmts;
                 char: db.prepare('SELECT * FROM CHARACTER_DATA WHERE character = ? LIMIT ?')
             };
 
+            // convert snake case into camel case.
+            const _toCamelCase = (str) => {
+                return str.replace(/_([a-z])/g, (match, letter) => letter.toUpperCase());
+            };
+
+            // convert all keys into camel case. 
+            const _convertKeysToCamelCase = (obj) => {
+                const camelCaseObj = {};
+                for (const key in obj) {
+                    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+                        camelCaseObj[_toCamelCase(key)] = obj[key];
+                    }
+                }
+                return camelCaseObj;
+            };    
+                    
             const _fetchAndReset = (stmt) => {
                     const results = [];
                     try {
                         while (stmt.step()) {
-                            results.push(stmt.getAsObject());
+                            const rawRow = stmt.getAsObject();
+                            // After converting a record keys as camel case, and push it into results list.
+                            results.push(_convertKeysToCamelCase(rawRow));
                         }
                     } finally {
                         stmt.reset(); // reset if error
@@ -309,33 +327,6 @@ function fetchCharFromDb(char, lang) {
     return entry ? entry[`explanation${lang}`] || '' : '';
 }
 
-// 将数字转换为上标形式的辅助函数
-function toSuperscript(num) {
-  if (!num) return '';
-  // 数字到上标字符的映射
-  const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
-  return num.toString().split('').map(digit => {
-    return superscripts[parseInt(digit)] || digit;
-  }).join('');
-}
-
-// 获取带LFW上标的字符
-function getCharWithLFW(char) {
-    const entry = stmts.getCharData(char);
-    if (entry && entry.LFW) {
-        return char + toSuperscript(entry.LFW);
-    }
-    return char;
-}
-
-// 处理字符和字符组合的LFW编号
-function processLFW(chars) {
-  if (Array.isArray(chars)) {
-    return chars.map(char => getCharWithLFW(char));
-  }
-  return getCharWithLFW(chars);
-}
-
 // 定义输出格式的分隔符
 const FORMAT_SEPARATORS = {
     typst: {
@@ -350,8 +341,6 @@ const FORMAT_SEPARATORS = {
         padding: ' '
     }
 };
-
-
 
 function processCombination(items) {
     const result = [];
@@ -625,7 +614,7 @@ function generateTypstOutput(chars, lang, readingSystem) {
     const charList = mergeConnectedItems(processedChars).map(char => processTypstBrackets(char));
     
     // 处理header - 添加LFW上标
-    const headerWithLFW = [...chars].map(char => getCharWithLFW(char)).join('');
+    const headerWithLFW = [...chars].map(char =>  getCharWithFourCode(char) + getCharWithLFW(char)).join('');
     
     // 处理源字符（添加LFW上标）- 仅用于header
     const charsWithLFW = processedChars.map(char => {
@@ -635,7 +624,7 @@ function generateTypstOutput(chars, lang, readingSystem) {
             const connectors = char.match(/[-=]/g);
             
             return parts.map((part, idx) => {
-                const partWithLFW = getCharWithLFW(part);
+                const partWithLFW = getCharWithFourCode(part) + getCharWithLFW(part);
                 return idx < parts.length - 1 ? 
                     `${partWithLFW}${connectors[idx]}` : partWithLFW;
             }).join('');
@@ -843,7 +832,7 @@ function generateObsidianOutput(chars, lang, readingSystem) {
     });
 
     // 添加LFW上标到字符
-    const charsWithLFW = [...chars].map(char => getCharWithLFW(char)).join('');
+    const charsWithLFW = [...chars].map(char => getCharWithFourCode(char) + getCharWithLFW(char)).join('');
 
     // 处理标点符号前的空格
     function joinWithSmartSpacing(items) {
@@ -900,14 +889,14 @@ function generatePlainTextOutput(chars, lang, readingSystem) {
         // 处理字符（添加LFW上标）
         let charWithLFW = char;
         if (!char.includes('-') && !char.includes('=')) {
-            charWithLFW = getCharWithLFW(char);
+            charWithLFW = getCharWithFourCode(char) + getCharWithLFW(char);
         } else {
             // 处理多字符连接情况
             const parts = char.split(/[-=]/);
             const connectors = char.match(/[-=]/g);
             
             charWithLFW = parts.map((part, idx) => {
-                const partWithLFW = getCharWithLFW(part);
+                const partWithLFW = getCharWithFourCode(part) + getCharWithLFW(part);
                 return idx < parts.length - 1 ? 
                     `${partWithLFW}${connectors[idx]}` : partWithLFW;
             }).join('');
@@ -1185,7 +1174,8 @@ const i18nData = {
         "copy-clipboard": "复制到剪贴板",
         "plain-text": "纯文本",
          "show-lfw": "显示编号：",
-        "lfw-label": "LFW"
+        "lfw-label": "LFW",
+        "fourcorner-label": "四角号码"
     },
     en: {
         "title": "Tangut Script<br>Annotation Tool α",
@@ -1203,7 +1193,8 @@ const i18nData = {
         "copy-clipboard": "Copy to Clipboard",
         "plain-text": "Plain Text",
         "show-lfw": "Show Numbers:",
-        "lfw-label": "LFW"
+        "lfw-label": "LFW",
+        "fourcorner-label": "Four Corner"
     },
     ja: {
         "title": "西夏文字<br>注釈ツール α",
@@ -1221,7 +1212,8 @@ const i18nData = {
         "copy-clipboard": "コピー",
         "plain-text": "テキスト形式",
         "show-lfw": "番号表示：",
-        "lfw-label": "LFW"
+        "lfw-label": "LFW",
+        "fourcorner-label": "四角号碼"
     },
     ru: {
         "title": "Тангутское письмо<br>Инструмент для глоссирования α",
@@ -1239,7 +1231,8 @@ const i18nData = {
         "copy-clipboard": "Копировать в буфер обмена",
         "plain-text": "Простой текст",
         "show-lfw": "Показать номера:",
-        "lfw-label": "LFW"
+        "lfw-label": "LFW",
+        "fourcorner-label": "Четырём Углам"
     }
 };
 
@@ -1309,12 +1302,26 @@ function toSuperscript(num) {
 function getCharWithLFW(char) {
     // 检查是否启用LFW编号显示
     const showLFW = document.getElementById('show-lfw').checked;
+    const showFourCorner = document.getElementById('show-fourcorner').checked;
     const entry = stmts.getCharData(char)
 
     if (showLFW && !!entry && entry.LFW) {
-        return char + toSuperscript(entry.LFW);
+        const delimiter = showFourCorner ? "´" : char;
+        return delimiter + "ᴸ"+ toSuperscript(entry.LFW);
     }
-    return char;
+    return showFourCorner ? "" : char;
+}
+
+// get the four-corner with superscript
+function getCharWithFourCode(char) {
+    // check if displays four-corner code
+    const showFourCorner = document.getElementById('show-fourcorner').checked;
+    const entry = stmts.getCharData(char)
+
+    if (showFourCorner && !!entry && entry.fourCode) {
+        return char + toSuperscript(entry.fourCode);
+    }
+    return "";
 }
 
 // 修改现有函数中处理字符显示的部分
