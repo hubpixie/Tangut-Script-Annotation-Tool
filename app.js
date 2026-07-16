@@ -935,14 +935,35 @@ function generatePlainTextOutput(chars, lang, readingSystem) {
         
         // 处理词义
         let morpheme = '';
-        if (!!entry) {
+        if (!!entry && !char.includes('-') && !char.includes('=')) {
             morpheme = entry[`explanation${lang}`] || '';
-        } else if (/[\p{P}\s]/u.test(char)) {
-            morpheme = char;
         } else {
             const prevChar = index > 0 ? array[index - 1] : null;
             const nextChar = index < array.length - 1 ? array[index + 1] : null;
-            morpheme = getExplanation(char, lang, prevChar, nextChar);
+            
+            if (char.includes('-') || char.includes('=')) {
+                const parts = char.split(/[-=]/);
+                const connectors = char.match(/[-=]/g);
+                
+                const explanations = parts.map((part, idx) => {
+                    const partEntry = stmts.getWordData(part);
+                    if (!!partEntry) {
+                        return partEntry[`explanation${lang}`] || '';
+                    }
+                    const prevPart = idx > 0 ? parts[idx - 1] : prevChar;
+                    const nextPart = idx < parts.length - 1 ? parts[idx + 1] : nextChar;
+                    return getExplanation(part, lang, prevPart, nextPart);
+                });
+                
+                morpheme = explanations.map((exp, idx) => 
+                    idx < explanations.length - 1 ? 
+                        `${exp}${connectors[idx]}` : exp
+                ).join('');
+            } else if (/[\p{P}\s]/u.test(char)) {
+                morpheme = char;
+            } else {
+                morpheme = getExplanation(char, lang, prevChar, nextChar);
+            }
         }
         currentMorphemeGroup += morpheme;
     });
