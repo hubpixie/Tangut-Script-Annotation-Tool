@@ -1196,7 +1196,8 @@ const i18nData = {
         "plain-text": "纯文本",
          "show-lfw": "显示编号：",
         "lfw-label": "LFW",
-        "fourcorner-label": "四角号码"
+        "fourcorner-label": "四角号码",
+        "stroke-entry-placeholder": "四角号码, LFW序号(四位), 部件编码(A-Q)"
     },
     en: {
         "title": "Tangut Script<br>Annotation Tool α",
@@ -1215,7 +1216,8 @@ const i18nData = {
         "plain-text": "Plain Text",
         "show-lfw": "Show Numbers:",
         "lfw-label": "LFW",
-        "fourcorner-label": "Four Corner"
+        "fourcorner-label": "Four Corner",
+        "stroke-entry-placeholder": "Four Corner, LFW(0000-9999), Radical(A-Q)"
     },
     ja: {
         "title": "西夏文字<br>注釈ツール α",
@@ -1234,7 +1236,8 @@ const i18nData = {
         "plain-text": "テキスト形式",
         "show-lfw": "番号表示：",
         "lfw-label": "LFW",
-        "fourcorner-label": "四角号碼"
+        "fourcorner-label": "四角号碼",
+        "stroke-entry-placeholder": "四角号碼, LFW(0000-9999), 部首番号(A-Q)"
     },
     ru: {
         "title": "Тангутское письмо<br>Инструмент для глоссирования α",
@@ -1253,7 +1256,8 @@ const i18nData = {
         "plain-text": "Простой текст",
         "show-lfw": "Показать номера:",
         "lfw-label": "LFW",
-        "fourcorner-label": "Четырём Углам"
+        "fourcorner-label": "Четырём Углам",
+        "stroke-entry-placeholder": "Четырём Углам, LFW(0000-9999), Корень(A-Q)"
     }
 };
 
@@ -1263,8 +1267,12 @@ function updatePageText(lang) {
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (i18nData[lang][key]) {
-            if (element.tagName === 'BUTTON' || element.tagName === 'LABEL' || element.tagName === 'SPAN') {
-                element.textContent = i18nData[lang][key];
+            if (element.tagName === 'BUTTON' || element.tagName === 'LABEL' || element.tagName === 'SPAN' || element.tagName === 'INPUT') {
+                if (element.getAttribute('placeholder')) {
+                    element.placeholder = i18nData[lang][key];
+                } else {
+                    element.textContent = i18nData[lang][key];
+                }
             } else {
                 element.innerHTML = i18nData[lang][key];
             }

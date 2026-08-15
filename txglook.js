@@ -102,8 +102,10 @@ function updateResultsList() {
   }
 
   const strokeValue = elements.strokeEntryField?.value || '';
+  // if code value length is less than 3, then do nothing.
+  const isUnder4Digits = !!strokeValue && (/^\d{1,3}$/.test(strokeValue));
 
-  if (!strokeValue) {
+  if (!strokeValue || isUnder4Digits) {
     // Default sorting by score when no input
     results = Object.keys(tangraphInfo)
       .filter(key => tangraphScores[key] > 0)
@@ -117,19 +119,38 @@ function updateResultsList() {
   if (elements.strokeBeginsWith?.checked) strokesRegex = `^${strokesRegex}`;
   if (elements.strokeEndsWith?.checked) strokesRegex += '$';
   
+  // specail code patterns (LFW code or Four Corner code)
+  const isValidFourCode = strokeValue.length >= 4 && /^\d+$/.test(strokeValue);
+  const isLFWCode = strokeValue.length === 5 && strokeValue.startsWith("L");
+  const isSpecialCode = isValidFourCode || isLFWCode;
+  
   const startsWithSeq = [];
   const containsSeq = [];
   
   try {
     const pattern = new RegExp(strokesRegex);
     const startPattern = new RegExp(`^${strokesRegex}`);
-
+    
+    let logCount = 0; 
     Object.entries(tangraphInfo).forEach(([tangraph, info]) => {
-      const strokeSeq = info[2];
-      if (startPattern.test(strokeSeq)) {
-        startsWithSeq.push(tangraph);
-      } else if (pattern.test(strokeSeq)) {
-        containsSeq.push(tangraph);
+      // - If the input code (=strokeValue) is a valid LFW code or 4+ digit's Four Corner 
+      //   code, search for the corresponding character from info[3] using them as keys.
+      // - Otherwise, treat it as an existing radical code, and 
+      //   search for the corresponding character from info[2] based on that radical. 
+      if (isSpecialCode) {
+          const strokeSeq = info[3];
+          const codes = strokeSeq.split(/\s+/);
+          const isMatch = codes.some(code => startPattern.test(code));
+          if (isMatch) {
+            startsWithSeq.push(tangraph);
+          }
+      } else {
+        const strokeSeq = info[2];
+        if (startPattern.test(strokeSeq)) {
+          startsWithSeq.push(tangraph);
+        } else if (pattern.test(strokeSeq)) {
+          containsSeq.push(tangraph);
+        }
       }
     });
 
@@ -169,11 +190,28 @@ function insertStroke(stroke) {
 function updateStrokeEntry() {
   if (!elements.strokeEntryField) return;
   
-  elements.strokeEntryField.value = 
-    elements.strokeEntryField.value
-      .toUpperCase()
-      .replace(/[^A-Q.*]/g, '');
-updateResultsList();
+  let val = elements.strokeEntryField.value.toUpperCase();
+
+  // If the first character is a digit, remove all alphabetic characters.
+  if (/^[0-9]/.test(val)) {
+    val = val.replace(/[A-Z]/g, '');
+  }
+
+  // Allow A-Q, numbers, '.', '*', and 'L'
+  val = val.replace(/[^A-Q0-9.*L]/g, '');
+
+  // Allow 'L0000-L9999' (including typing states like L1, L12...), 
+  // but disallow other combinations of alphabets and numbers.
+  if (/[A-Z]/.test(val) && /[0-9]/.test(val)) {
+    if (!/^L\d{0,4}$/.test(val)) {
+      val = val.replace(/[0-9]/g, '');
+    }
+  }
+
+  // Apply the ones that passed the check, then search for the corresponding 
+  // character using it and reflect it on the screen.
+  elements.strokeEntryField.value = val;
+  updateResultsList();
 }
 
 /**
