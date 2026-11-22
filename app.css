@@ -1,0 +1,594 @@
+@font-face {
+    font-family: 'Tangut N4694';
+    src: url('./Tangut_N4694_V17.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+17000-18DFF;
+}
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f7fa;
+    --text-color: #333;
+    --border-radius: 8px;
+    --min-container-width: 420px;
+    --max-container-width: 100%;
+    --standard-padding: 20px;
+}
+
+body {
+    font-family: 'Fira Sans', 'Tangut N4694', 'Noto Serif SC', 'Noto Serif Tangut', sans-serif;
+    max-width: var(--max-container-width);
+    min-width: var(--min-container-width);
+    margin: clamp(20px, 4vw, 40px) auto;
+    padding: 0 var(--standard-padding);
+    background-color: #f9fafb;
+    color: var(--text-color);
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: white;
+    padding: clamp(20px, 3vw, 30px);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: calc(var(--min-container-width) - 2 * var(--standard-padding));
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin: 0 0 clamp(15px, 2vw, 20px) 0;
+    font-weight: 600;
+    font-size: clamp(1.5em, 4vw, 2em);
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.input-section label {
+    font-weight: 500;
+    min-width: 90px;
+}
+
+.input-section textarea {
+    width: 100%;
+    min-height: 100px;
+    height: clamp(100px, 15vh, 150px);
+    padding: 12px 15px;
+    border: 2px solid #e1e4e8;
+    border-radius: var(--border-radius);
+    font-size: clamp(14px, 1.6vw, 16px);
+    transition: border-color 0.3s ease;
+    resize: vertical;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.input-section textarea:focus,
+.stroke-entry-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* 修改 explanation 相关样式 */
+.explanation {
+    padding: 0;
+    margin: 0;
+    height: 1.2em; /* 减小高度 */
+    line-height: 1.2em; /* 确保文字垂直居中 */
+    font-size: 0.9em; /* 稍微减小字体大小 */
+    color: #666; /* 使用较浅的颜色 */
+}
+
+#rollover-info {
+    height: 1.2em; /* 与 .explanation 保持一致 */
+    margin: 0; /* 移除上边距 */
+    padding: 0 5px; /* 仅保留水平方向的内边距 */
+    overflow: hidden; /* 改为 hidden 而不是 auto，除非真的需要滚动 */
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: clamp(10px, 2vw, 20px);
+    padding: 15px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-width: 200px;
+}
+
+button {
+    padding: clamp(8px, 1.5vw, 10px) clamp(15px, 2vw, 20px);
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: clamp(14px, 1.6vw, 16px);
+    height: 40px; /* 添加固定高度 */
+    line-height: 1; /* 确保文本垂直居中 */
+    display: flex; /* 使用 flex 布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+}
+
+button:hover {
+    background-color: #357abd;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.button-group button {
+    flex: 1;
+}
+
+#copy-btn {
+    width: 60%;
+    padding: clamp(20px, 3vw, 30px);
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;            
+}
+
+#copy-btn:hover {
+    background-color: #218838;
+}
+
+.results-viewport {
+    width: 96%;
+    overflow-x: auto;
+    padding: clamp(8px, 1.5vw, 10px);
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    margin: 0 auto;
+}
+
+.results-wrapper {
+    display: inline-flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.output-section {
+    max-width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.output-section textarea {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 200px;
+    height: clamp(200px, 25vh, 300px);
+    box-sizing: border-box;
+}
+
+.code-entry-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+}
+
+.code-entry-field {
+    flex: 1 1 auto;
+    min-width: 200px !important;
+    padding: 8px 12px;
+    border: 2px solid #e1e4e8;
+    border-radius: var(--border-radius);
+    font-size: clamp(14px, 1.6vw, 16px);
+}
+
+#stroke-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+
+.stroke-button {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px;
+    font-family: 'Tangut N4694', "Noto Serif Tangut", "Noto Serif SC", system-ui, -apple-system, sans-serif;
+    font-size: clamp(14px, 1.6vw, 16px);
+    font-weight: normal;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    /* 确保按钮内容居中 */
+    text-align: center;
+    /* 添加边框和背景 */
+    border: 1px solid #e1e4e8;
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+
+    /* 改善触摸体验 */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.stroke-button img {
+    max-width: 100%;
+    max-height: 1.5em;
+    display: block;
+    -webkit-filter: drop-shadow(0 0 0.5px rgba(0, 0, 0, 100));
+    filter: drop-shadow(0 0 0.5px rgba(0, 0, 0, 100));
+}
+
+@supports (-webkit-touch-callout: none) {
+  .stroke-button img {
+    -webkit-filter: drop-shadow(0 0px 1px rgba(0, 0, 0, 100));
+    filter: drop-shadow(0 0px 1px rgba(0, 0, 0, 100));
+  }
+}
+
+.stroke-button:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.stroke-button .tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.stroke-button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.stroke-button:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex: 0 0 auto;
+    min-width: 30px;
+    justify-content: center;
+}
+
+/* 调整复选框和标签的样式 */
+.checkbox-wrapper input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.checkbox-wrapper label {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.btn-undo, .undo-strokes {
+    padding: 8px;
+    background-color: #f1f1f1 !important; /* lightgray */
+    color: #6c757d !important;        
+    border: 1px solid #dee2e6 !important;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.btn-undo:hover, .undo-strokes:hover {
+    background-color: #d9dcef !important;
+    color: #495057 !important;          
+}
+
+.results-wrapper li {
+    cursor: pointer;
+    padding: 5px 10px;
+    background: white;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.results-wrapper li:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.results-viewport,
+.explanation {
+    font-size: 18px; /* Default font size */
+}
+
+/*field clear button START*/
+.has-clear {
+    position: relative;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* common setting for input area */
+.has-clear > input[type="text"],
+.has-clear > textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* base setting for field clear button*/
+.has-clear > .field-clear-btn {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    box-sizing: border-box;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.0);
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: #777;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+    transform: none;
+}
+
+/* show clear button if not empty */
+.has-clear.has-value > .field-clear-btn {
+    display: block;
+}
+
+/* input: Right and Middle (Vertical) */
+.has-clear > input[type="text"] ~ .field-clear-btn {
+    top: 47%;
+    right: 45px;
+    transform: translateY(-50%);
+}
+
+/* textarea: top right */
+.has-clear > textarea ~ .field-clear-btn {
+    top: 50px;
+    right: 6px;
+}
+
+.has-clear > textarea ~ .field-clear-btn {
+    font-size: 30px;
+    line-height: 30px;
+}
+
+/* Prevent input text from overlapping with the button */
+.has-clear > input[type="text"] {
+    padding-right: 30px;
+}
+
+.has-clear > textarea {
+    padding-right: 26px;
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .has-clear > input[type="text"] ~ .field-clear-btn {
+        right: 40px;
+    }
+    .has-clear > textarea ~ .field-clear-btn {
+        top: 42px !important;
+    }
+}
+
+/*field clear button END*/          
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.language-selector select {
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    border: 2px solid #e1e4e8;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.language-selector select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* tab menus START*/
+.tab-nav {
+    display: flex;
+    background-color: #f1f3f5;
+    padding: 8px 12px 0 12px;
+    gap: 6px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tab-btn {
+    padding: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #6c757d;
+    background-color: transparent;
+    border: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.0);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    color: #495057;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tab-btn.active {
+    color: #0066cc;
+    background-color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #ffffff;
+    margin-bottom: -1px;
+}
+
+.tab-content-container {
+    padding: 0px;
+}
+
+.tab-pane {
+    display: none;
+    width: 100%;
+    /*min-width: calc(var(--min-container-width) - 40px);*/
+    min-width: 0px;
+    max-width: ;
+    background: var(--secondary-color);
+    padding: clamp(5px, 5vw, 20px);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/*tab menus END*/
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .language-selector {
+        position: static;
+        justify-content: flex-end;
+        margin-bottom: 15px;
+    }
+
+    body {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 5px !important;
+        overflow-x: hidden !important; 
+    }
+
+    .container {
+        min-width: 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .results-viewport {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #stroke-tab {
+        min-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px !important;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .radio-group {
+        width: 100% !important;
+    }
+
+    #stroke-entry-field {
+        box-sizing: border-box;
+        width: calc(100% - 20px) !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        font-size: 16px !important;                
+    }
+}
+
+@media (max-width: 450px) {
+    :root {
+        --standard-padding: 10px !important;
+    }
+}
+
