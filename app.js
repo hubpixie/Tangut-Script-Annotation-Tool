@@ -342,6 +342,14 @@ const FORMAT_SEPARATORS = {
     }
 };
 
+const SUPERSCRIPT_MAP = {
+  0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+  5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹',
+  A: 'ᴬ',
+  B: 'ᴮ',
+  '-': '⁻',
+};
+
 function processCombination(items) {
     const result = [];
     let i = 0;
@@ -555,14 +563,14 @@ function generate() {
     const readingSystem = document.querySelector('input[name="reading"]:checked').value;
     const outputFormat = document.querySelector('input[name="format"]:checked').value;
         
-    const lines = inputText.split('\n');
+    const lines = inputText.split('<br/>');
     const outputs = lines
         .map(line => line.trim())
         .filter(line => line)
         .map(line => generateFormattedOutput(line, lang, readingSystem, outputFormat));
 
     const field = document.getElementById('output-text');
-    field.value = outputs.join('\n\n');
+    field.innerHTML = `<p>${outputs.join('')}</p>`;
     // show Field Clear Button
     updateFieldClearState(field);
     
@@ -726,13 +734,12 @@ function generateTypstOutput(chars, lang, readingSystem) {
 
     // 合并连接的词义解释
     const morphemes = mergeConnectedItems(rawMorphemes).map(morpheme => processTypstBrackets(morpheme));
-
-    return `#gloss(\n` +
-            `header: ${processTypstBrackets(headerWithLFW)},\n` +
-            `source: (${charList.join(separator)}),\n` +
-            `transliteration: (${readings.join(separator)}),\n` +
-            `morphemes: (${morphemes.join(separator)}),\n` +
-            `translation: ""\n)`;
+    return  `#gloss(<br/>` +
+            `header: ${processTypstBrackets(headerWithLFW)},<br/>` +
+            `source: (${charList.join(separator)}),<br/>` +
+            `transliteration: (${readings.join(separator)}),<br/>` +
+            `morphemes: (${morphemes.join(separator)}),<br/>` +
+            `translation: ""<br/>)`;
 }
 
 function generateObsidianOutput(chars, lang, readingSystem) {
@@ -867,12 +874,12 @@ function generateObsidianOutput(chars, lang, readingSystem) {
     const morphemesText = joinWithSmartSpacing(morphemes.filter(m => m));
 
     // 返回Obsidian格式的输出
-    return '```gloss\n' +
-           '\\set exstyle big\n' +
-           `\\ex ${charsWithLFW}\n` +
-           `\\gla ${readingsText}\n` +
-           `\\glb ${morphemesText}\n` +
-           '\\ft .\n' +
+    return '```gloss<br/>' +
+           '\\set exstyle big<br/>' +
+           `\\ex ${charsWithLFW}<br/>` +
+           `\\gla ${readingsText}<br/>` +
+           `\\glb ${morphemesText}<br/>` +
+           '\\ft .<br/>' +
            '```';
 }
 
@@ -995,8 +1002,8 @@ function generatePlainTextOutput(chars, lang, readingSystem) {
         morphemeGroups.map((morpheme, i) => padString(morpheme, columnWidths[i])).join('  ')
     ];
     
-    return lines.join('\n');
-    }
+    return lines.join('<br/>');
+}
 
 // 辅助函数：计算字符串显示宽度（考虑CJK字符）
 function getStringWidth(str) {
@@ -1037,22 +1044,44 @@ function getConnectedReading(char, readingSystem) {
     }).join('');
 }
 
+/**
+ * Converts editor content to Markdown and copies it to the clipboard.
+ *
+ * @param {HTMLElement} editor - The contenteditable editor element.
+ * @returns {Promise<boolean>} True if copying succeeds.
+ */
+function copyOutputToClipboard() {
+    const lang = document.documentElement.lang;
 
-function copyOutput() {
-    const output = document.getElementById('output-text');
-    if (!output.value) {
-        alert('没有可复制的内容');
-        return;
+    const copyBtn = document.getElementById('copy-btn');
+    const editor = document.getElementById('output-text');
+    if (!editor || !editor.innerText) {
+        const msg = i18nData[lang]["copy-clipboard.nodata"];
+        alert(msg);
+        return false;
     }
 
-    output.select();
-    document.execCommand('copy');
-    
-    const copyBtn = document.getElementById('copy-btn');
-    copyBtn.textContent = '已复制';
+    // Indicate the copy action with a background color highlight.
+    const i18nKey = copyBtn.getAttribute('data-i18n-after');
+    copyBtn.textContent = i18nData[lang][i18nKey];
+    copyBtn.classList.add('copy');
+
+    // copy to clipboard
+    const fmtType = document.querySelector('input[name="format"]:checked').value;
+    const markdown = formatEditorTextContent(editor.innerHTML, fmtType);
+    const textarea = document.createElement("textarea");
+    textarea.value = markdown;
+    document.body.appendChild(textarea);
+    textarea.select();
+    const success = document.execCommand("copy");
+    document.body.removeChild(textarea);
     setTimeout(() => {
-        copyBtn.textContent = '复制';
-    }, 1000);
+        // Reset the background color after the copy finishes.
+        const orgKey = copyBtn.getAttribute('data-i18n');
+        copyBtn.textContent = i18nData[lang][orgKey];
+        copyBtn.classList.remove('copy');
+    }, 1500);
+    return true;
 }
 
 function handleGenerate() {
@@ -1135,13 +1164,15 @@ function clearEntryField(field) {
 function clearAll() {
     document.getElementById('output').value = '';
     document.getElementById('outputHisState').value = '';
-    document.getElementById('output-text').value = '';
+    document.getElementById('output-text').innerHTML = '';
+    document.getElementById('copy-btn').textContent = '复制到剪贴板';
     document.getElementById('stroke-entry-field').value = '';
     document.getElementById('lfw-entry-field').value = '';
     document.getElementById('fourcode-entry-field').value = '';
     document.getElementById('unicode-entry-field').value = '';
     document.getElementById('result-list').innerHTML = '';
     document.getElementById('rollover-info').innerHTML = '';
+    
     // 重置复选框
     document.getElementById('stroke-begins-with').checked = false;
     document.getElementById('stroke-ends-with').checked = false;
@@ -1182,8 +1213,10 @@ const i18nData = {
         "gongxun": "龚勋",
         "gonghuangcheng": "龚煌城",
         "output-format": "输出格式：",
-        "format-output": "格式输出：",
+        "format-output": "生成结果：",
         "copy-clipboard": "复制到剪贴板",
+        "copy-clipboard.after": "已复制",
+        "copy-clipboard.nodata": "没有可复制的内容。",
         "plain-text": "纯文本",
          "show-lfw": "显示编号：",
         "lfw-label": "LFW",
@@ -1209,8 +1242,10 @@ const i18nData = {
         "gongxun": "GX",
         "gonghuangcheng": "GHC",
         "output-format": "Output Format:",
-        "format-output": "Formatted Output:",
+        "format-output": "Output Result:",
         "copy-clipboard": "Copy to Clipboard",
+        "copy-clipboard.after": "Copied!",
+        "copy-clipboard.nodata": "There is nothing to copy.",
         "plain-text": "Plain Text",
         "show-lfw": "Show Numbers:",
         "lfw-label": "LFW",
@@ -1236,8 +1271,10 @@ const i18nData = {
         "gongxun": "龔勋",
         "gonghuangcheng": "龔煌城",
         "output-format": "出力形式：",
-        "format-output": "出力：",
-        "copy-clipboard": "コピー",
+        "format-output": "出力結果：",
+        "copy-clipboard": "クリップボードへコピー",
+        "copy-clipboard.after": "コピーしました",
+        "copy-clipboard.nodata": "コピーするためのコンテンツがありません。",
         "plain-text": "テキスト形式",
         "show-lfw": "番号表示：",
         "lfw-label": "LFW",
@@ -1263,8 +1300,10 @@ const i18nData = {
         "gongxun": "Гун Сюня",
         "gonghuangcheng": "Гун Хуанчэна",
         "output-format": "Формат вывода:",
-        "format-output": "Форматированный вывод:",
+        "format-output": "Результат вывода:",
         "copy-clipboard": "Копировать в буфер обмена",
+        "copy-clipboard.after": "Скопировано!",
+        "copy-clipboard.nodata": "Нет содержимого для копирования.",
         "plain-text": "Простой текст",
         "show-lfw": "Показать номера:",
         "lfw-label": "LFW",
@@ -1364,13 +1403,140 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 将数字转换为上标形式的辅助函数
-function toSuperscript(num) {
+function toSuperscript(str) {
+    if (!str) return '';
+    const superMap = {
+        '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
+        '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
+        'A': 'ᴬ','B': 'ᴮ','-': '⁻',
+      };
+    return [...String(str)].map((char) => superMap[char] ?? '').join('');
+}
+
+/**
+ * Converts a number into an HTML superscript tag.
+ *
+ * @param {number|string} num - The number or text to display as superscript.
+ * @returns {string} HTML string wrapped in a <sup> tag, or an empty string if the input is falsy.
+ */
+function toHtmlSupTag(num) {
     if (!num) return '';
-    // 数字到上标字符的映射
-    const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
-    return num.toString().split('').map(digit => {
-        return superscripts[parseInt(digit)] || digit;
-    }).join('');
+    return `<sup>${num}</sup>`;
+}
+
+/**
+ * Converts rich HTML editor content into formatted output text.
+ *
+ * Supported HTML tags are preserved as inline HTML.
+ * Unsupported HTML tags are removed while their text content is retained.
+ * Block-level elements are converted into line breaks.
+ *
+ * @param {string} input - HTML or mixed Markdown/Typst content.
+ * @returns {string} Markdown-compatible content.
+ */
+function formatEditorTextContent(input, fmtType) {
+    if (!input || typeof input !== "string") {
+        return "";
+    }
+
+    // HTML tags that should be preserved in Markdown.
+    /*const allowedTags = plainFlag ? [] : [
+        "span",
+        "sub",
+        "sup",
+        "strong",
+        "em",
+        "rem"
+    ];*/
+
+    // Elements that represent line boundaries.
+    const blockTags =  [
+        "div",
+        "p"
+    ];
+
+    const parser = new DOMParser();
+
+    // Parse the input as an HTML fragment.
+    const doc = parser.parseFromString(
+        input,
+        "text/html"
+    );
+
+    /**
+     * Escapes HTML-sensitive characters in text nodes.
+     *
+     * @param {string} text - Text node content.
+     * @returns {string} Escaped text.
+     */
+    function escapeText(text) {
+        return text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+    }
+
+    /**
+     * Recursively converts DOM nodes into Markdown-compatible text.
+     *
+     * @param {Node} node - DOM node to process.
+     * @returns {string} Converted node content.
+     */
+    function convertNode(node) {
+
+        // Text node.
+        if (node.nodeType === Node.TEXT_NODE) {
+            return escapeText(node.nodeValue || "");
+        }
+
+        // Ignore comments and other unsupported node types.
+        if (node.nodeType !== Node.ELEMENT_NODE) {
+            return "";
+        }
+
+        const tag = node.tagName.toLowerCase();
+
+        // Convert child nodes recursively.
+        let content = Array.from(node.childNodes)
+            .map(child => convertNode(child))
+            .join("");
+
+        // Convert line breaks.
+        if (tag === "br") {
+            return "\n";
+        }
+
+        // Preserve supported inline HTML tags.
+        if (tag == 'sup') {
+            if (fmtType === 'typst') {
+                return `#super[${content}]`;
+            } else {
+                return toSuperscript(content);
+            }
+        }
+
+        // Convert block elements into line boundaries.
+        if (blockTags.includes(tag)) {
+            return `\n${content}\n`;
+        }
+
+        // Remove unsupported tags but retain their contents.
+        return content;
+    }
+
+    // Convert all nodes inside the editor.
+    let result = Array.from(doc.body.childNodes)
+        .map(node => convertNode(node))
+        .join("");
+
+    // Normalize excessive blank lines.
+    result = result
+        .replace(/\r\n/g, "\n")
+        .replace(/\n{3,}/g, "\n\n")
+        .replace(/[  ]+/g, " ")
+        .trim();
+
+    return result;
 }
 
 // 获取带LFW上标的字符
@@ -1380,7 +1546,7 @@ function getCharWithLFW(char) {
     const entry = stmts.getCharData(char)
 
     if (showLFW && !!entry && entry.LFW) {
-        return char + toSuperscript(entry.LFW);
+        return `<span>${char}${toHtmlSupTag(entry.LFW)}</span>`;
     }
     return "";
 }
@@ -1394,7 +1560,7 @@ function getCharWithFourCode(char) {
 
     if (showFourCorner && !!entry && entry.fourCode) {
         const delimiter = showLFW ? "´" : char;
-        return delimiter + toSuperscript(entry.fourCode);
+        return `<span>${delimiter}${toHtmlSupTag(entry.fourCode)}</span>`;
     }
     return showLFW ? "" : char;
 
@@ -1431,47 +1597,91 @@ function toggleDarkMode() {
     }
 }
 
-// add Field Clear Button inside the specified textarea or input/text
-function addFieldClearButtons() {    
-    document.querySelectorAll(".has-clear").forEach(div => {
-        const field = div.querySelector(
-         ':scope > input[type="text"], :scope > textarea'
+/**
+ * Adds clear buttons to input, textarea, and contenteditable fields.
+ */
+function addFieldClearButtons() {
+    document.querySelectorAll(".has-clear").forEach(container => {
+
+        // Find the field inside the container.
+        const field = container.querySelector(
+            ':scope > input[type="text"], ' +
+            ':scope > textarea, ' +
+            ':scope > div[contenteditable]'
         );
 
-        if (!field) return;
+        if (!field) {
+            console.log("field = null", container);
+            return;
+        }
+
+        // Prevent duplicate clear buttons.
+        if (container.querySelector(":scope > .field-clear-btn")) {
+            return;
+        }
 
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "field-clear-btn";
         btn.textContent = "×";
-        btn.setAttribute("aria-label", "入力内容をクリア");
+        btn.setAttribute("aria-label", "Clear input");
 
-        div.appendChild(btn);
+        container.appendChild(btn);
 
+        /**
+         * Updates the has-value class based on the field content.
+         */
         const update = () => {
-            div.classList.toggle("has-value", !!field.value);
+            const hasValue = field.isContentEditable
+                ? !!field.textContent.trim()
+                : !!field.value;
+
+            container.classList.toggle("has-value", hasValue);
         };
 
+        /**
+         * Clears the field content according to its type.
+         */
         btn.addEventListener("click", () => {
             if (field.matches('input[type="text"].code-entry-field')) {
                 clearEntryField(field);
-            } else if (field === document.getElementById('output')) {
+
+            } else if (field === document.getElementById("output")) {
                 clearAll();
+
+            } else if (field.isContentEditable) {
+                field.innerHTML = "";
             } else {
                 field.value = "";
             }
-            field.dispatchEvent(new Event("input", { bubbles: true }));
-            field.dispatchEvent(new Event("change", { bubbles: true }));
+
+            field.dispatchEvent(
+                new Event("input", { bubbles: true })
+            );
+
+            field.dispatchEvent(
+                new Event("change", { bubbles: true })
+            );
+
             update();
             field.focus();
         });
 
         field.addEventListener("input", update);
         field.addEventListener("change", update);
-
         update();
-    });    
+        
+        // block manual input 
+        if (field.isContentEditable) {
+            // Immediately blur on focusin to block manual input 
+            // while allowing programmatic updates
+            field.addEventListener("focusin", (e) => {
+              field.blur();
+            });
+        }
+    });
 }
+
 
 // add event listner into the specified target.
 function addTabsEventListener() {

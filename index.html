@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -175,7 +174,7 @@
             <div id="lfw-tab" class="tab-pane">
                 <div class="code-entry-container has-clear">
                     <input type="text" class="code-entry-field" id="lfw-entry-field" inputmode="numeric" pattern="[0-9]*" data-i18n="lfw-entry-placeholder"
-                        placeholder="LFW(0001~9999)" style="margin-left:40px; margin-right: 40px;"/>
+                        placeholder="LFW(0001~9999)" style="margin: 0 40px;"/>
                 </div>
             </div>
 
@@ -183,7 +182,7 @@
             <div id="fourcode-tab" class="tab-pane">
                 <div class="code-entry-container has-clear">
                     <input type="text" class="code-entry-field" id="fourcode-entry-field" inputmode="latin" autocapitalize="none" autocomplete="off" spellcheck="false"data-i18n="fourcode-entry-placeholder"
-                        placeholder="Four Corner" style="margin-left:40px; margin-right: 40px;"/>
+                        placeholder="Four Corner" style="margin: 0 40px;"/>
                 </div>
             </div>
 
@@ -191,7 +190,7 @@
             <div id="unicode-tab" class="tab-pane">
                 <div class="code-entry-container has-clear">
                     <input type="text" class="code-entry-field" id="unicode-entry-field" inputmode="latin"autocapitalize="none" autocomplete="off" spellcheck="false" data-i18n="unicode-entry-placeholder"
-                        placeholder="Unicode(0-9,A-F)" style="margin-left:40px; margin-right: 40px;"/>
+                        placeholder="Unicode(0-9,A-F)" style="margin: 0 40px;"/>
                 </div>
             </div>
         </div> <!-- tab contents area END -->
@@ -252,10 +251,14 @@
     </div>
 
     <div class="output-section has-clear">
-        <label for="output-text" data-i18n="format-output">格式输出：</label>
-        <textarea id="output-text"
-            style="font-family: Fira Sans, 'Tangut N4694', 'Noto Serif Tangut', 'Noto Serif SC', sans-serif; transform: translateY(8%); margin-bottom:30px;"></textarea>
-        <button onclick="copyOutput()" id="copy-btn" data-i18n="copy-clipboard">复制到剪贴板</button>
+        <span id="output-text-label" data-i18n="format-output">生成结果：</span>
+        <div id="output-text"
+            role="region" 
+            aria-labelledby="output-text-label"
+            contenteditable="true"
+            style="font-family: Fira Sans, 'Tangut N4694', 'Noto Serif Tangut', 'Noto Serif SC', sans-serif;">
+        </div>            
+        <button onclick="copyOutputToClipboard()" id="copy-btn" data-i18n="copy-clipboard" data-i18n-after="copy-clipboard.after">复制到剪贴板</button>
     </div>
     <div class="footer" style="text-align: center; margin: 20px auto;">
         <a href="https://github.com/tinbreaker/Tangut-Script-Annotation-Tool">© 𗼇𘝞𗫸𗯿𘍞</a>

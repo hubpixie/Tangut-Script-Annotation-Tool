@@ -49,6 +49,10 @@ h1 {
     font-size: clamp(1.5em, 4vw, 2em);
 }
 
+sub, sup {
+    font-size: clamp(0.4em, 4vw, 0.6em);
+}
+
 .input-section {
     display: flex;
     flex-direction: column;
@@ -170,6 +174,11 @@ button:active {
     background-color: #218838;
 }
 
+#copy-btn.copy {
+    background-color: #218838 !important;
+    transition: background-color 0.3s;
+}
+
 .results-viewport {
     width: 96%;
     overflow-x: auto;
@@ -188,18 +197,8 @@ button:active {
 }
 
 .output-section {
-    max-width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.output-section textarea {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    min-height: 200px;
-    height: clamp(200px, 25vh, 300px);
-    box-sizing: border-box;
+    /*width: 100% !important;*/
+    margin: 0px 10px;
 }
 
 .code-entry-container {
@@ -363,9 +362,10 @@ button:active {
     padding-right: 0;
 }
 
-/* common setting for input area */
+/* Common setting for input areas */
 .has-clear > input[type="text"],
-.has-clear > textarea {
+.has-clear > textarea,
+.has-clear > div[contenteditable="true"] {
     display: block;
     width: 100%;
     min-width: 0;
@@ -374,7 +374,7 @@ button:active {
     font-size: 16px;
 }
 
-/* base setting for field clear button*/
+/* Base setting for field clear button */
 .has-clear > .field-clear-btn {
     position: absolute;
     z-index: 2;
@@ -395,28 +395,45 @@ button:active {
     transform: none;
 }
 
-/* show clear button if not empty */
+/* Show clear button if not empty */
 .has-clear.has-value > .field-clear-btn {
     display: block;
 }
 
-/* input: Right and Middle (Vertical) */
+/* Input: Right and Middle (Vertical) */
 .has-clear > input[type="text"] ~ .field-clear-btn {
     top: 47%;
     right: 45px;
     transform: translateY(-50%);
 }
 
-/* textarea: top right */
+/* Textarea: Top right */
 .has-clear > textarea ~ .field-clear-btn {
     top: 50px;
     right: 6px;
-}
-
-.has-clear > textarea ~ .field-clear-btn {
     font-size: 30px;
     line-height: 30px;
 }
+
+/* Contenteditable editor: Top right */
+.has-clear > div[contenteditable="true"] ~ .field-clear-btn {
+    top: clamp(42px, 4vw, 50px);
+    right: 6px;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+/* Landscape orientation: 52px */
+@media screen and (orientation: landscape) {
+    @supports (-webkit-touch-callout: none) {
+        .has-clear > div[contenteditable="true"] ~ .field-clear-btn {
+            top: 55px;
+        }
+    }
+    .has-clear > textarea ~ .field-clear-btn {
+        top: 50px;
+    }
+}       
 
 /* Prevent input text from overlapping with the button */
 .has-clear > input[type="text"] {
@@ -427,6 +444,10 @@ button:active {
     padding-right: 26px;
 }
 
+.has-clear > div[contenteditable="true"] {
+    padding-right: 35px;
+}
+
 @media screen and (max-width: 767px) and (orientation: portrait) {
     .has-clear > input[type="text"] ~ .field-clear-btn {
         right: 40px;
@@ -434,9 +455,13 @@ button:active {
     .has-clear > textarea ~ .field-clear-btn {
         top: 42px !important;
     }
+    .has-clear > div[contenteditable="true"] ~ .field-clear-btn {
+        top: 42px !important;
+    }
 }
-
 /*field clear button END*/          
+
+
 .language-selector {
     position: absolute;
     top: 20px;
@@ -517,6 +542,24 @@ button:active {
     animation: fadeIn 0.3s ease;
 }
 
+#output-text {
+    width: auto;
+    min-height: 200px;
+    max-height: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow-y: auto;
+    transform: translateY(8%);
+    margin: 0px auto 30px;
+    line-height: normal;           
+}
+
+#output-text p,
+#output-text div {
+    margin: 0px 25px 0px 15px;
+}
+
 /*tab menus END*/
 
 @keyframes fadeIn {
@@ -591,4 +634,3 @@ button:active {
         --standard-padding: 10px !important;
     }
 }
-
