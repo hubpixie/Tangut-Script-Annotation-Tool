@@ -365,7 +365,11 @@ function updateFieldClearState(field) {
     const parent = field.parentElement;
     if (parent && parent.tagName === 'DIV' 
         && parent.classList.contains('has-clear')) {
-        parent.classList.toggle("has-value", !!field.value);
+        if (field.isContentEditable) {
+            parent.classList.toggle("has-value", !!field.textContent.trim());
+        } else {
+            parent.classList.toggle("has-value", !!field.value);
+        }
     }    
 }
 
