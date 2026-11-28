@@ -349,6 +349,7 @@ const SUPERSCRIPT_MAP = {
   B: 'ᴮ',
   '-': '⁻',
 };
+const EMPTY_VALUE = '　';
 
 function processCombination(items) {
     const result = [];
@@ -687,7 +688,7 @@ function generateTypstOutput(chars, lang, readingSystem) {
     });
     
     // 合并连接的读音
-    const readings = mergeConnectedItems(rawReadings).map(reading => processTypstBrackets(reading));
+    const readings = mergeConnectedItems(rawReadings).map(reading => processTypstBrackets(reading || EMPTY_VALUE));
 
     // 处理词义解释
     const rawMorphemes = processedChars.map((char, index, array) => {
@@ -733,7 +734,7 @@ function generateTypstOutput(chars, lang, readingSystem) {
     });
 
     // 合并连接的词义解释
-    const morphemes = mergeConnectedItems(rawMorphemes).map(morpheme => processTypstBrackets(morpheme));
+    const morphemes = mergeConnectedItems(rawMorphemes).map(morpheme => processTypstBrackets(morpheme || EMPTY_VALUE));
     return  `#gloss(<br/>` +
             `header: ${processTypstBrackets(headerWithLFW)},<br/>` +
             `source: (${charList.join(separator)}),<br/>` +
@@ -870,8 +871,8 @@ function generateObsidianOutput(chars, lang, readingSystem) {
     }
 
     // 过滤掉空字符串并使用新的连接方法
-    const readingsText = joinWithSmartSpacing(rawReadings.filter(r => r));
-    const morphemesText = joinWithSmartSpacing(morphemes.filter(m => m));
+    const readingsText = joinWithSmartSpacing(rawReadings.map(r => r || EMPTY_VALUE));
+    const morphemesText = joinWithSmartSpacing(morphemes.map(m => m || EMPTY_VALUE));
 
     // 返回Obsidian格式的输出
     return '```gloss<br/>' +
@@ -941,6 +942,7 @@ function generatePlainTextOutput(chars, lang, readingSystem) {
         if (!reading && /[\p{P}\s]/u.test(char)) {
             reading = char;
         }
+        reading = reading || EMPTY_VALUE;
         currentReadingGroup += reading;
         
         // 处理词义
@@ -975,6 +977,7 @@ function generatePlainTextOutput(chars, lang, readingSystem) {
                 morpheme = getExplanation(char, lang, prevChar, nextChar);
             }
         }
+        morpheme = morpheme || EMPTY_VALUE;
         currentMorphemeGroup += morpheme;
     });
     
@@ -1548,7 +1551,8 @@ function getCharWithLFW(char) {
     if (showLFW && !!entry && entry.LFW) {
         return `<span>${char}${toHtmlSupTag(entry.LFW)}</span>`;
     }
-    return "";
+    const showFourCorner = document.getElementById('show-fourcorner').checked;
+    return (!showFourCorner || !entry.LFW) ? `<span>${char}<span>` : "";
 }
 
 // get the four-corner with superscript
@@ -1562,8 +1566,7 @@ function getCharWithFourCode(char) {
         const delimiter = showLFW ? "´" : char;
         return `<span>${delimiter}${toHtmlSupTag(entry.fourCode)}</span>`;
     }
-    return showLFW ? "" : char;
-
+    return "";
 }
 
 // 在processCombination函数之前插入以下函数
